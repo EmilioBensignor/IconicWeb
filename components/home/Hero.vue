@@ -1,8 +1,8 @@
 <template>
   <section class="column gap-1 my-4">
-    <div class="columnAlignCenter gap-2 px-3">
+    <div class="columnAlignCenter gap-3 px-3">
       <div>
-        <p class="text-center font-bold text-light-blue">Empower your business.</p>
+        <p class="subtitle text-center text-light-blue">Empower your business.</p>
         <h1 class="column text-center">
           Meet your <span>Perfect Assistant</span>
         </h1>
@@ -12,8 +12,8 @@
         <span class="font-bold">hire the top 1%</span> of Executive and Customer
         Service Assistants. Tailored solutions that drive growth and innovation.
       </p>
-      <div>
-        <Button label="Get Started" class="primaryButton" />
+      <div class="w-full columnAlignCenter">
+        <NuxtLink to="/" class="primaryButton">Get Started</NuxtLink>
       </div>
     </div>
     <div>
@@ -21,3 +21,12 @@
     </div>
   </section>
 </template>
+
+<style scoped>
+  .subtitle {
+    font-weight: 700;
+  }
+  h1 {
+    font-weight: 800;
+  }
+</style>

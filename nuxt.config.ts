@@ -7,22 +7,26 @@ export default defineNuxtConfig({
   css: ["~/assets/main.css"],
   devtools: { enabled: true },
   modules: ['@primevue/nuxt-module', '@nuxt/image', '@nuxt/icon'],
-  colorMode: {
-    preference: "dark",
-    fallback: "dark",
-    hid: 'nuxt-color-mode-script',
-    globalName: '__NUXT_COLOR_MODE__',
-    componentName: 'ColorScheme',
-    classPrefix: '',
-    classSuffix: '-mode',
-    storageKey: 'nuxt-color-mode'
-  },
   app: {
     head: {
-      link: [{
-        rel: 'stylesheet',
-        href: 'https://unpkg.com/primeflex@latest/primeflex.css'
-      }]
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://unpkg.com/primeflex@latest/primeflex.css'
+        },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.googleapis.com'
+        },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com'
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap'
+        },
+      ],
     }
   }
 })
