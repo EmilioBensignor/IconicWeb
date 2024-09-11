@@ -1,5 +1,6 @@
 <template>
   <div>
-    <h1 class="column text-center">Meet your <span>Perfect Assistant</span></h1>
+    <HomeHero />
+    <HomeHappyClients />
   </div>
 </template>

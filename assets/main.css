@@ -1,5 +1,9 @@
+/* General */
+
 :root {
-  --text-white: rgba(250, 251, 255, 1);
+  --color-white: rgb(250, 251, 255);
+  --color-light-blue: rgb(56, 189, 248);
+  --color-blue: rgb(0, 73, 255);
 }
 
 * {
@@ -10,13 +14,29 @@
 }
 
 body {
-  height: 100vh;
   background: linear-gradient(360deg, rgb(10, 19, 42) 0%, rgb(28, 33, 45) 14%, rgb(47, 47, 47) 27.5%, rgb(28, 33, 45) 41%, rgb(10, 19, 42) 53.5%, rgb(28, 33, 45) 66%, rgb(47, 47, 47) 77.5%, rgb(28, 33, 45) 88.5%, rgb(10, 19, 42) 100%);
   background-repeat: no-repeat;
-  color: var(--text-white);
+  color: var(--color-white);
 }
 
-/* Global Classes */
+/* Colors */
+
+.text-light-blue {
+  color: var(--color-light-blue);
+}
+
+/* Flex */
+
+.rowCenter {
+  display: flex;
+  align-items: center;
+}
+
+.rowSpaceBetweenCenter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .column {
   display: flex;
@@ -27,4 +47,29 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Buttons */
+
+.primaryButton,
+.secondaryButton {
+  border-radius: 3.125rem !important;
+  padding: 0.65rem 2.125rem !important;
+  transition: all 0.3s !important;
+}
+
+.primaryButton {
+  background-color: var(--color-blue) !important;
+  border: 5px solid var(--color-blue) !important;
+}
+
+.primaryButton:hover {
+  background-color: var(--color-white) !important;
+  color: var(--color-blue) !important;
+}
+
+/* Fonts */
+
+.font-14 {
+  font-size: 0.875rem;
 }
