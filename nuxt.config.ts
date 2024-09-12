@@ -7,6 +7,11 @@ export default defineNuxtConfig({
   css: ["~/assets/main.css"],
   devtools: { enabled: true },
   modules: ['@primevue/nuxt-module', '@nuxt/image', '@nuxt/icon'],
+  icon: {
+    serverBundle: {
+      collections: ['mingcute']
+    }
+  },
   app: {
     head: {
       link: [

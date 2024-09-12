@@ -17,7 +17,7 @@
       </div>
     </div>
     <div>
-      <NuxtImg class="w-full" src="/images/Iconic-Executive-Assistant-Recruitment.png" alt="Iconic Executive Assistant Recruitment" />
+      <NuxtImg class="w-full" src="/images/home/Iconic-Executive-Assistant-Recruitment.png" alt="Iconic Executive Assistant Recruitment" />
     </div>
   </section>
 </template>

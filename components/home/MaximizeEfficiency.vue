@@ -8,8 +8,10 @@
         :value="problem.value"
       >
         <AccordionHeader>
-          {{ problem.icon }}
-          <p class="text-center">{{ problem.question }}</p>
+          <div class="columnAlignCenter">
+            <Icon :name="`mingcute:${problem.icon}`" style="color: var(--color-light-blue)" />
+            <p class="text-center">{{ problem.question }}</p>
+          </div>
         </AccordionHeader>
         <AccordionContent>
           <p>{{ problem.answer }}</p>
@@ -26,21 +28,21 @@ export default {
     return {
       problems: [
         {
-          icon: "",
+          icon: "star-line",
           question: "Are you struggling to hire top talent?",
           answer:
             "Stop sifting through unqualified candidates. ICONIC finds the right talent quickly, even for international hires, ensuring you get the best fit without the hassle.",
           value: 0,
         },
         {
-          icon: "",
+          icon: "alarm-1-line",
           question: "Is your hiring process taking too long?",
           answer:
             "Don't waste weeks on hiring. ICONIC speeds up the process, managing everything from job postings to candidate selection, so you can focus on growing your business.",
           value: 1,
         },
         {
-          icon: "",
+          icon: "currency-dollar-line",
           question: "Are costs impacting your profits?",
           answer:
             "Don't waste weeks on hiring. ICONIC speeds up the process, managing everything from job postings to candidate selection, so you can focus on growing your business.",
@@ -53,9 +55,15 @@ export default {
 </script>
 
 <style>
-.accordionMaximize .p-accordionpanel, .accordionMaximize .p-accordionheader {
+.accordionMaximize .p-accordionpanel,
+.accordionMaximize .p-accordionheader {
   border-width: 2px;
-  border-image: linear-gradient(to right, var(--color-blue), var(--color-light-blue), 1);
+  border-image: linear-gradient(
+    to right,
+    var(--color-blue),
+    var(--color-light-blue),
+    1
+  );
   border-color: transparent;
 }
 

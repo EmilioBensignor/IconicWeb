@@ -4,5 +4,7 @@
     <HomeHappyClients />
     <HomeHowWeHelp />
     <HomeMaximizeEfficiency />
+    <HomeHowYouWin />
+    <HomeYourReturn /> 
   </div>
 </template>
