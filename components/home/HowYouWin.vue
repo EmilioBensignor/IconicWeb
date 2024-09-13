@@ -2,15 +2,31 @@
   <section class="w-full columnAlignCenter px-3 py-4">
     <h2 class="text-center">How you win with Iconic Assistants</h2>
     <div class="w-full columnAlignCenter gap-4 my-4">
-      <div class="w-full win" v-for="(win, index) in wins" :key="index">
+      <div
+        class="w-full bg-dark-blue border-grey-1 border-round-3xl"
+        v-for="(win, index) in wins"
+        :key="index"
+      >
         <div class="relative">
-          <NuxtImg class="w-full" :src="`/images/home/${win.img}.png`" alt="" />
+          <NuxtImg
+            class="w-full border-round-top-3xl"
+            :src="`/images/home/${win.img}.png`"
+            alt=""
+          />
           <p class="absolute title">{{ win.title }}</p>
         </div>
-        <div>
-          <ul>
-            <li class="rowCenter" v-for="(item, index) in win.description" :key="index">
-              <Icon :name="`mingcute:${item.icon}`" style="color: var(--color-light-blue)" />
+        <div class="winBody">
+          <ul class="column gap-2">
+            <li
+              class="flex gap-2"
+              v-for="(item, index) in win.description"
+              :key="index"
+            >
+              <Icon
+                :name="`mingcute:${item.icon}`"
+                size="1.1rem"
+                style="color: var(--color-light-blue)"
+              />
               <p>{{ item.text }}</p>
             </li>
           </ul>
@@ -89,10 +105,23 @@ export default {
 </script>
 
 <style scoped>
-  .title {
-    left: 0.75rem;
-    bottom: 0.8rem;
-    font-size: 1.125rem;
-    font-weight: 600;
-  }
+.title {
+  left: 0.75rem;
+  bottom: 0.8rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.winBody {
+  padding: 0.75rem;
+}
+
+.winBody ul li span {
+  width: 10%;
+}
+
+.winBody ul li p {
+  width: 90%;
+  font-size: 0.75rem;
+}
 </style>

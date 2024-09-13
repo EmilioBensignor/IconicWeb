@@ -2,8 +2,12 @@
 
 :root {
   --color-white: rgb(250, 251, 255);
+  --color-black: #0A132A;
   --color-light-blue: rgb(56, 189, 248);
   --color-blue: rgb(0, 73, 255);
+  --color-dark-blue: #1F2D54;
+  --color-grey-50: #E0E3F980;
+  --color-grey: #E0E3F9;
 }
 
 * {
@@ -22,12 +26,39 @@ body {
 
 h2 {
   font-size: 1.25rem;
+  font-weight: 700;
 }
 
-/* Colors */
+/* Typography & Background */
+
+.text-black {
+  color: var(--color-black);
+}
 
 .text-light-blue {
   color: var(--color-light-blue);
+}
+
+.bg-blue {
+  background-color: var(--color-blue);
+}
+
+.bg-dark-blue {
+  background-color: var(--color-dark-blue);
+}
+
+.bg-grey {
+  background-color: var(--color-grey);
+}
+
+.bg-blue-light-gradient {
+  background: linear-gradient(90deg, var(--color-blue), var(--color-light-blue));
+}
+
+/* Border */
+
+.border-grey-1 {
+  border: 1px solid var(--color-grey-50);
 }
 
 /* Flex */
@@ -35,6 +66,11 @@ h2 {
 .rowCenter {
   display: flex;
   align-items: center;
+}
+
+.rowSpaceBetween {
+  display: flex;
+  justify-content: space-between;
 }
 
 .rowSpaceBetweenCenter {
@@ -52,6 +88,13 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.allCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Buttons */
@@ -81,4 +124,12 @@ h2 {
 
 .font-14 {
   font-size: 0.875rem;
+}
+
+.font-12 {
+  font-size: 0.75rem;
+}
+
+.font-10 {
+  font-size: 0.625rem;
 }
