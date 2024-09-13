@@ -7,5 +7,7 @@
     <HomeHowYouWin />
     <HomeYourReturn /> 
     <HomePrecisionMatching />
+    <HomeStartDelegating />
+    <HomeGoogleReviews />
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full columnAlignCenter gap-4 px-3 py-4">
+  <section class="w-full columnAlignCenter gap-4 px-3 py-5">
     <h2 class="text-center">Maximize efficiency</h2>
     <Accordion class="w-full accordionMaximize">
       <AccordionPanel

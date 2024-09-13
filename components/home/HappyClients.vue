@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full columnAlignCenter gap-4 px-3 py-4">
+  <section class="w-full columnAlignCenter gap-4 px-3 py-5">
     <div class="w-full rowSpaceBetweenCenter">
       <div class="info">
         <p>+1000</p>

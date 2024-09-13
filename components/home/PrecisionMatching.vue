@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full columnAlignCenter gap-4 px-3 py-4">
+  <section class="w-full columnAlignCenter gap-4 px-3 py-5">
     <h2>Precision matching process</h2>
     <Stepper value="1" class="w-full stepperProcess">
       <StepList>

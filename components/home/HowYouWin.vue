@@ -1,6 +1,6 @@
 <template>
-  <section class="w-full columnAlignCenter px-3 py-4">
-    <h2 class="text-center">How you win with Iconic Assistants</h2>
+  <section class="w-full columnAlignCenter px-3 py-5">
+    <h2 class="column text-center">How you win with <span>Iconic Assistants</span></h2>
     <div class="w-full columnAlignCenter gap-4 my-4">
       <div
         class="w-full bg-dark-blue border-grey-1 border-round-3xl"

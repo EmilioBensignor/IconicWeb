@@ -1,5 +1,5 @@
 <template>
-  <section class="column gap-1 my-4">
+  <section class="column gap-1 py-5">
     <div class="columnAlignCenter gap-3 px-3">
       <div>
         <p class="subtitle text-center text-light-blue">

@@ -8,6 +8,7 @@
   --color-dark-blue: #1F2D54;
   --color-grey-50: #E0E3F980;
   --color-grey: #E0E3F9;
+  --color-yellow: #FBBC05;
 }
 
 * {
@@ -140,4 +141,10 @@ h2 {
 
 .font-w-500 {
   font-weight: 500 !important;
+}
+
+/* Extra Padding, Margin & Gap */
+
+.gap-35 {
+  gap: 0.75rem;
 }

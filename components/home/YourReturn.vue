@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full columnAlignCenter px-3 py-4">
+  <section class="w-full columnAlignCenter px-3 py-5">
     <h2>Your return on investment</h2>
     <div class="w-full rowSpaceBetween gap-2 mt-3">
       <!-- Categories -->
