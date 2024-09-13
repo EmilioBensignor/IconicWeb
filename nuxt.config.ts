@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@primevue/nuxt-module', '@nuxt/image', '@nuxt/icon'],
   icon: {
+    size: '1rem',
     serverBundle: {
       collections: ['mingcute']
     }

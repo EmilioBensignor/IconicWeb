@@ -24,7 +24,6 @@
             >
               <Icon
                 :name="`mingcute:${item.icon}`"
-                size="1.1rem"
                 style="color: var(--color-light-blue)"
               />
               <p>{{ item.text }}</p>

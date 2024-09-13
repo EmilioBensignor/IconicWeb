@@ -26,8 +26,12 @@
           <Button
             label="Step 2"
             class="primaryButton align-self-end font-w-500"
-            icon="pi pi-arrow-right"
-            @click="activateCallback('2')" />
+            iconPos="right"
+            @click="activateCallback('2')">
+            <template #icon>
+              <Icon name="mingcute:arrow-right-line" />
+            </template>
+          </Button>
         </StepPanel>
         <StepPanel
           v-slot="{ activateCallback }"
@@ -42,11 +46,25 @@
             </p>
           </div>
           <div class="animacion"></div>
-          <Button
-            label="Step 3"
-            class="primaryButton align-self-end font-w-500"
-            icon="pi pi-arrow-right"
-            @click="activateCallback('3')" />
+          <div class="w-full rowSpaceBetweenCenter">
+            <Button
+              class="back"
+              aria-label="Back"
+              @click="activateCallback('1')">
+              <template #icon>
+                <Icon name="mingcute:arrow-left-line" />
+              </template>
+            </Button>
+            <Button
+              label="Step 3"
+              class="primaryButton align-self-end font-w-500"
+              iconPos="right"
+              @click="activateCallback('3')">
+              <template #icon>
+                <Icon name="mingcute:arrow-right-line" />
+              </template>
+            </Button>
+          </div>
         </StepPanel>
         <StepPanel
           v-slot="{ activateCallback }"
@@ -63,11 +81,25 @@
             </p>
           </div>
           <div class="animacion"></div>
-          <Button
-            label="Step 4"
-            class="primaryButton align-self-end font-w-500"
-            icon="pi pi-arrow-right"
-            @click="activateCallback('4')" />
+          <div class="w-full rowSpaceBetweenCenter">
+            <Button
+              class="back"
+              aria-label="Back"
+              @click="activateCallback('2')">
+              <template #icon>
+                <Icon name="mingcute:arrow-left-line" />
+              </template>
+            </Button>
+            <Button
+              label="Step 4"
+              class="primaryButton align-self-end font-w-500"
+              iconPos="right"
+              @click="activateCallback('4')">
+              <template #icon>
+                <Icon name="mingcute:arrow-right-line" />
+              </template>
+            </Button>
+          </div>
         </StepPanel>
         <StepPanel
           v-slot="{ activateCallback }"
@@ -78,14 +110,17 @@
               Psychometric and Job Compatibility Assessment
             </h3>
             <p class="text-center font-14">
-              We perform behavioral assessments to test each candidate's compatibility with the job position, ensuring the perfect fit for your team.
+              We perform behavioral assessments to test each candidate's
+              compatibility with the job position, ensuring the perfect fit for
+              your team.
             </p>
           </div>
           <div class="animacion"></div>
-          <Button
-            label="<"
-            class="primaryButton align-self-start font-w-500"
-            @click="activateCallback('3')" />
+          <Button class="back align-self-start" aria-label="Back" @click="activateCallback('3')">
+            <template #icon>
+              <Icon name="mingcute:arrow-left-line" />
+            </template>
+          </Button>
         </StepPanel>
       </StepPanels>
     </Stepper>
@@ -142,6 +177,13 @@
     font-size: 0.875rem;
     font-weight: 700;
   }
+
+  .stepperProcess .p-button {
+    display: flex !important;
+    flex-direction: row-reverse;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem !important;
+  }
 </style>
 
 <style scoped>
@@ -150,5 +192,19 @@
     height: 9.375rem;
     background-color: var(--color-grey);
     border-radius: 12px;
+  }
+  .stepperProcess .back {
+    width: 1.875rem !important;
+    height: 1.875rem !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50% !important;
+    border: 1px solid var(--color-grey) !important;
+    padding: 0 !important;
+  }
+  .stepperProcess .back span {
+    position: absolute;
   }
 </style>
