@@ -22,7 +22,7 @@
             <AccordionContent>
               <div class="column gap-2 mt-2">
                 <NuxtImg
-                  :src="`/images/home/${step.img}-Iconic-Recruitment.png`"
+                  :src="`/images/home/${step.img}-Iconic-Recruitment.jpg`"
                   :alt="step.alt"
                   class="w-full"
                 />

@@ -10,7 +10,7 @@
         <div class="relative">
           <NuxtImg
             class="w-full border-round-top-3xl"
-            :src="`/images/home/${win.img}.png`"
+            :src="`/images/home/${win.img}.jpg`"
             alt=""
           />
           <p class="absolute title">{{ win.title }}</p>
