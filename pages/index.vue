@@ -6,5 +6,6 @@
     <HomeMaximizeEfficiency />
     <HomeHowYouWin />
     <HomeYourReturn /> 
+    <HomePrecisionMatching />
   </div>
 </template>

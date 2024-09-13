@@ -122,6 +122,10 @@ h2 {
 
 /* Fonts */
 
+.font-18 {
+  font-size: 1.125rem;
+}
+
 .font-14 {
   font-size: 0.875rem;
 }
@@ -132,4 +136,8 @@ h2 {
 
 .font-10 {
   font-size: 0.625rem;
+}
+
+.font-w-500 {
+  font-weight: 500 !important;
 }
