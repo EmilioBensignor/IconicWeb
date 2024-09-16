@@ -56,6 +56,12 @@ h2 {
   background: linear-gradient(90deg, var(--color-blue), var(--color-light-blue));
 }
 
+.bgCover {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 /* Border */
 
 .border-grey-1 {
