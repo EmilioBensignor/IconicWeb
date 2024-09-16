@@ -1,6 +1,8 @@
 <template>
   <section class="w-full columnAlignCenter gap-4 px-3 py-5">
-    <h2 class="column text-center">Start delegating <span>in 3 simple steps</span></h2>
+    <h2 class="column text-center">
+      Start delegating <span>in 3 simple steps</span>
+    </h2>
     <div class="w-full">
       <Accordion
         value="0"
@@ -22,9 +24,10 @@
             <AccordionContent>
               <div class="column gap-2 mt-2">
                 <NuxtImg
+                  style="object-fit: cover"
                   :src="`/images/home/${step.img}-Iconic-Recruitment.jpg`"
                   :alt="step.alt"
-                  class="w-full"
+                  class="w-full h-8rem"
                 />
                 <p class="font-12">{{ step.text }}</p>
               </div>
