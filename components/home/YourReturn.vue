@@ -9,7 +9,7 @@
         </div>
         <div class="bg-dark-blue border-grey-1 border-round-xl">
           <div
-            class="categories p-2"
+            class="categories allCenter"
             v-for="(category, index) in categories"
             :key="index"
           >
@@ -23,11 +23,13 @@
           <p class="text-center font-14 font-bold">FULL-TIME ICONIC EA</p>
         </div>
         <div
-          class="iconic allCenter flex-grow-1 bg-dark-blue"
+          class="iconic allCenter flex-grow-1 bg-blue-light-gradient"
           v-for="(iconicItem, index) in iconic"
           :key="index"
         >
-          <p class="text-center font-12">{{ iconicItem }}</p>
+          <div class="w-full h-full allCenter bg-dark-blue">
+            <p class="text-center font-12">{{ iconicItem }}</p>
+          </div>
         </div>
         <div class="less absolute bg-blue-light-gradient">
           <p class="text-center font-10">70% LESS</p>
@@ -79,7 +81,15 @@ export default {
 .categories,
 .iconic,
 .employee {
+  height: 2.75rem;
+}
+
+.categories, .employee, .iconic div {
   border-bottom: 1px solid var(--color-grey-50);
+}
+
+.categories {
+  padding: 0.5rem 0.4rem;
 }
 
 .categories:last-of-type,
@@ -99,28 +109,16 @@ export default {
 }
 
 .iconic {
-  border-left: 3px solid var(--color-blue);
-  border-right: 3px solid var(--color-blue);
+  padding: 0 3px;
 }
 
 .less {
   width: 105%;
-  left: -0.225rem;
+  left: -0.15rem;
   right: 0;
   bottom: -0.75rem;
   border-radius: 20px;
   padding: 0.25rem 1rem;
   margin: 0 auto;
-}
-
-@media only screen and (min-width: 350px) {
-  .iconic,
-  .employee {
-    padding: 0.5rem 1.25rem;
-  }
-
-  .less {
-    padding: 0.25rem 1.25rem;
-  }
 }
 </style>

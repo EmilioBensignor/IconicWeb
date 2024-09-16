@@ -1,24 +1,37 @@
 <template>
   <section class="w-full columnAlignCenter gap-4 px-3 py-5">
     <h2 class="text-center">Maximize efficiency</h2>
-    <Accordion class="w-full accordionMaximize">
+    <Accordion class="w-full accordionMaximize columnAlignCenter gap-3">
       <AccordionPanel
         v-for="(problem, index) in problems"
         :key="index"
         :value="problem.value"
+        class="w-full bg-blue-light-gradient"
       >
-        <AccordionHeader>
-          <div class="columnAlignCenter">
-            <Icon :name="`mingcute:${problem.icon}`" style="color: var(--color-light-blue)" />
-            <p class="text-center">{{ problem.question }}</p>
-          </div>
-        </AccordionHeader>
-        <AccordionContent>
-          <p>{{ problem.answer }}</p>
-        </AccordionContent>
+        <div class="w-full panelContent columnAlignCenter bg-dark-blue">
+          <AccordionHeader>
+            <div class="questionContent columnAlignCenter gap-2">
+              <Icon
+                :name="`mingcute:${problem.icon}`"
+                style="color: var(--color-light-blue)"
+                size="1.125rem"
+              />
+              <p class="text-center">{{ problem.question }}</p>
+            </div>
+          </AccordionHeader>
+          <AccordionContent>
+            <div class="answerContent bg-dark-blue">
+              <p class="text-center">{{ problem.answer }}</p>
+            </div>
+          </AccordionContent>
+        </div>
       </AccordionPanel>
     </Accordion>
-    <NuxtLink to="/" class="secondaryButton">Explore Our Solutions</NuxtLink>
+    <NuxtLink to="/" class="secondaryButton">
+      <div>
+        <p>Explore Our Solutions</p>
+      </div>
+    </NuxtLink>
   </section>
 </template>
 
@@ -56,18 +69,49 @@ export default {
 
 <style>
 .accordionMaximize .p-accordionpanel,
-.accordionMaximize .p-accordionheader {
-  border-width: 2px;
-  border-image: linear-gradient(
-    to right,
-    var(--color-blue),
-    var(--color-light-blue),
-    1
-  );
-  border-color: transparent;
+.accordionMaximize .p-accordionheader,
+.accordionMaximize .p-accordioncontent-content {
+  border: none;
+}
+
+.accordionMaximize .p-accordionpanel {
+  border-radius: 12px;
+  padding: 2px;
 }
 
 .accordionMaximize .p-accordionheader-toggle-icon {
   display: none;
+}
+
+.accordionMaximize .p-accordionpanel-active .panelContent {
+  background: transparent;
+}
+
+.accordionMaximize .p-accordionpanel-active span {
+  color: white !important;
+}
+</style>
+
+<style scoped>
+.panelContent {
+  border-radius: 12px;
+}
+
+.questionContent {
+  padding: 1rem 0.75rem
+}
+
+.questionContent p {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.answerContent {
+  border-radius: 0 0 12px 12px;
+  padding: 1rem;
+}
+
+.answerContent p {
+  font-size: 0.75rem;
 }
 </style>

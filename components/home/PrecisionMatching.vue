@@ -153,6 +153,8 @@
       var(--color-light-blue)
     );
     color: var(--color-white);
+    border: none;
+    padding: 2px;
   }
 
   .stepperProcess .p-step {

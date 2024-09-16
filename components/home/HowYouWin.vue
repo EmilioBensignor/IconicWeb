@@ -1,6 +1,8 @@
 <template>
   <section class="w-full columnAlignCenter px-3 py-5">
-    <h2 class="column text-center">How you win with <span>Iconic Assistants</span></h2>
+    <h2 class="column text-center">
+      How you win with <span>Iconic Assistants</span>
+    </h2>
     <div class="w-full columnAlignCenter gap-4 my-4">
       <div
         class="w-full bg-dark-blue border-grey-1 border-round-3xl"
@@ -9,9 +11,10 @@
       >
         <div class="relative">
           <NuxtImg
-            class="w-full border-round-top-3xl"
+            style="object-fit: cover"
+            class="w-full h-7rem bg-cover border-round-top-3xl"
             :src="`/images/home/${win.img}.jpg`"
-            alt=""
+            :alt="win.alt"
           />
           <p class="absolute title">{{ win.title }}</p>
         </div>

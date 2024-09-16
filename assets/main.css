@@ -106,7 +106,7 @@ h2 {
   font-size: 0.75rem !important;
   font-weight: 900 !important;
   text-decoration: none;
-  padding: 0.65rem 2.125rem !important;
+  padding: 0.75rem 2.225rem !important;
   transition: all 0.3s !important;
 }
 
@@ -119,6 +119,34 @@ h2 {
 .primaryButton:hover {
   background-color: var(--color-white) !important;
   color: var(--color-blue) !important;
+}
+
+.secondaryButton {
+  background: linear-gradient(90deg, var(--color-blue), var(--color-light-blue));
+  color: var(--color-white);
+  padding: 0.125rem !important;
+}
+
+.secondaryButton div {
+  background: transparent;
+  border-radius: 3.125rem !important;
+  padding: 0.95rem 2.425rem !important;
+  transition: all 0.3s !important;
+}
+
+.secondaryButton:hover {
+  padding: 0.125rem !important;
+}
+
+.secondaryButton:hover div {
+  background-color: var(--color-white);
+}
+
+.secondaryButton:hover div p {
+  background: linear-gradient(90deg, var(--color-blue), var(--color-light-blue));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Fonts */
