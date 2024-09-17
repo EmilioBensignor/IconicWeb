@@ -1,11 +1,11 @@
 <template>
-  <div class="header columnAlignCenter">
+  <header class="columnAlignCenter">
     <NuxtImg class="logo" src="/images/Iconic-Assistants-Logo.png" alt="Iconic Assistants Logo" />
-  </div>
+  </header>
 </template>
 
 <style scoped>
-.header {
+header {
   padding: 1.125rem 1rem;
 }
 

@@ -108,10 +108,11 @@ h2 {
 
 .primaryButton,
 .secondaryButton {
-  border-radius: 3.125rem !important;
+  text-align: center;
   font-size: 0.75rem !important;
   font-weight: 900 !important;
   text-decoration: none;
+  border-radius: 3.125rem !important;
   padding: 0.75rem 2.225rem !important;
   transition: all 0.3s !important;
 }
