@@ -16,7 +16,9 @@
       >
         <div class="w-full h-full overlay gap-3 aboslute top-0 left-0">
           <h3 class="text-center">{{ item.title }}</h3>
-          <p v-show="item.show" class="text-center">{{ item.text }}</p>
+          <transition name="fade">
+            <p v-show="item.show" class="text-center">{{ item.text }}</p>
+          </transition>
         </div>
       </div>
     </div>
@@ -93,10 +95,17 @@ export default {
 .overlay p {
   font-size: 0.875rem;
   opacity: 0;
-  transition: all 0.7s ease;
+  transition: all 0.5s ease;
 }
 
 .help:hover .overlay p {
   opacity: 1;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>
