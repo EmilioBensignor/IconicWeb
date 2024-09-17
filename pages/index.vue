@@ -9,5 +9,6 @@
     <HomePrecisionMatching />
     <HomeStartDelegating />
     <HomeGoogleReviews />
+    <HomeFAQ />
   </div>
 </template>

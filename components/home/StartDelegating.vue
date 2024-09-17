@@ -76,9 +76,9 @@ export default {
 </script>
 
 <style>
-.accordionSteps .p-accordionpanel,
-.accordionSteps .p-accordionheader,
-.accordionSteps .p-accordioncontent-content {
+.p-accordionpanel,
+.p-accordionheader,
+.p-accordioncontent-content {
   border: none !important;
 }
 
