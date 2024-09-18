@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full columnAlignCenter gap-35 px-3 py-5">
+  <section class="w-full columnAlignCenter gap-25 px-3 py-5">
     <h2 class="column text-center">
       What our clients <span>are saying about us</span>
     </h2>
