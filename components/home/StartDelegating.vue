@@ -23,12 +23,12 @@
             </AccordionHeader>
             <AccordionContent>
               <div class="column gap-2 mt-2">
-                <NuxtImg
-                  style="object-fit: cover"
-                  :src="`/images/home/${step.img}-Iconic-Recruitment.jpg`"
-                  :alt="step.alt"
-                  class="w-full h-8rem border-round-md"
-                />
+                <div
+                  class="w-full h-8rem imgStarDelegating border-round-md"
+                  :style="{
+                    backgroundImage: `url(/images/home/${step.img}-Iconic-Recruitment.jpg)`,
+                  }"
+                ></div>
                 <p class="font-12">{{ step.text }}</p>
               </div>
             </AccordionContent>
@@ -134,5 +134,11 @@ export default {
 .headAccordion h3 {
   font-size: 1rem;
   font-weight: 700;
+}
+
+.imgStarDelegating {
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 </style>

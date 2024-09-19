@@ -43,7 +43,7 @@ export default {
           show: false,
         },
         {
-          img: "Administrative-Tasks",
+          img: "Customer-Support",
           title: "Customer Support",
           text: "We provide comprehensive support through phone, email, and live chat, focusing on customer retention, relationship building, escalation management, and seamless onboarding.",
           show: false,

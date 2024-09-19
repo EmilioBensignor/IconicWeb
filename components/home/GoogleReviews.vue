@@ -28,7 +28,7 @@
             />
             <div class="reviewHeader column gap-1">
               <p class="font-bold">{{ slotProps.data.name }}</p>
-              <p>{{ slotProps.data.numReviews }} Reviews</p>
+              <p>{{ slotProps.data.numReviews }} reviews</p>
             </div>
           </div>
           <div>

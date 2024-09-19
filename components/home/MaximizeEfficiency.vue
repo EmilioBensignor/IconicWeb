@@ -1,32 +1,27 @@
 <template>
   <section class="w-full columnAlignCenter gap-4 px-3 py-5">
     <h2 class="text-center">Maximize efficiency</h2>
-    <Accordion class="w-full accordionMaximize columnAlignCenter gap-3">
-      <AccordionPanel
+    <div class="w-full accordionMaximize columnAlignCenter gap-3">
+      <div
         v-for="(problem, index) in problems"
         :key="index"
-        :value="problem.value"
-        class="w-full bg-blue-light-gradient"
+        class="w-full accordionMaximize bg-blue-light-gradient"
       >
         <div class="w-full panelContent columnAlignCenter bg-dark-blue">
-          <AccordionHeader>
-            <div class="questionContent columnAlignCenter gap-2">
-              <Icon
-                :name="`mingcute:${problem.icon}`"
-                style="color: var(--color-light-blue)"
-                size="1.125rem"
-              />
-              <p class="text-center">{{ problem.question }}</p>
-            </div>
-          </AccordionHeader>
-          <AccordionContent>
-            <div class="answerContent bg-dark-blue">
-              <p class="text-center">{{ problem.answer }}</p>
-            </div>
-          </AccordionContent>
+          <div class="questionContent columnAlignCenter gap-2">
+            <Icon
+              :name="`mingcute:${problem.icon}`"
+              style="color: var(--color-light-blue)"
+              size="1.125rem"
+            />
+            <p class="text-center">{{ problem.question }}</p>
+          </div>
+          <div class="answerContent bg-dark-blue">
+            <p class="text-center">{{ problem.answer }}</p>
+          </div>
         </div>
-      </AccordionPanel>
-    </Accordion>
+      </div>
+    </div>
     <NuxtLink to="/" class="secondaryButton">
       <div>
         <p>Explore Our Solutions</p>
@@ -67,38 +62,30 @@ export default {
 };
 </script>
 
-<style>
-.accordionMaximize .p-accordionpanel,
-.accordionMaximize .p-accordionheader,
-.accordionMaximize .p-accordioncontent-content {
-  border: none;
-}
-
-.accordionMaximize .p-accordionpanel {
+<style scoped>
+.accordionMaximize {
   border-radius: 12px;
   padding: 2px;
 }
 
-.accordionMaximize .p-accordionheader-toggle-icon {
-  display: none;
-}
-
-.accordionMaximize .p-accordionpanel-active .panelContent {
-  background: transparent;
-}
-
-.accordionMaximize .p-accordionpanel-active span {
-  color: white !important;
-}
-</style>
-
-<style scoped>
 .panelContent {
   border-radius: 12px;
+  transition: all 0.5s ease;
+}
+
+.panelContent:hover .questionContent {
+  background: linear-gradient(90deg, var(--color-blue), var(--color-light-blue));
 }
 
 .questionContent {
-  padding: 1rem 0.75rem
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  padding: 1rem 0.75rem;
+  transition: all 0.5s ease;
+}
+
+.panelContent:hover .questionContent span {
+  color: var(--color-white) !important;
 }
 
 .questionContent p {
@@ -107,7 +94,15 @@ export default {
 }
 
 .answerContent {
+  max-height: 0;
   border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  padding: 0 1rem;
+}
+
+.panelContent:hover .answerContent {
+  max-height: 1000px;
   padding: 1rem;
 }
 
