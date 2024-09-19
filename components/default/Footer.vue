@@ -54,7 +54,7 @@
     <div class="w-full columnAlignCenter gap-35 mt-2">
       <div class="privacyTerms rowCenter gap-3">
         <NuxtLink to="#" class="text-white no-underline">Privacy</NuxtLink>
-        <span>|</span>
+        <span>&</span>
         <NuxtLink to="#" class="text-white no-underline">Terms</NuxtLink>
       </div>
       <div class="rightsReserved columnAlignCenter">
