@@ -1,212 +1,237 @@
 <template>
   <section class="w-full columnAlignCenter gap-4 px-3 py-5">
     <h2>Precision matching process</h2>
-    <Stepper value="1" class="w-full stepperProcess">
+    <Stepper
+      v-model="currentStep"
+      :value="currentStep"
+      class="w-full stepperProcess"
+    >
       <StepList>
-        <Step value="1"></Step>
-        <Step value="2"></Step>
-        <Step value="3"></Step>
-        <Step value="4"></Step>
+        <Step
+          v-for="step in 4"
+          :key="step"
+          :value="step"
+          @click="setStep(step)"
+        />
       </StepList>
       <StepPanels class="mt-3">
         <StepPanel
-          v-slot="{ activateCallback }"
+          v-for="step in 4"
+          :key="step"
+          :value="step"
           class="columnAlignCenter gap-4"
-          value="1">
+        >
           <div>
-            <h3 class="text-center font-18 mb-2">Filtering and Screening</h3>
-            <p class="text-center font-14">
-              At Iconic Assistant, we begin by filtering candidates based on
-              their experience, skills, and education. We then conduct an
-              initial screening to ensure that only the most qualified
-              professionals, aligned with your specific needs, move forward.
-            </p>
+            <h3 class="text-center font-18 mb-2">{{ stepTitles[step - 1] }}</h3>
+            <p class="text-center font-14">{{ stepDescriptions[step - 1] }}</p>
           </div>
-          <div class="animacion"></div>
-          <Button
-            label="Step 2"
-            class="primaryButton align-self-end font-w-500"
-            iconPos="right"
-            @click="activateCallback('2')">
-            <template #icon>
-              <Icon name="mingcute:arrow-right-line" />
-            </template>
-          </Button>
-        </StepPanel>
-        <StepPanel
-          v-slot="{ activateCallback }"
-          class="columnAlignCenter gap-4"
-          value="2">
-          <div>
-            <h3 class="text-center font-18 mb-2">Values and Background</h3>
-            <p class="text-center font-14">
-              We ensure that candidates share our values and work ethics. We
-              conduct thorough background checks, including education and
-              criminal records, to guarantee alignment with our standards.
-            </p>
+          <div class="animacion">
+            <video :ref="`video${step}`" muted preload="none" class="lazyVideo">
+              <source :src="stepVideos[step - 1]" type="video/mp4" />
+              Tu navegador no soporta videos.
+            </video>
           </div>
-          <div class="animacion"></div>
-          <div class="w-full rowSpaceBetweenCenter">
-            <Button
-              class="back"
-              aria-label="Back"
-              @click="activateCallback('1')">
-              <template #icon>
-                <Icon name="mingcute:arrow-left-line" />
-              </template>
+          <div
+            class="w-full"
+            :class="
+              step === 1
+                ? 'flex justify-content-end'
+                : step === 4
+                ? 'flex justify-content-start'
+                : 'rowSpaceBetweenCenter'
+            "
+          >
+            <Button v-if="step > 1" class="back" @click="setStep(step - 1)">
+              <template #icon
+                ><Icon name="mingcute:arrow-left-line"
+              /></template>
             </Button>
             <Button
-              label="Step 3"
-              class="primaryButton align-self-end font-w-500"
-              iconPos="right"
-              @click="activateCallback('3')">
-              <template #icon>
-                <Icon name="mingcute:arrow-right-line" />
-              </template>
+              v-if="step < 4"
+              :label="`Step ${step + 1}`"
+              class="primaryButton"
+              @click="setStep(step + 1)"
+            >
+              <template #icon
+                ><Icon name="mingcute:arrow-right-line"
+              /></template>
             </Button>
           </div>
-        </StepPanel>
-        <StepPanel
-          v-slot="{ activateCallback }"
-          class="columnAlignCenter gap-4"
-          value="3">
-          <div>
-            <h3 class="text-center font-18 mb-2">
-              English Proficiency Assessment
-            </h3>
-            <p class="text-center font-14">
-              We assess each candidate's ability to communicate effectively and
-              accurately. We conduct English proficiency tests to ensure they
-              meet our high standards.
-            </p>
-          </div>
-          <div class="animacion"></div>
-          <div class="w-full rowSpaceBetweenCenter">
-            <Button
-              class="back"
-              aria-label="Back"
-              @click="activateCallback('2')">
-              <template #icon>
-                <Icon name="mingcute:arrow-left-line" />
-              </template>
-            </Button>
-            <Button
-              label="Step 4"
-              class="primaryButton align-self-end font-w-500"
-              iconPos="right"
-              @click="activateCallback('4')">
-              <template #icon>
-                <Icon name="mingcute:arrow-right-line" />
-              </template>
-            </Button>
-          </div>
-        </StepPanel>
-        <StepPanel
-          v-slot="{ activateCallback }"
-          class="columnAlignCenter gap-4"
-          value="4">
-          <div>
-            <h3 class="text-center font-18 mb-2">
-              Psychometric and Job Compatibility Assessment
-            </h3>
-            <p class="text-center font-14">
-              We perform behavioral assessments to test each candidate's
-              compatibility with the job position, ensuring the perfect fit for
-              your team.
-            </p>
-          </div>
-          <div class="animacion"></div>
-          <Button class="back align-self-start" aria-label="Back" @click="activateCallback('3')">
-            <template #icon>
-              <Icon name="mingcute:arrow-left-line" />
-            </template>
-          </Button>
         </StepPanel>
       </StepPanels>
     </Stepper>
   </section>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      currentStep: 1,
+      observer: null,
+      stepTitles: [
+        "Filtering and Screening",
+        "Values and Background",
+        "English Proficiency Assessment",
+        "Psychometric and Job Compatibility Assessment",
+      ],
+      stepDescriptions: [
+        "At Iconic Assistant, we begin by filtering candidates based on their experience, skills, and education.",
+        "We ensure that candidates share our values and work ethics.",
+        "We assess each candidate's ability to communicate effectively.",
+        "We perform behavioral assessments to test each candidate's compatibility.",
+      ],
+      stepVideos: [
+        "/videos/home/Filtering-Screening-Process.mp4",
+        "/videos/home/Values-Background-Process.mp4",
+        "/videos/home/English-Proficiency-Assessment-Process.mp4",
+        "/videos/home/Psychometric-Job-Compatibility-Process.mp4",
+      ],
+    };
+  },
+  methods: {
+    setStep(step) {
+      this.currentStep = step;
+      this.$nextTick(() => {
+        this.reloadVideo(step);
+      });
+    },
+    reloadVideo(step) {
+      const videoRef = this.$refs[`video${step}`];
+      if (videoRef && videoRef[0]) {
+        videoRef[0].load();
+        videoRef[0].play().catch((error) => {
+          if (error.name !== "AbortError") {
+            console.error("Error al reproducir el video:", error);
+          }
+        });
+      }
+    },
+    setupIntersectionObserver() {
+      if ("IntersectionObserver" in window) {
+        this.observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.play().catch((error) => {
+                if (error.name !== "AbortError") {
+                  console.error("Error al reproducir el video:", error);
+                }
+              });
+            } else {
+              entry.target.pause();
+            }
+          });
+        });
+
+        this.$nextTick(() => {
+          for (let i = 1; i <= 4; i++) {
+            const videoRef = this.$refs[`video${i}`];
+            if (videoRef && videoRef[0]) {
+              this.observer.observe(videoRef[0]);
+            }
+          }
+        });
+      }
+    },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.reloadVideo(this.currentStep);
+      this.setupIntersectionObserver();
+    });
+  },
+  beforeUnmount() {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+  },
+};
+</script>
+
 <style>
-  .stepperProcess .p-steplist {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
+.stepperProcess .p-steplist {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
 
-  .stepperProcess .p-step-header {
-    width: 1.875rem;
-    height: 1.875rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-dark-blue);
-    border: 2px solid var(--color-blue);
-    border-radius: 50%;
-  }
+.stepperProcess .p-step-header {
+  width: 1.875rem;
+  height: 1.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-dark-blue);
+  border: 2px solid var(--color-blue);
+  border-radius: 50%;
+}
 
-  .stepperProcess .p-step-active .p-step-header {
-    background: linear-gradient(
-      90deg,
-      var(--color-blue),
-      var(--color-light-blue)
-    );
-    color: var(--color-white);
-    border: none;
-    padding: 2px;
-  }
+.stepperProcess .p-step-active .p-step-header {
+  background: linear-gradient(
+    90deg,
+    var(--color-blue),
+    var(--color-light-blue)
+  );
+  color: var(--color-white);
+  border: none;
+  padding: 2px;
+}
 
-  .stepperProcess .p-step {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
+.stepperProcess .p-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
 
-  .stepperProcess .p-stepper-separator,
-  .stepperProcess .p-step:has(~ .p-step-active) .p-stepper-separator {
-    height: 4px;
-    background: linear-gradient(
-      90deg,
-      var(--color-blue),
-      var(--color-light-blue)
-    );
-    border-radius: 10px;
-  }
+.stepperProcess .p-stepper-separator,
+.stepperProcess .p-step:has(~ .p-step-active) .p-stepper-separator {
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--color-blue),
+    var(--color-light-blue)
+  );
+  border-radius: 10px;
+}
 
-  .stepperProcess .p-step-number {
-    color: var(--color-white);
-    font-size: 0.875rem;
-    font-weight: 700;
-  }
+.stepperProcess .p-step-number {
+  color: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
 
-  .stepperProcess .p-button {
-    display: flex !important;
-    flex-direction: row-reverse;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem !important;
-  }
+.stepperProcess .p-button {
+  display: flex !important;
+  flex-direction: row-reverse;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem !important;
+}
 </style>
 
 <style scoped>
-  .animacion {
-    width: 100%;
-    height: 9.375rem;
-    background-color: var(--color-grey);
-    border-radius: 12px;
-  }
-  .stepperProcess .back {
-    width: 1.875rem !important;
-    height: 1.875rem !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50% !important;
-    border: 1px solid var(--color-grey) !important;
-    padding: 0 !important;
-  }
-  .stepperProcess .back span {
-    position: absolute;
-  }
+.animacion {
+  width: 100%;
+  height: 9.375rem;
+  border-radius: 12px;
+}
+
+.lazyVideo {
+  max-width: 100%;
+}
+
+.stepperProcess .back {
+  width: 1.875rem !important;
+  height: 1.875rem !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50% !important;
+  border: 1px solid var(--color-grey) !important;
+  padding: 0 !important;
+}
+.stepperProcess .back span {
+  position: absolute;
+}
 </style>

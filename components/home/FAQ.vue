@@ -39,7 +39,7 @@ export default {
         },
         {
           question: "Can i hire a part-time EA?",
-          answer: "<p>Yes, we can help you outsource part-time executive assistant for your business or specific campaigns. Our plans include either part-time (80 hours per month) or full-time (160 hours per month) EA's</p>.",
+          answer: "<p>Yes, we can help you outsource part-time executive assistant for your business or specific campaigns. Our plans include either part-time (80 hours per month) or full-time (160 hours per month) EA's.</p>",
         },
         {
           question: "How can i sign up to be an EA",

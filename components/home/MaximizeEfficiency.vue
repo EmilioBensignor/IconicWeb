@@ -73,15 +73,15 @@ export default {
   transition: all 0.5s ease;
 }
 
-.panelContent:hover .questionContent {
-  background: linear-gradient(90deg, var(--color-blue), var(--color-light-blue));
-}
-
 .questionContent {
   width: 100%;
   border-radius: 12px 12px 0 0;
   padding: 1rem 0.75rem;
   transition: all 0.5s ease;
+}
+
+.panelContent:hover .questionContent {
+  background: linear-gradient(90deg, var(--color-blue), var(--color-light-blue));
 }
 
 .panelContent:hover .questionContent span {
