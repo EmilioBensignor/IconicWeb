@@ -13,7 +13,7 @@
           :style="{
             backgroundImage: `url(/images/home/${win.img}.jpg)`,
           }">
-          <div class="w-full h-full flex align-items-end overlay px-3 py-2">
+          <div class="w-full h-full flex align-items-end px-3 py-2">
             <p class="title">{{ win.title }}</p>
           </div>
         </div>
@@ -101,10 +101,6 @@
 </script>
 
 <style scoped>
-  .overlay {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #0A132A 100%);
-  }
-
   .title {
     left: 0.75rem;
     bottom: 0.8rem;

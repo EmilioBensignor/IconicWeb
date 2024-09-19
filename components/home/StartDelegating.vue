@@ -27,7 +27,7 @@
                   style="object-fit: cover"
                   :src="`/images/home/${step.img}-Iconic-Recruitment.jpg`"
                   :alt="step.alt"
-                  class="w-full h-8rem"
+                  class="w-full h-8rem border-round-md"
                 />
                 <p class="font-12">{{ step.text }}</p>
               </div>
