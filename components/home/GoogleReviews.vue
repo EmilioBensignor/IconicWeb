@@ -9,16 +9,7 @@
         src="/images/home/Google-Reviews-5-Stars-Iconic-Assistants.png"
         alt="Google Reviews 5 Stars Iconic Assistants"
       />
-      <div>
-        <Icon style="color: var(--color-yellow)" name="mingcute:star-fill" />
-        <Icon style="color: var(--color-yellow)" name="mingcute:star-fill" />
-        <Icon style="color: var(--color-yellow)" name="mingcute:star-fill" />
-        <Icon style="color: var(--color-yellow)" name="mingcute:star-fill" />
-        <Icon
-          style="color: var(--color-yellow)"
-          name="mingcute:star-half-fill"
-        />
-      </div>
+      <MiscStarsFourHalf />
     </div>
     <Carousel
       :value="reviews"
@@ -28,16 +19,34 @@
       :autoplayInterval="3000"
       class="w-full carrouselReviews"
     >
-      <div
-        class="bg-dark-blue border-grey-1"
-        v-for="(review, index) in reviews"
-        :key="index"
-      >
-        <NuxtImg
-          :src="`/images/home/reviews/${review.img}-Google-Review.png`"
-        />
-        <p>{{ review.name }}</p>
-      </div>
+      <template #item="slotProps">
+        <article class="reviewCard column relative bg-dark-blue border-grey-1 mx-1">
+          <div class="rowCenter gap-2">
+            <NuxtImg
+              class="avatar"
+              :src="`/images/home/reviews/${slotProps.data.img}-Google-Review.png`"
+            />
+            <div class="reviewHeader column gap-1">
+              <p class="font-bold">{{ slotProps.data.name }}</p>
+              <p>{{ slotProps.data.numReviews }} reviews</p>
+            </div>
+          </div>
+          <div>
+            <div v-if="slotProps.data.numStars === 4.5">
+              <MiscStarsFourHalf />
+            </div>
+            <div v-if="slotProps.data.numStars === 5">
+              <MiscStarsFive />
+            </div>
+          </div>
+          <p>{{ slotProps.data.text }}</p>
+          <NuxtImg
+            class="googleIcon absolute"
+            src="/images/home/Google-Icon.svg"
+            alt="Google Icon"
+          />
+        </article>
+      </template>
     </Carousel>
   </section>
 </template>
@@ -93,7 +102,7 @@ export default {
           name: "Sharon H",
           numReviews: 5,
           numStars: 5,
-          text: "Iconic Assistant has been a true partner in our business, helping us find an assistant who not only meets but exceeds our expectations. The entire process, from the initial consultation to the final onboarding, was seamless and handled with great professionalism. The assistant is proactive, detail-oriented, and has quickly become an indispensable part of our team.",
+          text: "Iconic Assistant has been a key partner in our business, helping us find an assistant who exceeds our expectations. The process, from consultation to onboarding, was smooth and professional. The assistant is proactive, detail-oriented, and now an indispensable part of our team.",
         },
       ],
     };
@@ -104,6 +113,52 @@ export default {
 <style>
 .carrouselReviews .p-carousel-next-button,
 .carrouselReviews .p-carousel-prev-button {
-  display: none;
+  visibility: hidden;
+}
+
+.carrouselReviews .p-carousel-indicator-list {
+  gap: 0.5rem;
+  margin: 0.625rem 0.5rem 0 0.5rem;
+}
+
+.carrouselReviews .p-carousel-indicator {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--color-grey);
+  border-radius: 50%;
+}
+
+.carrouselReviews .p-carousel-indicator-active {
+  background-color: var(--color-blue);
+}
+</style>
+
+<style scoped>
+.reviewCard {
+  gap: 0.625rem;
+  border-radius: 12px;
+  padding: 1.25rem 0.75rem;
+}
+
+.googleIcon {
+  width: 1.25rem;
+  top: 1.25rem;
+  right: 0.75rem;
+}
+
+.avatar {
+  width: 2.5rem;
+}
+
+.reviewHeader p:first-of-type {
+  font-size: 0.875rem;
+}
+
+.reviewHeader p:last-of-type {
+  font-size: 0.75rem;
+}
+
+.reviewCard p:last-of-type {
+  font-size: 0.75rem
 }
 </style>
