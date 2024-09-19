@@ -102,7 +102,7 @@ export default {
 
 <style scoped>
 .headerDefault {
-  background-color: var(--color-dark-blue);
+  background: #0A132A;
   padding: 1.125rem 1rem;
   z-index: 5;
 }
