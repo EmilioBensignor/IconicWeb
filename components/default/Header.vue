@@ -6,17 +6,23 @@
     <NuxtImg
       class="logo"
       src="/images/Iconic-Assistants-Logo.png"
-      alt="Iconic Assistants Logo" />
+      alt="Iconic Assistants Logo"
+    />
     <div>
       <Drawer
         :visible="drawerMenu"
         :show-close-button="false"
-        @click-outside="closeDrawer">
+        @click-outside="closeDrawer"
+      >
         <div class="menuContent column">
           <NuxtLink to="#" class="primaryButton">Get Started</NuxtLink>
-          <div v-for="(accordion, index) in menuAccordion" :key="index">
-            <p class="font-bold">{{ accordion.title }}</p>
-            <ul>
+          <div
+            v-for="(accordion, index) in menuAccordion"
+            class="column gap-3"
+            :key="index"
+          >
+            <p class="linkTitle font-bold">{{ accordion.title }}</p>
+            <ul class="column gap-3">
               <li v-for="(link, index) in accordion.list" :key="index">
                 <NuxtLink :to="link.route" class="text-white no-underline">{{
                   link.title
@@ -24,11 +30,11 @@
               </li>
             </ul>
           </div>
-          <div class="column">
+          <div class="column gap-3">
             <NuxtLink
               :to="link.route"
               v-for="(link, index) in menuLinks"
-              class="text-white font-bold no-underline"
+              class="linkTitle text-white font-bold no-underline"
               :key="index"
               >{{ link.title }}</NuxtLink
             >
@@ -40,87 +46,87 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        drawerMenu: false,
-        menuAccordion: null,
-        menuLinks: null,
-      };
+import { menuAccordion, menuLinks } from "~/shared/menu";
+
+export default {
+  data() {
+    return {
+      drawerMenu: false,
+      menuAccordion: menuAccordion,
+      menuLinks: menuLinks,
+    };
+  },
+  methods: {
+    toggleDrawer() {
+      this.drawerMenu = !this.drawerMenu;
     },
-    methods: {
-      toggleDrawer() {
-        this.drawerMenu = !this.drawerMenu;
-      },
-      closeDrawer() {
-        this.drawerMenu = false;
-      },
-      handleClickOutside(event) {
-        const drawer = this.$refs.drawer;
-        if (drawer && !drawer.contains(event.target)) {
-          this.closeDrawer();
-        }
-      },
+    closeDrawer() {
+      this.drawerMenu = false;
     },
-    async created() {
-      try {
-        this.menuAccordion = await fetch("/menu/menuAccordion.json").then(
-          (res) => res.json()
-        );
-        this.menuLinks = await fetch("/menu/menuLinks.json").then((res) =>
-          res.json()
-        );
-      } catch (error) {
-        console.error("Error fetching JSON data:", error);
+    handleClickOutside(event) {
+      const drawer = this.$refs.drawer;
+      if (drawer && !drawer.contains(event.target)) {
+        this.closeDrawer();
       }
     },
-    mounted() {
-      document.addEventListener("click", this.handleClickOutside);
-    },
-    beforeDestroy() {
-      document.removeEventListener("click", this.handleClickOutside);
-    },
-  };
+  },
+  mounted() {
+    document.addEventListener("click", this.handleClickOutside);
+  },
+  beforeDestroy() {
+    document.removeEventListener("click", this.handleClickOutside);
+  },
+};
 </script>
 
 <style>
-  .p-drawer-mask {
-    width: 60% !important;
-    top: 4.438rem !important;
-  }
+.p-drawer-mask {
+  width: 12.5rem !important;
+  top: 4.438rem !important;
+}
 
-  .p-drawer-header {
-    display: none !important;
-  }
+.p-drawer-header {
+  display: none !important;
+}
 
-  .p-drawer-content {
-    background: linear-gradient(
-      180deg,
-      #0d1428 0%,
-      #0e1a3d 50%,
-      #0f2052 100%
-    ) !important;
-    padding: 1rem !important;
-  }
+.p-drawer-content {
+  background: linear-gradient(
+    180deg,
+    #0d1428 0%,
+    #0e1a3d 50%,
+    #0f2052 100%
+  ) !important;
+  padding: 2.5rem 1rem !important;
+}
 </style>
 
 <style scoped>
-  header {
-    padding: 1.125rem 1rem;
-  }
+.headerDefault {
+  background-color: var(--color-dark-blue);
+  padding: 1.125rem 1rem;
+  z-index: 5;
+}
 
-  .hamburger {
-    left: 1rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
+.hamburger {
+  left: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
-  .logo {
-    width: 6.25rem;
-  }
+.logo {
+  width: 6.25rem;
+}
 
-  .menuContent {
-    gap: 1.875rem;
-  }
+.primaryButton {
+  font-size: 0.875rem !important;
+}
+
+.menuContent {
+  gap: 1.875rem;
+}
+
+.linkTitle {
+  font-size: 1.25rem;
+}
 </style>

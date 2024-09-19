@@ -65,21 +65,15 @@
 </template>
 
 <script>
+  import { menuAccordion, menuLinks } from '~/shared/menu';
+
   export default {
     data() {
       return {
-        menuAccordion: null,
-        menuBottom: null,
+        menuAccordion: menuAccordion,
+        menuBottom: menuLinks,
         currentYear: new Date().getFullYear(),
       };
-    },
-    async created() {
-      try {
-        this.menuAccordion = await fetch("/menu/menuAccordion.json").then((res) => res.json());
-        this.menuBottom = await fetch("/menu/menuLinks.json").then((res) => res.json());
-      } catch (error) {
-        console.error("Error fetching JSON data:", error);
-      }
     },
   };
 </script>

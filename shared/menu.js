@@ -1,4 +1,4 @@
-[
+export const menuAccordion = [
   {
     "title": "About",
     "value": 1,
@@ -35,4 +35,15 @@
       }
     ]
   }
-]
+];
+
+export const menuLinks = [
+  {
+    "title": "Our Solution",
+    "route": "#"
+  },
+  {
+    "title": "Types of EAs",
+    "route": "#"
+  }
+];
