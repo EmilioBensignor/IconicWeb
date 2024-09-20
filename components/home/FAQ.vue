@@ -71,7 +71,7 @@ export default {
         },
         {
           question: "How quickly can i be up and running?",
-          answer: "<p>From the first meeting, it takes approximately 10 to 20 business days to find, interview and qualify the right candidate for you and your business.</p>",
+          answer: "<p>From the first meeting, it takes approximately 5 to 7 business days to find, interview and qualify the right candidate for you and your business.</p>",
         },
       ],
     };
