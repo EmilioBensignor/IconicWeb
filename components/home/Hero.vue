@@ -1,8 +1,8 @@
 <template>
-  <section class="column gap-1 py-5">
+  <section class="hero column gap-1 py-5">
     <div class="columnAlignCenter gap-3 px-3">
       <div>
-        <p class="subtitle text-center text-light-blue">
+        <p class="empower text-center text-light-blue">
           Empower your business.
         </p>
         <h1 class="column text-center">
@@ -29,7 +29,7 @@
 </template>
 
 <style scoped>
-.subtitle {
+.empower {
   font-weight: 700;
 }
 
@@ -43,5 +43,44 @@ h1 {
 
 .starting span {
   font-weight: 800;
+}
+
+@media (width >= 700px) {
+  .hero {
+    flex-direction: row;
+    justify-content: center;
+    padding: 2.5rem 0 2.5rem 2.5rem;
+  }
+
+  .hero > div:first-of-type {
+    width: 46%;
+    align-items: flex-start;
+    gap: 1.25rem !important;
+    padding: 0 !important;
+  }
+
+  .empower {
+    text-align: start !important;
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    text-align: start !important;
+    font-size: 2rem;
+  }
+
+  .starting {
+    text-align: start !important;
+    font-size: 1rem;
+  }
+
+  .hero > div:first-of-type > div {
+    align-items: flex-start;
+  }
+
+  
+  .hero > div:last-of-type {
+    width: 54%;
+  }
 }
 </style>

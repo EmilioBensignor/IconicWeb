@@ -6,21 +6,18 @@
     <NuxtImg
       class="logo"
       src="/images/Iconic-Assistants-Logo.png"
-      alt="Iconic Assistants Logo"
-    />
+      alt="Iconic Assistants Logo" />
     <div>
       <Drawer
         :visible="drawerMenu"
         :show-close-button="false"
-        @click-outside="closeDrawer"
-      >
+        @click-outside="closeDrawer">
         <div class="menuContent column">
           <NuxtLink to="#" class="primaryButton">Get Started</NuxtLink>
           <div
             v-for="(accordion, index) in menuAccordion"
             class="column gap-3"
-            :key="index"
-          >
+            :key="index">
             <p class="linkTitle font-bold">{{ accordion.title }}</p>
             <ul class="column gap-3">
               <li v-for="(link, index) in accordion.list" :key="index">
@@ -46,87 +43,121 @@
 </template>
 
 <script>
-import { menuAccordion, menuLinks } from "~/shared/menu";
+  import { menuAccordion, menuLinks } from "~/shared/menu";
 
-export default {
-  data() {
-    return {
-      drawerMenu: false,
-      menuAccordion: menuAccordion,
-      menuLinks: menuLinks,
-    };
-  },
-  methods: {
-    toggleDrawer() {
-      this.drawerMenu = !this.drawerMenu;
+  export default {
+    data() {
+      return {
+        drawerMenu: false,
+        menuAccordion: menuAccordion,
+        menuLinks: menuLinks,
+      };
     },
-    closeDrawer() {
-      this.drawerMenu = false;
+    methods: {
+      toggleDrawer() {
+        this.drawerMenu = !this.drawerMenu;
+      },
+      closeDrawer() {
+        this.drawerMenu = false;
+      },
+      handleClickOutside(event) {
+        const drawer = this.$refs.drawer;
+        if (drawer && !drawer.contains(event.target)) {
+          this.closeDrawer();
+        }
+      },
     },
-    handleClickOutside(event) {
-      const drawer = this.$refs.drawer;
-      if (drawer && !drawer.contains(event.target)) {
-        this.closeDrawer();
-      }
+    mounted() {
+      document.addEventListener("click", this.handleClickOutside);
     },
-  },
-  mounted() {
-    document.addEventListener("click", this.handleClickOutside);
-  },
-  beforeDestroy() {
-    document.removeEventListener("click", this.handleClickOutside);
-  },
-};
+    beforeDestroy() {
+      document.removeEventListener("click", this.handleClickOutside);
+    },
+  };
 </script>
 
 <style>
-.p-drawer-mask {
-  width: 12.5rem !important;
-  top: 4.438rem !important;
-}
+  .p-drawer-mask {
+    width: 12.5rem !important;
+    top: 4.438rem !important;
+  }
 
-.p-drawer-header {
-  display: none !important;
-}
+  .p-drawer-header {
+    display: none !important;
+  }
 
-.p-drawer-content {
-  background: linear-gradient(
-    180deg,
-    #0d1428 0%,
-    #0e1a3d 50%,
-    #0f2052 100%
-  ) !important;
-  padding: 2.5rem 1rem !important;
-}
+  .p-drawer-content {
+    background: linear-gradient(
+      180deg,
+      #0d1428 0%,
+      #0e1a3d 50%,
+      #0f2052 100%
+    ) !important;
+    padding: 2.5rem 1rem !important;
+  }
+
+  @media (width >= 700px) {
+    .p-drawer-mask {
+      width: 15rem !important;
+      top: 5.094rem !important;
+    }
+
+    .p-drawer-content {
+      padding: 2.5rem !important;
+    }
+  }
 </style>
 
 <style scoped>
-.headerDefault {
-  background: #0A132A;
-  padding: 1.125rem 1rem;
-  z-index: 5;
-}
+  .headerDefault {
+    background: #0a132a;
+    padding: 1.125rem 1rem;
+    z-index: 5;
+  }
 
-.hamburger {
-  left: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+  .hamburger {
+    left: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 
-.logo {
-  width: 6.25rem;
-}
+  .logo {
+    width: 6.25rem;
+  }
 
-.primaryButton {
-  font-size: 0.875rem !important;
-}
+  .primaryButton {
+    font-size: 0.875rem !important;
+  }
 
-.menuContent {
-  gap: 1.875rem;
-}
+  .menuContent {
+    gap: 1.875rem;
+  }
 
-.linkTitle {
-  font-size: 1.25rem;
-}
+  .linkTitle {
+    font-size: 1.25rem;
+  }
+
+  @media (width >= 700px) {
+    .headerDefault {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 2.5rem;
+      padding: 1.125rem 2.5rem;
+    }
+
+    .hamburger {
+      width: 2.5rem;
+      position: relative !important;
+      left: 0;
+    }
+
+    .logo {
+      width: 8.125rem;
+    }
+
+    .menuContent {
+      gap: 2.5rem;
+    }
+  }
 </style>

@@ -30,6 +30,10 @@ h2 {
   font-weight: 700;
 }
 
+.subtitle {
+  display: none;
+}
+
 /* Typography & Background */
 
 .text-black {
@@ -186,4 +190,23 @@ h2 {
 
 .gap-35 {
   gap: 1.25rem;
+}
+
+/* Media Queries */
+
+/* Tablet */
+
+@media (width >= 700px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    display: block;
+  }
+
+  .primaryButton, .secondaryButton {
+    font-size: 0.875rem !important;
+    padding: 1rem 2.5rem !important;
+  }
 }

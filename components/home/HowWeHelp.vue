@@ -1,24 +1,29 @@
 <template>
-  <section class="w-full columnAlignCenter gap-4 px-3 py-5">
-    <h2 class="column text-center">
-      How we help <span>your business thrive</span>
-    </h2>
-    <div class="w-full">
+  <section class="w-full howWeHelp columnAlignCenter gap-4 px-3 py-5">
+    <div class="h2Subtitle column">
+      <h2 class="column text-center">
+        How we help <span>your business thrive</span>
+      </h2>
+      <p class="subtitle">
+        Stop spending countless hours on tasks someone else can do for you.
+      </p>
+    </div>
+
+    <div class="w-full helpContainer">
       <div
         v-for="(item, index) in help"
         :key="index"
-        class="help relative bgCover"
+        class="help bgCover"
         @mouseenter="item.show = true"
         @mouseleave="item.show = false"
         :style="{
           backgroundImage: `url(/images/home/${item.img}-Executive-Assistant.jpg)`,
-        }"
-      >
-        <div class="w-full h-full overlay gap-3 aboslute top-0 left-0">
+        }">
+        <div class="w-full h-full overlay gap-3">
           <h3 class="text-center">{{ item.title }}</h3>
-          <transition name="fade">
-            <p v-show="item.show" class="text-center">{{ item.text }}</p>
-          </transition>
+          <p :class="{ 'text-visible': item.show }" class="text-center">
+            {{ item.text }}
+          </p>
         </div>
       </div>
     </div>
@@ -26,86 +31,148 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      help: [
-        {
-          img: "Executive-Support",
-          title: "Executive Support",
-          text: "We handle scheduling appointments, managing travel plans, arranging meetings, and preparing reports and presentations, ensuring efficient support for your business.",
-          show: false,
-        },
-        {
-          img: "Administrative-Tasks",
-          title: "Administrative Tasks",
-          text: "We manage emails, handle data entry, post to social media, and take phone calls, providing comprehensive administrative support.",
-          show: false,
-        },
-        {
-          img: "Customer-Support",
-          title: "Customer Support",
-          text: "We provide comprehensive support through phone, email, and live chat, focusing on customer retention, relationship building, escalation management, and seamless onboarding.",
-          show: false,
-        },
-        {
-          img: "Finance-Bookkeeping",
-          title: "Finance & Bookkeeping",
-          text: "We offer cloud bookkeeping services, including expense tracking and reporting, ledger maintenance, invoicing, and payroll support.",
-          show: false,
-        },
-      ],
-    };
-  },
-};
+  export default {
+    data() {
+      return {
+        help: [
+          {
+            img: "Executive-Support",
+            title: "Executive Support",
+            text: "We handle scheduling appointments, managing travel plans, arranging meetings, and preparing reports and presentations, ensuring efficient support for your business.",
+            show: false,
+          },
+          {
+            img: "Administrative-Tasks",
+            title: "Administrative Tasks",
+            text: "We manage emails, handle data entry, post to social media, and take phone calls, providing comprehensive administrative support.",
+            show: false,
+          },
+          {
+            img: "Customer-Support",
+            title: "Customer Support",
+            text: "We provide comprehensive support through phone, email, and live chat, focusing on customer retention, relationship building, escalation management, and seamless onboarding.",
+            show: false,
+          },
+          {
+            img: "Finance-Bookkeeping",
+            title: "Finance & Bookkeeping",
+            text: "We offer cloud bookkeeping services, including expense tracking and reporting, ledger maintenance, invoicing, and payroll support.",
+            show: false,
+          },
+        ],
+      };
+    },
+  };
 </script>
 
 <style scoped>
-.help {
-  height: 6.25rem;
-  overflow: hidden;
-  transition: all 0.7s ease;
-}
+  .help {
+    height: 6.25rem;
+    overflow: hidden;
+    transition: height 0.7s ease;
+  }
 
-.help:hover {
-  height: 15.625rem;
-}
+  .help:hover {
+    height: 15.625rem;
+  }
 
-.help:first-of-type {
-  border-radius: 12px 12px 0 0;
-}
+  .help:first-of-type {
+    border-radius: 12px 12px 0 0;
+  }
 
-.help:last-of-type {
-  border-radius: 0 0 12px 12px;
-}
+  .help:last-of-type {
+    border-radius: 0 0 12px 12px;
+  }
 
-.overlay {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #0A132A 100%);
-  padding: 0 0.75rem 1.25rem 0.75rem;
-}
+  .overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #0a132a 100%);
+    padding: 0 0.75rem 1.25rem 0.75rem;
+    height: 100%;
+  }
 
-.overlay h3 {
-  font-size: 1.125rem;
-  font-weight: 700;
-}
+  .overlay h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    transition: transform 0.7s ease, margin-bottom 0.7s ease;
+  }
 
-.overlay p {
-  font-size: 0.875rem;
-  opacity: 0;
-  transition: all 0.5s ease;
-}
+  .overlay p {
+    font-size: 0.875rem;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.7s ease;
+  }
 
-.help:hover .overlay p {
-  opacity: 1;
-}
+  .help:hover .overlay p {
+    opacity: 1;
+    max-height: 200px; /* Ajusta este valor según sea necesario */
+  }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
+  @media (width >= 700px) {
+    .howWeHelp {
+      padding: 2.5rem !important;
+    }
+
+    .h2Subtitle {
+      gap: 0.313rem;
+      align-self: flex-start;
+    }
+
+    h2 {
+      display: block;
+      text-align: start !important;
+    }
+
+    .helpContainer {
+      height: 18.75rem;
+      display: flex;
+    }
+
+    .help {
+      height: auto;
+      flex: 1;
+      position: relative;
+      transition: flex 0.7s ease;
+    }
+
+    .help:hover {
+      height: auto;
+      flex: 2;
+    }
+
+    .overlay {
+      padding: 0 1rem 1.375rem 1rem;
+    }
+
+    .helpContainer:hover .help:not(:hover) .overlay {
+      padding-bottom: 1.5rem;
+    }
+
+    .help:hover h3 {
+      text-align: start !important;
+      transform: rotate(0deg);
+      margin-bottom: 0.5rem;
+    }
+
+    .helpContainer:hover .help:not(:hover) h3 {
+      margin-bottom: 2rem;
+      transform: rotate(-90deg);
+    }
+
+    .help .overlay p {
+      text-align: start !important;
+    }
+
+    .help:first-of-type {
+      border-radius: 12px 0 0 12px;
+    }
+
+    .help:last-of-type {
+      border-radius: 0 12px 12px 0;
+    }
+  }
 </style>
