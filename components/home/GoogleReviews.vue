@@ -48,6 +48,11 @@
         </article>
       </template>
     </Carousel>
+    <NuxtLink to="/" class="secondaryButton mt-2">
+      <div>
+        <p>Read more reviews</p>
+      </div>
+    </NuxtLink>
   </section>
 </template>
 

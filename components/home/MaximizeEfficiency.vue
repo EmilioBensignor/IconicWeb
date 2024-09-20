@@ -1,28 +1,60 @@
 <template>
-  <section class="w-full columnAlignCenter gap-4 px-3 py-5">
-    <h2 class="text-center">Maximize efficiency</h2>
-    <div class="w-full accordionMaximize columnAlignCenter gap-3">
+  <section class="w-full maximizeEfficiency columnAlignCenter gap-4 px-3 py-5">
+    <div class="h2Subtitle">
+      <div>
+        <h2 class="text-center">Maximize efficiency</h2>
+        <p class="subtitle">Don't let time and money slip away.</p>
+      </div>
+      <NuxtLink to="/" class="secondaryButton secondaryTablet">
+        <div>
+          <p>Explore Our Solutions</p>
+        </div>
+      </NuxtLink>
+    </div>
+    <div class="relative">
       <div
-        v-for="(problem, index) in problems"
-        :key="index"
-        class="w-full accordionMaximize bg-blue-light-gradient"
+        class="w-full accordionMaximizeContainer columnAlignCenter gap-3"
+        :class="{ 'hover-active': activePanel !== null }"
       >
-        <div class="w-full panelContent columnAlignCenter bg-dark-blue">
-          <div class="questionContent columnAlignCenter gap-2">
-            <Icon
-              :name="`mingcute:${problem.icon}`"
-              style="color: var(--color-light-blue)"
-              size="1.125rem"
-            />
-            <p class="text-center">{{ problem.question }}</p>
-          </div>
-          <div class="answerContent bg-dark-blue">
-            <p class="text-center">{{ problem.answer }}</p>
+        <div
+          v-for="(problem, index) in problems"
+          :key="index"
+          class="w-full accordionMaximize bg-blue-light-gradient"
+          @mouseenter="activePanel = index"
+          @mouseleave="activePanel = null"
+        >
+          <div
+            class="w-full panelContent columnAlignCenter bg-dark-blue"
+            :class="{ active: activePanel === index }"
+          >
+            <div class="questionContent columnAlignCenter gap-2">
+              <Icon
+                :name="`mingcute:${problem.icon}`"
+                :class="{
+                  'text-white': activePanel === index,
+                  'text-light-blue': activePanel !== index,
+                }"
+                size="1.125rem"
+              />
+              <p class="text-center">{{ problem.question }}</p>
+            </div>
+            <div class="answerContent bg-dark-blue answerMobile">
+              <p class="text-center">{{ problem.answer }}</p>
+            </div>
           </div>
         </div>
       </div>
+      <div
+        class="answerTablet relative bg-blue-light-gradient"
+        :class="{ active: activePanel !== null }"
+      >
+        <div class="bg-dark-blue">
+          <p>{{ activePanel !== null ? problems[activePanel].answer : "" }}</p>
+        </div>
+      </div>
     </div>
-    <NuxtLink to="/" class="secondaryButton">
+
+    <NuxtLink to="/" class="secondaryButton secondaryMobile">
       <div>
         <p>Explore Our Solutions</p>
       </div>
@@ -34,6 +66,7 @@
 export default {
   data() {
     return {
+      activePanel: null,
       problems: [
         {
           icon: "star-line",
@@ -81,7 +114,11 @@ export default {
 }
 
 .panelContent:hover .questionContent {
-  background: linear-gradient(90deg, var(--color-blue), var(--color-light-blue));
+  background: linear-gradient(
+    90deg,
+    var(--color-blue),
+    var(--color-light-blue)
+  );
 }
 
 .panelContent:hover .questionContent span {
@@ -108,5 +145,92 @@ export default {
 
 .answerContent p {
   font-size: 0.75rem;
+}
+
+.secondaryTablet,
+.answerTablet {
+  display: none;
+}
+
+@media (width >= 700px) {
+  .secondaryMobile {
+    display: none;
+  }
+
+  .maximizeEfficiency {
+    padding: 2.5rem !important;
+  }
+
+  .h2Subtitle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .h2Subtitle h2 {
+    text-align: start !important;
+  }
+
+  .secondaryTablet {
+    display: inline;
+  }
+
+  .accordionMaximizeContainer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .accordionMaximize {
+    transition: all 0.5s ease;
+  }
+
+  .accordionMaximizeContainer.hover-active .accordionMaximize,
+  .accordionMaximizeContainer.hover-active .panelContent {
+    border-radius: 12px 12px 0 0;
+  }
+
+  .answerMobile {
+    display: none;
+  }
+
+  .answerTablet {
+    display: block;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+    padding: 2px;
+    margin-top: -2px;
+    z-index: 1;
+    transition: all 0.3s ease;
+    opacity: 0;
+    max-height: 0;
+  }
+
+  .answerTablet.active {
+    opacity: 1;
+    max-height: 1000px;
+  }
+
+  .answerTablet div {
+    border-radius: 0 0 12px 12px;
+    padding: 1.25rem;
+  }
+
+  .panelContent .questionContent {
+    background: transparent;
+    transition: all 0.5s ease;
+  }
+
+  .panelContent.active .questionContent {
+    background: linear-gradient(
+      90deg,
+      var(--color-blue),
+      var(--color-light-blue)
+    );
+  }
+
+  .panelContent.active .questionContent span,
+  .panelContent.active .questionContent p {
+    color: var(--color-white) !important;
+  }
 }
 </style>
