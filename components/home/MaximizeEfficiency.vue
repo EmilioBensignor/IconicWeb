@@ -178,6 +178,7 @@ export default {
   .accordionMaximizeContainer {
     flex-direction: row;
     align-items: flex-start;
+    gap: 0.75rem !important;
   }
 
   .accordionMaximize {
@@ -187,6 +188,18 @@ export default {
   .accordionMaximizeContainer.hover-active .accordionMaximize,
   .accordionMaximizeContainer.hover-active .panelContent {
     border-radius: 12px 12px 0 0;
+  }
+
+  .questionContent {
+    padding: 0.875rem 0.625rem;
+  }
+
+  .questionContent span {
+    font-size: 1.25rem !important;
+  }
+
+  .questionContent p {
+    font-size: 1rem;
   }
 
   .answerMobile {
@@ -203,6 +216,10 @@ export default {
     transition: all 0.3s ease;
     opacity: 0;
     max-height: 0;
+  }
+
+  .answerTablet p {
+    font-size: 0.875rem;
   }
 
   .answerTablet.active {
