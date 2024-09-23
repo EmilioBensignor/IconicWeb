@@ -11,20 +11,20 @@
         <NuxtLink class="w-7 primaryButton" to="/">Contact Us</NuxtLink>
         <div class="socialMedia rowCenter gap-35">
           <a href="facebook.com">
-            <NuxtImg
-              src="/footer/Facebook-Icon.svg"
+            <img
+              src="/images/footer/Facebook-Icon.svg"
               alt="Facebook Icon"
             />
           </a>
           <a href="instagram.com">
-            <NuxtImg
-              src="/footer/Instagram-Icon.svg"
+            <img
+              src="/images/footer/Instagram-Icon.svg"
               alt="Instagram Icon"
             />
           </a>
           <a href="linkedin.com">
-            <NuxtImg
-              src="/footer/LinkedIn-Icon.svg"
+            <img
+              src="/images/footer/LinkedIn-Icon.svg"
               alt="LinkedIn Icon"
             />
           </a>
