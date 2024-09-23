@@ -12,19 +12,19 @@
         <div class="socialMedia rowCenter gap-35">
           <a href="facebook.com">
             <NuxtImg
-              src="/images/footer/Facebook-Icon.svg"
+              src="/public/images/footer/Facebook-Icon.svg"
               alt="Facebook Icon"
             />
           </a>
           <a href="instagram.com">
             <NuxtImg
-              src="/images/footer/Instagram-Icon.svg"
+              src="/public/images/footer/Instagram-Icon.svg"
               alt="Instagram Icon"
             />
           </a>
           <a href="linkedin.com">
             <NuxtImg
-              src="/images/footer/LinkedIn-Icon.svg"
+              src="/public/images/footer/LinkedIn-Icon.svg"
               alt="LinkedIn Icon"
             />
           </a>
