@@ -1,15 +1,22 @@
 <template>
-  <section class="w-full columnAlignCenter gap-25 px-3 py-5">
-    <h2 class="column text-center">
-      What our clients <span>are saying about us</span>
-    </h2>
-    <div class="columnAlignCenter gap-1">
-      <NuxtImg
-        class="w-full"
-        src="/images/home/Google-Reviews-5-Stars-Iconic-Assistants.png"
-        alt="Google Reviews 5 Stars Iconic Assistants"
-      />
-      <MiscStarsFourHalf />
+  <section class="w-full googleReviews columnAlignCenter gap-25 px-3 py-5">
+    <div class="googleHeader">
+      <div class="h2Google column">
+        <h2 class="column text-center">
+          What our clients <span>are saying about us</span>
+        </h2>
+        <p class="subtitle">
+          Real feedback from businesses empowered by Iconic Assistants.
+        </p>
+      </div>
+      <div class="columnAlignCenter gap-1">
+        <NuxtImg
+          class="googleLogo"
+          src="/images/home/Google-Reviews-5-Stars-Iconic-Assistants.png"
+          alt="Google Reviews 5 Stars Iconic Assistants"
+        />
+        <MiscStarsFourHalf class="googleStars" />
+      </div>
     </div>
     <Carousel
       :value="reviews"
@@ -20,34 +27,18 @@
       class="w-full carrouselReviews"
     >
       <template #item="slotProps">
-        <article class="reviewCard column relative bg-dark-blue border-grey-1 mx-1">
-          <div class="rowCenter gap-2">
-            <NuxtImg
-              class="avatar"
-              :src="`/images/home/reviews/${slotProps.data.img}-Google-Review.png`"
-            />
-            <div class="reviewHeader column gap-1">
-              <p class="font-bold">{{ slotProps.data.name }}</p>
-              <p>{{ slotProps.data.numReviews }} reviews</p>
-            </div>
-          </div>
-          <div>
-            <div v-if="slotProps.data.numStars === 4.5">
-              <MiscStarsFourHalf />
-            </div>
-            <div v-if="slotProps.data.numStars === 5">
-              <MiscStarsFive />
-            </div>
-          </div>
-          <p>{{ slotProps.data.text }}</p>
-          <NuxtImg
-            class="googleIcon absolute"
-            src="/images/home/Google-Icon.svg"
-            alt="Google Icon"
-          />
-        </article>
+        <HomeGoogleReviewsReviewCard :review="slotProps.data" />
       </template>
     </Carousel>
+    <div class="reviewsContainer">
+      <div class="clipContainer">
+        <HomeGoogleReviewsReviewCard
+          :review="review"
+          v-for="(review, index) in reviews"
+          :key="index"
+        />
+      </div>
+    </div>
     <NuxtLink to="/" class="secondaryButton mt-2">
       <div>
         <p>Read more reviews</p>
@@ -109,6 +100,30 @@ export default {
           numStars: 5,
           text: "Iconic Assistant has been a key partner in our business, helping us find an assistant who exceeds our expectations. The process, from consultation to onboarding, was smooth and professional. The assistant is proactive, detail-oriented, and now an indispensable part of our team.",
         },
+        {
+          img: "Liam-A",
+          alt: "Liam A",
+          name: "Liam A",
+          numReviews: 5,
+          numStars: 4.5,
+          text: "We're thrilled with our new assistant from Iconic Assistant. The support team is responsive and helpful.  Overall, we're very satisfied with the results.",
+        },
+        {
+          img: "Demian-L",
+          alt: "Demian L",
+          name: "Demian L",
+          numReviews: 3,
+          numStars: 5,
+          text: "The selection process at Iconic Assistant was seamless. We found a perfect match!",
+        },
+        {
+          img: "Brian-S",
+          alt: "Brian S",
+          name: "Brian S",
+          numReviews: 7,
+          numStars: 4.5,
+          text: "The quality of the assistants at Iconic Assistant is impressive. The process was almost flawless, with only a minor delay in onboarding. Still, it's been a great experience overall.",
+        },
       ],
     };
   },
@@ -136,34 +151,64 @@ export default {
 .carrouselReviews .p-carousel-indicator-active {
   background-color: var(--color-blue);
 }
+
+@media (width >= 700px) {
+  .googleReviews .p-carousel {
+    display: none !important;
+  }
+}
 </style>
 
 <style scoped>
-.reviewCard {
-  gap: 0.625rem;
-  border-radius: 12px;
-  padding: 1.25rem 0.75rem;
+.googleLogo {
+  width: 6.5rem;
+  margin-top: 0.75rem;
 }
 
-.googleIcon {
-  width: 1.25rem;
-  top: 1.25rem;
-  right: 0.75rem;
-}
+@media (width >= 700px) {
+  .googleReviews {
+    gap: 2rem !important;
+    padding: 2.5rem !important;
+  }
 
-.avatar {
-  width: 2.5rem;
-}
+  .googleHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
 
-.reviewHeader p:first-of-type {
-  font-size: 0.875rem;
-}
+  .h2Google h2 {
+    display: block;
+    text-align: start !important;
+  }
 
-.reviewHeader p:last-of-type {
-  font-size: 0.75rem;
-}
+  .googleLogo {
+    width: 7rem;
+    margin-top: 0;
+  }
 
-.reviewCard p:last-of-type {
-  font-size: 0.75rem
+  .googleStars {
+    display: flex;
+    gap: 0.266rem;
+  }
+
+  .reviewsContainer {
+    width: 100%;
+    height: 40rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .clipContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    clip-path: inset(0 0 0 0);
+    column-count: 2;
+    column-gap: 1.25rem;
+    row-gap: 0.625rem;
+  }
 }
 </style>

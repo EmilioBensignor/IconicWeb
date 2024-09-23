@@ -98,7 +98,7 @@
 
   @media (width >= 700px) {
     .p-drawer-mask {
-      width: 15rem !important;
+      width: 15.5rem !important;
       top: 5.094rem !important;
     }
 
@@ -147,9 +147,13 @@
     }
 
     .hamburger {
-      width: 2.5rem;
+      display: flex;
       position: relative !important;
       left: 0;
+    }
+    
+    .hamburger span {
+      width: 2.5rem;
     }
 
     .logo {

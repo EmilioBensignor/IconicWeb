@@ -1,8 +1,11 @@
 <template>
-  <section class="w-full columnAlignCenter gap-4 px-3 py-5">
-    <h2 class="column text-center">
-      Start delegating <span>in 3 simple steps</span>
-    </h2>
+  <section class="w-full startDelegating columnAlignCenter gap-4 px-3 py-5">
+    <div class="h2StartDelegating column">
+      <h2 class="column text-center">
+        Start delegating <span>in 3 simple steps</span>
+      </h2>
+      <p class="subtitle">Sign up for Iconic Assistant. It takes 60 seconds.</p>
+    </div>
     <div class="w-full">
       <Accordion
         value="0"
@@ -99,6 +102,18 @@ export default {
 .accordionSteps .p-accordionpanel-active .headAccordion div {
   background: var(--color-dark-blue);
 }
+
+@media (width >= 700px) {
+  .accordionSteps .p-accordioncontent-content > div {
+    flex-direction: row;
+    gap: 1.25rem !important;
+  }
+
+  .accordionSteps .p-accordioncontent-content > div > p {
+    width: 100%;
+    font-size: 1rem
+  }
+}
 </style>
 
 <style scoped>
@@ -140,5 +155,34 @@ export default {
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+@media (width >= 700px) {
+  .startDelegating {
+    gap: 2rem !important;
+    padding: 2.5rem !important;
+  }
+
+  .h2StartDelegating {
+    align-self: flex-start;
+  }
+
+  .h2StartDelegating h2 {
+    display: block;
+  }
+
+  .imgStarDelegating {
+    background-position: center;
+  }
+
+  .headAccordion div {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.125rem
+  }
+  
+  .headAccordion h3 {
+    font-size: 1.125rem
+  }
 }
 </style>

@@ -1,6 +1,9 @@
 <template>
-  <section class="w-full columnAlignCenter gap-4 px-3 py-5">
-    <h2>Precision matching process</h2>
+  <section class="w-full precisionMatching columnAlignCenter gap-4 px-3 py-5">
+    <div class="h2Subtitle column">
+      <h2>Precision matching process</h2>
+      <p class="subtitle">DATA DRIVEN HR</p>
+    </div>
     <Stepper
       v-model="currentStep"
       :value="currentStep"
@@ -21,15 +24,27 @@
           :value="step"
           class="columnAlignCenter gap-4"
         >
-          <div>
-            <h3 class="text-center font-18 mb-2">{{ stepTitles[step - 1] }}</h3>
-            <p class="text-center font-14">{{ stepDescriptions[step - 1] }}</p>
-          </div>
-          <div class="animacion">
-            <video :ref="`video${step}`" muted preload="none" class="lazyVideo">
-              <source :src="stepVideos[step - 1]" type="video/mp4" />
-              Tu navegador no soporta videos.
-            </video>
+          <div class="stepContent column">
+            <div>
+              <h3 class="text-center font-18 mb-2">
+                {{ stepTitles[step - 1] }}
+              </h3>
+              <p class="text-center font-14">
+                {{ stepDescriptions[step - 1] }}
+              </p>
+            </div>
+            <div class="animacion shadow-3">
+              <video
+                :ref="`video${step}`"
+                muted
+                preload="none"
+                class="lazyVideo"
+                poster="/images/home/Precision-Matching-Placeholder.jpg"
+              >
+                <source :src="stepVideos[step - 1]" type="video/mp4" />
+                Tu navegador no soporta videos.
+              </video>
+            </div>
           </div>
           <div
             class="w-full"
@@ -76,10 +91,10 @@ export default {
         "Psychometric and Job Compatibility Assessment",
       ],
       stepDescriptions: [
-        "At Iconic Assistant, we begin by filtering candidates based on their experience, skills, and education.",
-        "We ensure that candidates share our values and work ethics.",
-        "We assess each candidate's ability to communicate effectively.",
-        "We perform behavioral assessments to test each candidate's compatibility.",
+        "At Iconic Assistant, we begin by filtering candidates based on their experience, skills, and education. We then conduct an initial screening to ensure that only the most qualified professionals, aligned with your specific needs, move forward.",
+        "We ensure that candidates share our values and work ethics. We conduct thorough background checks, including education and criminal records, to guarantee alignment with our standards.",
+        "We assess each candidate's ability to communicate effectively and accurately. We conduct English proficiency tests to ensure they meet our high standards.",
+        "We perform behavioral assessments to test each candidate's compatibility with the job position, ensuring the perfect fit for your team.",
       ],
       stepVideos: [
         "/videos/home/Filtering-Screening-Process.mp4",
@@ -207,17 +222,46 @@ export default {
   gap: 0.5rem;
   padding: 0.75rem 1.5rem !important;
 }
+
+@media (width >= 700px) {
+  .stepperProcess .p-step-header {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .stepperProcess .p-step-number {
+    font-size: 1.25rem;
+  }
+
+  .stepperProcess .p-step {
+    gap: 1.644rem;
+  }
+
+  .stepperProcess .p-steplist {
+    gap: 1.644rem;
+  }
+
+  .stepperProcess .p-steppanels {
+    margin-top: 2rem !important;
+  }
+}
 </style>
 
 <style scoped>
+.stepContent {
+  gap: 1.25rem;
+}
+
 .animacion {
   width: 100%;
-  height: 9.375rem;
   border-radius: 12px;
 }
 
 .lazyVideo {
+  width: 100%;
+  height: 100%;
   max-width: 100%;
+  border-radius: 12px;
 }
 
 .stepperProcess .back {
@@ -233,5 +277,36 @@ export default {
 }
 .stepperProcess .back span {
   position: absolute;
+}
+
+@media (width >= 700px) {
+  .precisionMatching {
+    gap: 2rem !important;
+    padding: 2.5rem !important;
+  }
+
+  .h2Subtitle {
+    align-self: flex-start;
+  }
+
+  .stepContent {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.25rem;
+  }
+
+  .stepContent > div {
+    width: 50%;
+  }
+
+  .stepContent h3 {
+    text-align: start !important;
+    font-size: 1.5rem;
+  }
+  
+  .stepContent p {
+    text-align: start !important;
+    font-size: 1rem;
+  }
 }
 </style>
