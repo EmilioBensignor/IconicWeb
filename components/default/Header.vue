@@ -5,7 +5,7 @@
     </button>
     <NuxtImg
       class="logo"
-      src="/images/Iconic-Assistants-Logo.png"
+      src="/Iconic-Assistants-Logo.png"
       alt="Iconic Assistants Logo" />
     <div>
       <Drawer

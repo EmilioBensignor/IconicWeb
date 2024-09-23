@@ -4,15 +4,33 @@
       <div class="column gap-35">
         <NuxtImg
           class="logo"
-          src="/images/Iconic-Assistants-Logo.png"
+          src="/Iconic-Assistants-Logo.png"
           alt="Iconic Assistants Logo"
         />
         <p>Empowering businesses to thrive.</p>
         <NuxtLink class="w-7 primaryButton" to="/">Contact Us</NuxtLink>
         <div class="socialMedia rowCenter gap-35">
-          <a href="facebook.com" class="iconFooter bgCover" :style="{backgroundImage: url('/images/footer/Facebook-Icon.svg')}"></a>
-          <a href="instagram.com" class="iconFooter bgCover" :style="{backgroundImage: url('/images/footer/Instagram-Icon.svg')}"></a>
-          <a href="linkedin.com" class="iconFooter bgCover" :style="{backgroundImage: url('/images/footer/LinkedIn-Icon.svg')}"></a>
+          <a
+            href="https://facebook.com"
+            class="iconFooter bgCover"
+            :style="{
+              backgroundImage: `url('/images/footer/Facebook-Icon.svg')`,
+            }"
+          ></a>
+          <a
+            href="https://instagram.com"
+            class="iconFooter bgCover"
+            :style="{
+              backgroundImage: `url('/images/footer/Instagram-Icon.svg')`,
+            }"
+          ></a>
+          <a
+            href="https://linkedin.com"
+            class="iconFooter bgCover"
+            :style="{
+              backgroundImage: `url('/images/footer/LinkedIn-Icon.svg')`,
+            }"
+          ></a>
         </div>
       </div>
       <div class="menuFooter column gap-2">
@@ -61,18 +79,12 @@
   </footer>
 </template>
 
-<script>
+<script setup>
+import { ref } from "vue";
 import { menuAccordion, menuLinks } from "~/shared/menu";
 
-export default {
-  data() {
-    return {
-      menuAccordion: menuAccordion,
-      menuBottom: menuLinks,
-      currentYear: new Date().getFullYear(),
-    };
-  },
-};
+const menuBottom = ref(menuLinks);
+const currentYear = ref(new Date().getFullYear());
 </script>
 
 <style>
@@ -171,7 +183,7 @@ footer {
   }
 
   .footerContent > div:first-of-type p {
-    font-size: 1.125rem
+    font-size: 1.125rem;
   }
 
   .linksAccordion li a {

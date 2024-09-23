@@ -3,7 +3,7 @@
     <div class="rowCenter gap-2">
       <NuxtImg
         class="avatar"
-        :src="`/images/home/reviews/${review.img}-Google-Review.png`"
+        :src="`/home/reviews/${review.img}-Google-Review.png`"
       />
       <div class="reviewHeader column gap-1">
         <p class="font-bold">{{ review.name }}</p>
@@ -21,7 +21,7 @@
     <p>{{ review.text }}</p>
     <NuxtImg
       class="googleIcon absolute"
-      src="/images/home/Google-Icon.svg"
+      src="/home/Google-Icon.svg"
       alt="Google Icon"
     />
   </article>

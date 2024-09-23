@@ -12,7 +12,7 @@
       <div class="columnAlignCenter gap-1">
         <NuxtImg
           class="googleLogo"
-          src="/images/home/Google-Reviews-5-Stars-Iconic-Assistants.png"
+          src="/home/Google-Reviews-5-Stars-Iconic-Assistants.png"
           alt="Google Reviews 5 Stars Iconic Assistants"
         />
         <MiscStarsFourHalf class="googleStars" />

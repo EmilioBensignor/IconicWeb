@@ -21,7 +21,7 @@
     <div>
       <NuxtImg
         class="w-full"
-        src="/images/home/Iconic-Executive-Assistant-Recruitment.png"
+        src="/home/Iconic-Executive-Assistant-Recruitment.png"
         alt="Iconic Executive Assistant Recruitment"
       />
     </div>
