@@ -38,7 +38,7 @@
           </div>
         </div>
         <div class="less absolute bg-blue-light-gradient">
-          <p class="text-center font-10">70% LESS</p>
+          <p class="text-center font-10 font-bold">70% LESS</p>
         </div>
       </div>
       <!-- Employee -->

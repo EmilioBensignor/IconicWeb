@@ -33,12 +33,12 @@
                 {{ stepDescriptions[step - 1] }}
               </p>
             </div>
-            <div class="animacion shadow-3">
+            <div class="animacion">
               <video
                 :ref="`video${step}`"
                 muted
                 preload="none"
-                class="lazyVideo"
+                class="lazyVideo shadow-3"
                 poster="/images/home/Precision-Matching-Placeholder.jpg"
               >
                 <source :src="stepVideos[step - 1]" type="video/mp4" />
@@ -244,6 +244,23 @@ export default {
   .stepperProcess .p-steppanels {
     margin-top: 2rem !important;
   }
+
+  .stepperProcess .p-step-header {
+    border: 3px solid var(--color-blue);
+  }
+
+  .stepperProcess .p-stepper-separator,
+  .stepperProcess .p-step:has(~ .p-step-active) .p-stepper-separator {
+    height: 6px;
+  }
+
+  .stepperProcess .p-button {
+    font-size: 1rem !important;
+  }
+
+  .stepperProcess .p-button .iconify {
+    font-size: 1.25rem !important;
+  }
 }
 </style>
 
@@ -259,7 +276,6 @@ export default {
 
 .lazyVideo {
   width: 100%;
-  height: 100%;
   max-width: 100%;
   border-radius: 12px;
 }
@@ -303,7 +319,7 @@ export default {
     text-align: start !important;
     font-size: 1.5rem;
   }
-  
+
   .stepContent p {
     text-align: start !important;
     font-size: 1rem;
