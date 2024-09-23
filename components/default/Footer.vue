@@ -10,24 +10,9 @@
         <p>Empowering businesses to thrive.</p>
         <NuxtLink class="w-7 primaryButton" to="/">Contact Us</NuxtLink>
         <div class="socialMedia rowCenter gap-35">
-          <a href="facebook.com">
-            <img
-              src="/images/footer/Facebook-Icon.svg"
-              alt="Facebook Icon"
-            />
-          </a>
-          <a href="instagram.com">
-            <img
-              src="/images/footer/Instagram-Icon.svg"
-              alt="Instagram Icon"
-            />
-          </a>
-          <a href="linkedin.com">
-            <img
-              src="/images/footer/LinkedIn-Icon.svg"
-              alt="LinkedIn Icon"
-            />
-          </a>
+          <a href="facebook.com" class="iconFooter bgCover" style="background-image: url('/images/footer/Facebook-Icon.svg');"></a>
+          <a href="instagram.com" class="iconFooter bgCover" style="background-image: url('/images/footer/Instagram-Icon.svg');"></a>
+          <a href="linkedin.com" class="iconFooter bgCover" style="background-image: url('/images/footer/LinkedIn-Icon.svg');"></a>
         </div>
       </div>
       <div class="menuFooter column gap-2">
@@ -142,7 +127,7 @@ footer {
   width: 6.25rem;
 }
 
-.socialMedia a img {
+.iconFooter {
   width: 2rem;
   height: 2rem;
 }

@@ -165,6 +165,10 @@ export default {
   margin-top: 0.75rem;
 }
 
+.reviewsContainer {
+  display: none;
+}
+
 @media (width >= 700px) {
   .googleReviews {
     gap: 2rem !important;
@@ -195,6 +199,7 @@ export default {
   .reviewsContainer {
     width: 100%;
     height: 40rem;
+    display: block;
     position: relative;
     overflow: hidden;
   }
