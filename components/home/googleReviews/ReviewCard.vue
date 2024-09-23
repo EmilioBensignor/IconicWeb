@@ -4,7 +4,7 @@
       <div
         class="avatar bgCover"
         :style="{
-          backgroundImage: `url('/images/reviews/${review.img}-Google-Review.png')`,
+          backgroundImage: `url('/images/home/reviews/${review.img}-Google-Review.png')`,
         }"
       ></div>
       <div class="reviewHeader column gap-1">
@@ -55,6 +55,7 @@ export default {
 
 .avatar {
   width: 2.5rem;
+  height: 2.5rem;
 }
 
 .reviewHeader p:first-of-type {
