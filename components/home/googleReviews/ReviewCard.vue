@@ -4,7 +4,7 @@
       <div
         class="avatar bgCover"
         :style="{
-          backgroundImage: `url('/images/home/reviews/${review.img}-Google-Review.png')`,
+          backgroundImage: `url('/images/reviews/${review.img}-Google-Review.png')`,
         }"
       ></div>
       <div class="reviewHeader column gap-1">
