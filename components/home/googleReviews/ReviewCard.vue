@@ -1,10 +1,12 @@
 <template>
   <article class="reviewCard column relative bg-dark-blue border-grey-1 mx-1">
     <div class="rowCenter gap-2">
-      <NuxtImg
-        class="avatar"
-        :src="`/images/home/reviews/${review.img}-Google-Review.png`"
-      />
+      <div
+        class="avatar bgCover"
+        :style="{
+          backgroundImage: `url('/images/reviews/${review.img}-Google-Review.png')`,
+        }"
+      ></div>
       <div class="reviewHeader column gap-1">
         <p class="font-bold">{{ review.name }}</p>
         <p>{{ review.numReviews }} reviews</p>
