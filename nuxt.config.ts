@@ -34,5 +34,13 @@ export default defineNuxtConfig({
         },
       ],
     }
+  },
+  image: {
+    dir: 'public',
+    domains: ['iconic-web.vercel.app'],
+    format: ['webp', 'png', 'jpg', 'jpeg', 'svg']
+  },
+  nitro: {
+    preset: 'vercel'
   }
 })
