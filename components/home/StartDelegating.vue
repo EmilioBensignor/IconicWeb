@@ -6,17 +6,15 @@
       </h2>
       <p class="subtitle">Sign up for Iconic Assistant. It takes 60 seconds.</p>
     </div>
-    <div class="w-full">
+    <div class="w-full delegatingContainer">
       <Accordion
         value="0"
-        class="w-full accordionSteps columnAlignCenter gap-5"
-      >
+        class="w-full accordionSteps columnAlignCenter gap-5">
         <AccordionPanel
           :value="step.value"
           v-for="(step, index) in steps"
           :key="index"
-          class="w-full relative bg-blue-light-gradient"
-        >
+          class="w-full relative bg-blue-light-gradient">
           <div class="blueLayer">
             <AccordionHeader class="w-full">
               <div class="headAccordion">
@@ -30,8 +28,7 @@
                   class="w-full h-8rem imgStarDelegating border-round-md"
                   :style="{
                     backgroundImage: `url(/images/home/${step.img}-Iconic-Recruitment.jpg)`,
-                  }"
-                ></div>
+                  }"></div>
                 <p class="font-12">{{ step.text }}</p>
               </div>
             </AccordionContent>
@@ -44,145 +41,170 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      steps: [
-        {
-          value: "0",
-          number: "1",
-          title: "Discovery call",
-          img: "Discovery-Call",
-          alt: "Discovery Call Iconic Recruitment",
-          text: "Complete the registration form to schedule a call with us and discuss your business needs and the desired qualities in your executive assistant.",
-        },
-        {
-          value: "1",
-          number: "2",
-          title: "Matching and interview",
-          img: "Matching-Interview",
-          alt: "Matching Interview Iconic Recruitment",
-          text: "Complete the registration form to schedule a call with us and discuss your business needs and the desired qualities in your executive assistant.",
-        },
-        {
-          value: "2",
-          number: "3",
-          title: "Onboarding & ongoing support",
-          img: "Onboarding-Support",
-          alt: "Onboarding Support Iconic Recruitment",
-          text: "Complete the registration form to schedule a call with us and discuss your business needs and the desired qualities in your executive assistant.",
-        },
-      ],
-    };
-  },
-};
+  export default {
+    data() {
+      return {
+        steps: [
+          {
+            value: "0",
+            number: "1",
+            title: "Discovery call",
+            img: "Discovery-Call",
+            alt: "Discovery Call Iconic Recruitment",
+            text: "Complete the registration form to schedule a call with us and discuss your business needs and the desired qualities in your executive assistant.",
+          },
+          {
+            value: "1",
+            number: "2",
+            title: "Matching and interview",
+            img: "Matching-Interview",
+            alt: "Matching Interview Iconic Recruitment",
+            text: "Complete the registration form to schedule a call with us and discuss your business needs and the desired qualities in your executive assistant.",
+          },
+          {
+            value: "2",
+            number: "3",
+            title: "Onboarding & ongoing support",
+            img: "Onboarding-Support",
+            alt: "Onboarding Support Iconic Recruitment",
+            text: "Complete the registration form to schedule a call with us and discuss your business needs and the desired qualities in your executive assistant.",
+          },
+        ],
+      };
+    },
+  };
 </script>
 
 <style>
-.p-accordionpanel,
-.p-accordionheader,
-.p-accordioncontent-content {
-  border: none !important;
-}
-
-.accordionSteps .p-accordionpanel {
-  border-radius: 9px;
-  padding: 2px;
-  transition: all 0.3s;
-}
-
-.accordionSteps .p-accordionheader-toggle-icon {
-  display: none;
-}
-
-.accordionSteps .p-accordionpanel-active .blueLayer {
-  background: none;
-}
-
-.accordionSteps .p-accordionpanel-active .headAccordion div {
-  background: var(--color-dark-blue);
-}
-
-@media (width >= 700px) {
-  .accordionSteps .p-accordioncontent-content > div {
-    flex-direction: row;
-    gap: 1.25rem !important;
+  .p-accordionpanel,
+  .p-accordionheader,
+  .p-accordioncontent-content {
+    border: none !important;
   }
 
-  .accordionSteps .p-accordioncontent-content > div > p {
-    width: 100%;
-    font-size: 1rem
+  .accordionSteps .p-accordionpanel {
+    border-radius: 9px;
+    padding: 2px;
+    transition: all 0.3s;
   }
-}
+
+  .accordionSteps .p-accordionheader-toggle-icon {
+    display: none;
+  }
+
+  .accordionSteps .p-accordionpanel-active .blueLayer {
+    background: none;
+  }
+
+  .accordionSteps .p-accordionpanel-active .headAccordion div {
+    background: var(--color-dark-blue);
+  }
+
+  @media (width >= 480px) {
+    .accordionSteps .p-accordioncontent-content > div > p {
+      font-size: 0.875rem;
+    }
+  }
+
+  @media (width >= 700px) {
+    .accordionSteps .p-accordioncontent-content > div {
+      flex-direction: row;
+      gap: 1.25rem !important;
+    }
+
+    .accordionSteps .p-accordioncontent-content > div > p {
+      width: 100%;
+      font-size: 1rem;
+    }
+  }
 </style>
 
 <style scoped>
-.blueLayer {
-  position: relative;
-  z-index: 1;
-  background-color: var(--color-dark-blue);
-  border-radius: 9px;
-  padding: 0.75rem;
-}
-
-.headAccordion {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.headAccordion div {
-  width: 1.5rem;
-  height: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(
-    90deg,
-    var(--color-blue),
-    var(--color-light-blue)
-  );
-  border-radius: 50%;
-}
-
-.headAccordion h3 {
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.imgStarDelegating {
-  background-position: center top;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-@media (width >= 700px) {
-  .startDelegating {
-    gap: 2rem !important;
-    padding: 2.5rem !important;
+  .blueLayer {
+    position: relative;
+    z-index: 1;
+    background-color: var(--color-dark-blue);
+    border-radius: 9px;
+    padding: 0.75rem;
   }
 
-  .h2StartDelegating {
-    align-self: flex-start;
+  .headAccordion {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
-  .h2StartDelegating h2 {
-    display: block;
+  .headAccordion div {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      90deg,
+      var(--color-blue),
+      var(--color-light-blue)
+    );
+    border-radius: 50%;
+  }
+
+  .headAccordion h3 {
+    font-size: 1rem;
+    font-weight: 700;
   }
 
   .imgStarDelegating {
     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
-  .headAccordion div {
-    width: 2rem;
-    height: 2rem;
-    font-size: 1.125rem
+  @media (width >= 480px) {
+    .delegatingContainer {
+      max-width: 506px;
+    }
+
+    .h2StartDelegating h2 {
+      display: block;
+    }
+
+    .blueLayer {
+      padding: 1rem;
+    }
+
+    .headAccordion div {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+
+    .imgStarDelegating {
+      height: 10rem !important;
+    }
   }
-  
-  .headAccordion h3 {
-    font-size: 1.125rem
+
+  @media (width >= 700px) {
+    .startDelegating {
+      gap: 2rem !important;
+      padding: 2.5rem !important;
+    }
+
+    .h2StartDelegating {
+      align-self: flex-start;
+    }
+
+    .imgStarDelegating {
+      background-position: center;
+    }
+
+    .headAccordion div {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.125rem;
+    }
+
+    .headAccordion h3 {
+      font-size: 1.125rem;
+    }
   }
-}
 </style>

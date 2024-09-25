@@ -223,7 +223,17 @@ export default {
   padding: 0.75rem 1.5rem !important;
 }
 
+@media (width >= 480px) {
+  .precisionMatching .p-stepper {
+    max-width: 506px;
+  }
+}
+
 @media (width >= 700px) {
+  .precisionMatching .p-stepper {
+    max-width: 100%;
+  }
+
   .stepperProcess .p-step-header {
     width: 3rem;
     height: 3rem;
@@ -293,6 +303,12 @@ export default {
 }
 .stepperProcess .back span {
   position: absolute;
+}
+
+@media (width >= 480px) {
+  .stepContent h3 {
+    font-size: 1.25rem;
+  }
 }
 
 @media (width >= 700px) {

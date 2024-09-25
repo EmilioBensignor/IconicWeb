@@ -8,7 +8,7 @@
           alt="Iconic Assistants Logo"
         />
         <p>Empowering businesses to thrive.</p>
-        <NuxtLink class="w-7 primaryButton" to="/">Contact Us</NuxtLink>
+        <NuxtLink class="w-7 contactFooter primaryButton" to="/">Contact Us</NuxtLink>
         <div class="socialMedia rowCenter gap-35">
           <a
             href="https://facebook.com"
@@ -142,6 +142,10 @@ footer {
 .iconFooter {
   width: 2rem;
   height: 2rem;
+}
+
+.contactFooter {
+  max-width: 168px;
 }
 
 .linksAccordion li a {

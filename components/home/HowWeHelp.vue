@@ -97,6 +97,11 @@
     font-size: 1.125rem;
     font-weight: 700;
     transition: transform 0.7s ease, margin-bottom 0.7s ease;
+    margin-bottom: -1rem;
+  }
+
+  .help:hover h3 {
+    margin-bottom: 0;
   }
 
   .overlay p {
@@ -109,7 +114,17 @@
 
   .help:hover .overlay p {
     opacity: 1;
-    max-height: 200px; /* Ajusta este valor según sea necesario */
+    max-height: 200px;
+  }
+
+  @media (width >= 480px) {
+    .help {
+      height: 11rem;
+    }
+
+    .h2Subtitle h2 {
+      display: block;
+    }
   }
 
   @media (width >= 700px) {
@@ -123,7 +138,6 @@
     }
 
     h2 {
-      display: block;
       text-align: start !important;
     }
 

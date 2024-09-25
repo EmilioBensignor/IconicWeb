@@ -18,69 +18,115 @@
         <NuxtLink to="/" class="primaryButton">Get Started</NuxtLink>
       </div>
     </div>
-    <div>
+    <div class="column">
       <NuxtImg
-        class="w-full"
+        class="w-full heroAssistant"
         src="/images/home/Iconic-Executive-Assistant-Recruitment.png"
-        alt="Iconic Executive Assistant Recruitment"
-      />
+        alt="Iconic Executive Assistant Recruitment" />
     </div>
   </section>
 </template>
 
 <style scoped>
-.empower {
-  font-weight: 700;
-}
-
-h1 {
-  font-weight: 800;
-}
-
-.starting {
-  font-weight: 500;
-}
-
-.starting span {
-  font-weight: 800;
-}
-
-@media (width >= 700px) {
-  .hero {
-    flex-direction: row;
-    justify-content: center;
-    padding: 2.5rem 0 2.5rem 2.5rem;
-  }
-
-  .hero > div:first-of-type {
-    width: 46%;
-    align-items: flex-start;
-    gap: 1.25rem !important;
-    padding: 0 !important;
+  .heroAssistant {
+    max-width: 400px;
+    align-self: flex-end;
   }
 
   .empower {
-    text-align: start !important;
-    font-size: 1.5rem;
+    font-weight: 700;
   }
 
   h1 {
-    text-align: start !important;
-    font-size: 2rem;
+    font-weight: 800;
   }
 
   .starting {
-    text-align: start !important;
-    font-size: 1rem;
+    font-weight: 500;
+    max-width: 320px;
   }
 
-  .hero > div:first-of-type > div {
-    align-items: flex-start;
+  .starting span {
+    font-weight: 800;
   }
 
-  
-  .hero > div:last-of-type {
-    width: 54%;
+  @media (width >= 480px) {
+    .hero {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem !important;
+      padding: 1rem 0 1rem 2rem;
+    }
+
+    .hero > div {
+      width: 50%;
+    }
+
+    .hero > div:first-of-type {
+      align-items: flex-start;
+      gap: 0.5rem !important;
+      padding: 0 !important;
+    }
+
+    .hero > div:first-of-type > div {
+      align-items: flex-start;
+    }
+
+    .empower {
+      text-align: start !important;
+      font-size: 1.25rem;
+    }
+
+    h1 {
+      text-align: start !important;
+      font-size: 1.75rem;
+    }
+
+    .starting {
+      max-width: 100%;
+      text-align: start !important;
+    }
+
+    .hero > div:first-child > div:last-of-type {
+      margin-top: 0.5rem;
+    }
+
+    .heroAssistant {
+      max-width: 100%;
+    }
   }
-}
+
+  @media (width >= 700px) {
+    .hero {
+      justify-content: center;
+      gap: 1.25rem !important;
+      padding: 2.5rem 0 2.5rem 2.5rem;
+    }
+
+    .hero > div:first-of-type {
+      width: 46%;
+      gap: 1rem !important;
+    }
+
+    .empower {
+      font-size: 1.5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .starting {
+      font-size: 1rem;
+    }
+
+    .hero > div:first-child > div:last-of-type {
+      margin-top: 0;
+    }
+
+    .hero > div:last-of-type {
+      width: 54%;
+    }
+  }
 </style>

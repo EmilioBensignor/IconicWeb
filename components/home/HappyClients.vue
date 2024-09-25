@@ -1,6 +1,6 @@
 <template>
   <section class="w-full happyClients columnAlignCenter gap-4 px-3 py-5">
-    <div class="w-full rowSpaceBetweenCenter">
+    <div class="w-full infoContainer rowSpaceBetweenCenter">
       <div class="info">
         <p>+1000</p>
         <p>Happy clients</p>
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="gradientLine lineSeparator"></div>
-    <div class="w-full rowSpaceBetweenCenter">
+    <div class="w-full infoContainer rowSpaceBetweenCenter">
       <div class="info">
         <p>4.9</p>
         <p>On Google Reviews</p>
@@ -65,6 +65,24 @@
     display: none;
   }
 
+  @media (width >= 480px) {
+    .gradientLine {
+      height: 5px;
+    }
+
+    .infoContainer {
+      max-width: 450px;
+    }
+
+    .info p:first-of-type {
+      font-size: 2.125rem;
+    }
+
+    .info p:last-of-type {
+      font-size: 0.875rem;
+    }
+  }
+
   @media (width >= 700px) {
     .happyClients {
       flex-direction: row;
@@ -100,10 +118,6 @@
 
     .info p:first-of-type {
       font-size: 2.25rem;
-    }
-
-    .info p:last-of-type {
-      font-size: 0.875rem;
     }
   }
 </style>
