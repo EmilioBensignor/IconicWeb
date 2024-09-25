@@ -196,7 +196,7 @@ h2 {
 
 /* Tablet */
 
-@media (width >= 700px) {
+@media (width >=700px) {
   h2 {
     font-size: 1.5rem;
   }
@@ -205,8 +205,25 @@ h2 {
     display: block;
   }
 
-  .primaryButton, .secondaryButton div {
+  .primaryButton,
+  .secondaryButton div {
     font-size: 0.875rem !important;
     padding: 1rem 2.5rem !important;
+  }
+}
+
+@media (width >=1080px) {
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .primaryButton,
+  .secondaryButton div {
+    font-size: 1.25rem !important;
+    padding: 1.25rem 2.5rem !important;
   }
 }

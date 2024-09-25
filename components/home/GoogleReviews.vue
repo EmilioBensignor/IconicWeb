@@ -121,8 +121,48 @@
             numStars: 4.5,
             text: "The quality of the assistants at Iconic Assistant is impressive. The process was almost flawless, with only a minor delay in onboarding. Still, it's been a great experience overall.",
           },
+          {
+            img: "Brian-S",
+            alt: "Brian S",
+            name: "Brian S",
+            numReviews: 7,
+            numStars: 4.5,
+            text: "The quality of the assistants at Iconic Assistant is impressive. The process was almost flawless, with only a minor delay in onboarding. Still, it's been a great experience overall.",
+          },
+          {
+            img: "Brian-S",
+            alt: "Brian S",
+            name: "Brian S",
+            numReviews: 7,
+            numStars: 4.5,
+            text: "The quality of the assistants at Iconic Assistant is impressive. The process was almost flawless, with only a minor delay in onboarding. Still, it's been a great experience overall.",
+          },
+          {
+            img: "Brian-S",
+            alt: "Brian S",
+            name: "Brian S",
+            numReviews: 7,
+            numStars: 4.5,
+            text: "The quality of the assistants at Iconic Assistant is impressive. The process was almost flawless, with only a minor delay in onboarding. Still, it's been a great experience overall.",
+          },
+          {
+            img: "Brian-S",
+            alt: "Brian S",
+            name: "Brian S",
+            numReviews: 7,
+            numStars: 4.5,
+            text: "The quality of the assistants at Iconic Assistant is impressive. The process was almost flawless, with only a minor delay in onboarding. Still, it's been a great experience overall.",
+          },
         ],
       };
+    },
+    mounted() {
+      window.addEventListener("touchstart", this.handleTouchStart, {
+        passive: true,
+      });
+    },
+    beforeUnmount() {
+      window.removeEventListener("touchstart", this.handleTouchStart);
     },
   };
 </script>
@@ -222,6 +262,21 @@
       column-count: 2;
       column-gap: 1.25rem;
       row-gap: 0.625rem;
+    }
+  }
+
+  @media (width >= 1080px) {
+    .googleReviews {
+      padding: 3.75rem 5rem !important;
+    }
+
+    .googleLogo {
+      width: 8.313rem;
+    }
+
+    .clipContainer {
+      column-count: 3;
+      column-gap: 0.75rem;
     }
   }
 </style>

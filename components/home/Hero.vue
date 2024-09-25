@@ -129,4 +129,30 @@
       width: 54%;
     }
   }
+
+  @media (width >= 1080px) {
+    .hero {
+      padding: 2.5rem 0 2.5rem 5rem;
+    }
+
+    .hero > div:first-of-type {
+      width: 50%;
+    }
+
+    .hero > div:last-of-type {
+      width: 50%;
+    }
+
+    .empower {
+      font-size: 2rem;
+    }
+
+    h1 {
+      font-size: 3.25rem;
+    }
+
+    .starting {
+      font-size: 1.25rem;
+    }
+  }
 </style>

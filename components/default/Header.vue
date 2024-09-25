@@ -7,7 +7,7 @@
       class="logo"
       src="/images/Iconic-Assistants-Logo.png"
       alt="Iconic Assistants Logo" />
-    <div>
+    <div class="menuSidebar">
       <Drawer
         :visible="drawerMenu"
         :show-close-button="false"
@@ -38,6 +38,9 @@
           </div>
         </div>
       </Drawer>
+    </div>
+    <div>
+      
     </div>
   </header>
 </template>
@@ -106,6 +109,12 @@
       padding: 2.5rem !important;
     }
   }
+
+  @media (width >= 1080px) {
+    .p-drawer-mask, .menuSidebar {
+      display: none !important;
+    }
+  }
 </style>
 
 <style scoped>
@@ -162,6 +171,16 @@
 
     .menuContent {
       gap: 2.5rem;
+    }
+  }
+
+  @media (width >= 1080px) {
+    .headerDefault {
+      padding: 1.156rem 5rem;
+    }
+
+    .hamburger {
+      display: none;
     }
   }
 </style>

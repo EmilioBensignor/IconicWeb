@@ -190,9 +190,6 @@
 
     .winImg div {
       width: 11.25rem !important;
-    }
-
-    .winImg div {
       justify-content: center !important;
     }
 
@@ -216,6 +213,52 @@
     .winBody ul li p {
       width: auto;
       font-size: 1rem;
+    }
+  }
+
+  @media (width >= 1080px) {
+    .howYouWin {
+      padding: 3.75rem 5rem !important;
+    }
+
+    .howYouWin > div:last-of-type {
+      flex-direction: row;
+      margin: 2rem 0 0 0 !important;
+    }
+
+    .winContainer {
+      height: 27.25rem;
+      flex-direction: column;
+    }
+
+    .winImg {
+      width: 100% !important;
+      height: 10.375rem !important;
+    }
+
+    .winImg div {
+      width: 100% !important;
+      justify-content: flex-start !important;
+      padding: 0.75rem !important;
+    }
+
+    .title {
+      font-size: 1.875rem;
+    }
+
+    .winBody ul li {
+      gap: 0.75rem !important;
+    }
+
+    .winBody ul li span {
+      width: 1.25rem;
+      height: 1.25rem;
+      font-size: 1.25rem !important;
+    }
+
+    .winBody ul li p {
+      width: 85%;
+      font-size: 1.25rem;
     }
   }
 </style>

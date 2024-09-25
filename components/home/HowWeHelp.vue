@@ -189,4 +189,23 @@
       border-radius: 0 12px 12px 0;
     }
   }
+
+  @media (width >= 1080px) {
+    .howWeHelp {
+      gap: 2rem !important;
+      padding: 3.75rem 5rem !important;
+    }
+
+    .overlay {
+      padding: 0 2.813rem 2.25rem 2.813rem;
+    }
+
+    .help h3 {
+      font-size: 1.5rem;
+    }
+
+    .help:hover h3 {
+      margin-bottom: 0;
+    }
+  }
 </style>

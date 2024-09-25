@@ -5,41 +5,38 @@
         <NuxtImg
           class="logo"
           src="/images/Iconic-Assistants-Logo.png"
-          alt="Iconic Assistants Logo"
-        />
+          alt="Iconic Assistants Logo" />
         <p>Empowering businesses to thrive.</p>
-        <NuxtLink class="w-7 contactFooter primaryButton" to="/">Contact Us</NuxtLink>
+        <NuxtLink class="w-7 contactFooter primaryButton" to="/"
+          >Contact Us</NuxtLink
+        >
         <div class="socialMedia rowCenter gap-35">
           <a
             href="https://facebook.com"
             class="iconFooter bgCover"
             :style="{
               backgroundImage: `url('/images/footer/Facebook-Icon.svg')`,
-            }"
-          ></a>
+            }"></a>
           <a
             href="https://instagram.com"
             class="iconFooter bgCover"
             :style="{
               backgroundImage: `url('/images/footer/Instagram-Icon.svg')`,
-            }"
-          ></a>
+            }"></a>
           <a
             href="https://linkedin.com"
             class="iconFooter bgCover"
             :style="{
               backgroundImage: `url('/images/footer/LinkedIn-Icon.svg')`,
-            }"
-          ></a>
+            }"></a>
         </div>
       </div>
       <div class="menuFooter column gap-2">
-        <Accordion value="0">
+        <Accordion class="menuMobile" value="0">
           <AccordionPanel
             v-for="(item, index) in menuAccordion"
             :key="index"
-            :value="item.value"
-          >
+            :value="item.value">
             <AccordionHeader>
               {{ item.title }}
             </AccordionHeader>
@@ -54,19 +51,30 @@
             </AccordionContent>
           </AccordionPanel>
         </Accordion>
+        <div class="menuDesktop">
+          <div class="column gap-3" v-for="(item, index) in menuAccordion" :key="index">
+            <p class="font-bold">{{ item.title }}</p>
+            <ul class="column gap-2">
+              <li v-for="(link, index) in item.list" :key="index">
+                <NuxtLink class="text-white no-underline" :to="link.route">
+                  {{ link.title }}
+                </NuxtLink>
+              </li>
+            </ul>
+          </div>
+        </div>
         <div class="menuBottom column gap-2">
           <NuxtLink
             v-for="(link, index) in menuBottom"
             :key="index"
             class="text-white no-underline"
-            :to="link.route"
-          >
+            :to="link.route">
             {{ link.title }}
           </NuxtLink>
         </div>
       </div>
     </section>
-    <div class="w-full columnAlignCenter gap-35 mt-2">
+    <div class="w-full footerBottom columnAlignCenter gap-35 mt-2">
       <div class="privacyTerms rowCenter gap-3">
         <NuxtLink to="#" class="text-white no-underline">Privacy</NuxtLink>
         <span>|</span>
@@ -80,122 +88,168 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { menuAccordion, menuLinks } from "~/shared/menu";
+  import { ref } from "vue";
+  import { menuAccordion, menuLinks } from "~/shared/menu";
 
-const menuBottom = ref(menuLinks);
-const currentYear = ref(new Date().getFullYear());
+  const menuBottom = ref(menuLinks);
+  const currentYear = ref(new Date().getFullYear());
 </script>
 
 <style>
-.menuFooter .p-accordionheader {
-  color: var(--color-white) !important;
-  font-weight: 700;
-  border-bottom: 1px solid var(--color-grey-50) !important;
-  padding: 0.5rem 0;
-}
-
-.menuFooter
-  .p-accordionpanel:not(.p-disabled).p-accordionpanel-active
-  > .p-accordionheader {
-  background: transparent !important;
-  border: none !important;
-  color: var(--color-white) !important;
-}
-
-.menuFooter
-  .p-accordionpanel:not(.p-disabled).p-accordionpanel-active
-  > .p-accordionheader
-  .p-accordionheader-toggle-icon {
-  color: var(--color-white) !important;
-}
-
-.menuFooter .p-accordioncontent-content {
-  border-bottom: 1px solid var(--color-grey-50) !important;
-  padding: 0.5rem 0;
-}
-
-@media (width >= 700px) {
   .menuFooter .p-accordionheader {
-    padding: 0.75rem 0;
+    color: var(--color-white) !important;
+    font-weight: 700;
+    border-bottom: 1px solid var(--color-grey-50) !important;
+    padding: 0.5rem 0;
+  }
+
+  .menuFooter
+    .p-accordionpanel:not(.p-disabled).p-accordionpanel-active
+    > .p-accordionheader {
+    background: transparent !important;
+    border: none !important;
+    color: var(--color-white) !important;
+  }
+
+  .menuFooter
+    .p-accordionpanel:not(.p-disabled).p-accordionpanel-active
+    > .p-accordionheader
+    .p-accordionheader-toggle-icon {
+    color: var(--color-white) !important;
   }
 
   .menuFooter .p-accordioncontent-content {
-    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--color-grey-50) !important;
+    padding: 0.5rem 0;
   }
-}
+
+  @media (width >= 700px) {
+    .menuFooter .p-accordionheader {
+      padding: 0.75rem 0;
+    }
+
+    .menuFooter .p-accordioncontent-content {
+      padding: 0.75rem 0;
+    }
+  }
 </style>
 
 <style scoped>
-footer {
-  padding: 1.875rem 1rem;
-}
-
-.footerContent {
-  gap: 1.25rem;
-}
-
-.logo {
-  width: 6.25rem;
-}
-
-.iconFooter {
-  width: 2rem;
-  height: 2rem;
-}
-
-.contactFooter {
-  max-width: 168px;
-}
-
-.linksAccordion li a {
-  font-size: 0.75rem;
-  cursor: pointer;
-}
-
-.menuBottom a {
-  font-weight: 700;
-}
-
-.privacyTerms a {
-  font-size: 0.75rem;
-}
-
-.rightsReserved p {
-  font-size: 00.75rem;
-}
-
-@media (width >= 700px) {
   footer {
-    padding: 2.5rem;
+    padding: 1.875rem 1rem;
   }
 
   .footerContent {
-    flex-direction: row;
-  }
-
-  .footerContent > div {
-    width: 50%;
+    gap: 1.25rem;
   }
 
   .logo {
-    width: 9.375rem;
+    width: 6.25rem;
   }
 
-  .footerContent > div:first-of-type {
-    gap: 0.75rem;
+  .iconFooter {
+    width: 2rem;
+    height: 2rem;
   }
 
-  .footerContent > div:first-of-type p {
-    font-size: 1.125rem;
+  .contactFooter {
+    max-width: 168px;
   }
 
   .linksAccordion li a {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
+    cursor: pointer;
   }
 
-  .menuBottom {
-    gap: 1rem !important;
+  .menuBottom a {
+    font-weight: 700;
   }
-}
+
+  .privacyTerms a {
+    font-size: 0.75rem;
+  }
+
+  .rightsReserved p {
+    font-size: 00.75rem;
+  }
+
+  .menuDesktop {
+    display: none;
+  }
+
+  @media (width >= 700px) {
+    footer {
+      padding: 2.5rem;
+    }
+
+    .footerContent {
+      flex-direction: row;
+    }
+
+    .footerContent > div {
+      width: 50%;
+    }
+
+    .logo {
+      width: 9.375rem;
+    }
+
+    .footerContent > div:first-of-type {
+      gap: 0.75rem;
+    }
+
+    .footerContent > div:first-of-type p {
+      font-size: 1.125rem;
+    }
+
+    .linksAccordion li a {
+      font-size: 0.875rem;
+    }
+
+    .menuBottom {
+      gap: 1rem !important;
+    }
+  }
+
+  @media (width >= 1080px) {
+    footer {
+      padding: 3.75rem 5rem !important;
+    }
+
+    .footerContent > div:first-of-type {
+      gap: 1.25rem;
+    }
+
+    .contactFooter {
+      max-width: 200px;
+    }
+
+    .menuMobile {
+      display: none;
+    }
+
+    .menuFooter {
+      flex-direction: row;
+      gap: 2.5rem !important;
+    }
+
+    .menuDesktop {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .menuBottom a, .menuFooter p {
+      font-size: 1.25rem;
+    }
+
+    .footerBottom {
+      align-items: flex-end;
+      margin-top: 0 !important;
+    }
+
+    .privacyTerms a,
+    .rightsReserved p {
+      font-size: 1rem;
+    }
+  }
 </style>

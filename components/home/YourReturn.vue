@@ -1,6 +1,6 @@
 <template>
   <section class="w-full yourReturn columnAlignCenter gap-3 px-3 py-5">
-    <div class="h2Subtitle column">
+    <div class="h2Return column">
       <h2>Your return on investment</h2>
       <p class="subtitle">
         Our clients <span class="font-bold">save $30k+ a year</span> by hiring
@@ -129,10 +129,16 @@
     max-width: 100px;
     left: -0.15rem;
     right: 0;
-    bottom: -0.875rem;
+    bottom: -0.5rem;
     border-radius: 20px;
     padding: 0.35rem 1rem;
     margin: 0 auto;
+  }
+
+  .categories:last-of-type,
+  .iconicContainer div:nth-child(7),
+  .employee:last-of-type {
+    height: 3.688rem;
   }
 
   .iconicContainer div:nth-child(7) {
@@ -168,14 +174,14 @@
       margin: 0 auto;
     }
 
-    p {
+    .costComparisonTable p {
       font-size: 0.875rem;
     }
 
     .less {
       width: 100%;
       max-width: 120px;
-      bottom: -1.25rem;
+      bottom: -1rem;
     }
   }
 
@@ -183,6 +189,10 @@
     .yourReturn {
       gap: 2rem !important;
       padding: 2.5rem !important;
+    }
+
+    .h2Return {
+      align-self: flex-start;
     }
 
     .costComparisonTable {
@@ -206,7 +216,6 @@
     .categoriesContainer > div:first-child p,
     .employeeContainer > div:first-child p,
     .iconicContainer > div:first-child p {
-      max-width: 100%;
       font-size: 1.5rem;
     }
 
@@ -251,16 +260,48 @@
       font-size: 1.125rem;
     }
 
+    .categories:last-of-type,
+    .iconicContainer div:nth-child(7),
+    .employee:last-of-type {
+      height: 4.063rem;
+    }
+
     .less {
       max-width: 100%;
       width: 80%;
       left: 0;
-      bottom: -1.8rem;
+      bottom: -1.45rem;
       padding: 0.625rem 1.25rem;
     }
 
     .less p {
       font-size: 1rem;
+    }
+  }
+
+  @media (width >= 1080px) {
+    .yourReturn {
+      padding: 3.75rem 5rem !important;
+    }
+
+    .costComparisonTable {
+      gap: 1.25rem !important;
+    }
+
+    .costComparisonTable p,
+    .iconic div p {
+      font-size: 1.375rem;
+    }
+
+    .categories,
+    .employee,
+    .iconic div {
+      padding: 0.625rem 1.25rem !important;
+    }
+
+    .less {
+      width: 70%;
+      bottom: -1.875rem;
     }
   }
 </style>

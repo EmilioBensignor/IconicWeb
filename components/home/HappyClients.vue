@@ -93,6 +93,7 @@
 
     .happyClients > .rowSpaceBetweenCenter {
       width: auto !important;
+      max-width: 100%;
       gap: 1.25rem;
     }
 
@@ -118,6 +119,25 @@
 
     .info p:first-of-type {
       font-size: 2.25rem;
+    }
+  }
+
+  @media (width >= 1080px) {
+    .happyClients {
+      gap: 2.188rem !important;
+      padding: 3.25rem 5rem !important;
+    }
+
+    .happyClients > .rowSpaceBetweenCenter {
+      gap: 2.188rem;
+    }
+
+    .info p:first-of-type {
+      font-size: 3.25rem;
+    }
+
+    .info p:last-of-type {
+      font-size: 1.25rem;
     }
   }
 </style>

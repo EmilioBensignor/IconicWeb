@@ -34,7 +34,7 @@
                 size="1.125rem" />
               <p class="text-center">{{ problem.question }}</p>
             </div>
-            <div class="answerContent bg-dark-blue answerMobile">
+            <div class="answerContent bg-dark-blue">
               <p class="text-center">{{ problem.answer }}</p>
             </div>
           </div>
@@ -207,7 +207,7 @@
       font-size: 1.125rem;
     }
 
-    .answerMobile {
+    .answerContent {
       display: none;
     }
 
@@ -249,6 +249,70 @@
     .panelContent.active .questionContent span,
     .panelContent.active .questionContent p {
       color: var(--color-white) !important;
+    }
+  }
+
+  @media (width >= 1080px) {
+    .maximizeEfficiency {
+      flex-direction: row;
+      gap: 2.563rem !important;
+      padding: 3.75rem 5rem !important;
+    }
+
+    .h2Subtitle {
+      width: 45%;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .secondaryTablet {
+      width: 80%;
+    }
+
+    .relative {
+      width: 60%;
+    }
+
+    .accordionMaximizeContainer {
+      flex-direction: column;
+    }
+
+    .accordionMaximizeContainer.hover-active .accordionMaximize,
+    .accordionMaximizeContainer.hover-active .panelContent {
+      border-radius: 12px;
+    }
+
+    .panelContent .questionContent {
+      flex-direction: row;
+      gap: 1rem !important;
+      padding: 1rem 1.25rem;
+    }
+
+    .questionContent span {
+      font-size: 1.5rem !important;
+    }
+
+    .questionContent p {
+      font-size: 1.5rem;
+    }
+
+    .answerTablet {
+      display: none;
+    }
+
+    .answerContent {
+      display: block;
+      border-radius: 0 0 12px 12px;
+      padding: 0 1.25rem;
+    }
+
+    .answerContent p {
+      text-align: start !important;
+      font-size: 1.25rem;
+    }
+
+    .panelContent:hover .answerContent {
+      padding: 0.75rem 1.25rem 1rem 1.25rem;
     }
   }
 </style>

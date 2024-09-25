@@ -36,6 +36,31 @@
         </AccordionPanel>
       </Accordion>
     </div>
+    <div class="delegatingContainerDesktop">
+      <div class="desktopPanelsContainer column">
+        <div
+          v-for="(step, index) in steps"
+          :key="index"
+          @click="setSelectedStep(index)"
+          :class="{ 'panelContainer-active': selectedStep === index }"
+          class="w-full panelContainer relative bg-blue-light-gradient">
+          <div class="blueLayer">
+            <div class="w-full headAccordion">
+              <div>{{ step.number }}</div>
+              <h3>{{ step.title }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="desktopContentPanel column">
+        <div
+          class="w-full h-12rem imgStarDelegating border-round-md"
+          :style="{
+            backgroundImage: `url(/images/home/${steps[selectedStep].img}-Iconic-Recruitment.jpg)`,
+          }"></div>
+        <p>{{ steps[selectedStep].text }}</p>
+      </div>
+    </div>
     <NuxtLink to="/" class="primaryButton">Book a call</NuxtLink>
   </section>
 </template>
@@ -44,6 +69,7 @@
   export default {
     data() {
       return {
+        selectedStep: 0,
         steps: [
           {
             value: "0",
@@ -59,7 +85,7 @@
             title: "Matching and interview",
             img: "Matching-Interview",
             alt: "Matching Interview Iconic Recruitment",
-            text: "Complete the registration form to schedule a call with us and discuss your business needs and the desired qualities in your executive assistant.",
+            text: "Our recruitment team will provide you with a perfect match from a pool of over 5,000 pre-vetted professionals for you to interview and approve.",
           },
           {
             value: "2",
@@ -67,10 +93,15 @@
             title: "Onboarding & ongoing support",
             img: "Onboarding-Support",
             alt: "Onboarding Support Iconic Recruitment",
-            text: "Complete the registration form to schedule a call with us and discuss your business needs and the desired qualities in your executive assistant.",
+            text: "We help you onboard your Executive Assistant and provide support with your dedicated Customer Success Manager.",
           },
         ],
       };
+    },
+    methods: {
+      setSelectedStep(index) {
+        this.selectedStep = index;
+      },
     },
   };
 </script>
@@ -160,6 +191,10 @@
     background-repeat: no-repeat;
   }
 
+  .delegatingContainerDesktop {
+    display: none;
+  }
+
   @media (width >= 480px) {
     .delegatingContainer {
       max-width: 506px;
@@ -205,6 +240,50 @@
 
     .headAccordion h3 {
       font-size: 1.125rem;
+    }
+  }
+
+  @media (width >= 1080px) {
+    .startDelegating {
+      padding: 3.75rem 5rem !important;
+    }
+
+    .delegatingContainer {
+      display: none;
+    }
+
+    .delegatingContainerDesktop {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .desktopPanelsContainer {
+      width: 50%;
+      gap: 1.25rem;
+    }
+
+    .panelContainer {
+      border-radius: 9px;
+      padding: 2px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .headAccordion {
+      gap: 1.25rem;
+    }
+
+    .panelContainer-active .blueLayer {
+      background: none;
+    }
+
+    .panelContainer-active .headAccordion div {
+      background: var(--color-dark-blue);
+    }
+
+    .desktopContentPanel {
+      width: 50%;
+      gap: 0.75rem;
     }
   }
 </style>

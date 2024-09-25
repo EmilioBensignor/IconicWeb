@@ -35,4 +35,7 @@ export default defineNuxtConfig({
       ],
     }
   },
+  plugins: [
+    { src: '~/plugins/passive-events.js', mode: 'client'}
+  ]
 })

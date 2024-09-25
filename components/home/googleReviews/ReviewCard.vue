@@ -73,7 +73,6 @@ export default {
 @media (width >= 700px) {
   .reviewCard {
     width: 100%;
-    max-width: 292px;
     height: max-content;
     break-inside: avoid-column;
     page-break-inside: avoid;
