@@ -212,6 +212,21 @@ h2 {
   }
 }
 
+@media (width >=850px) {
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+  }
+
+  .primaryButton,
+  .secondaryButton div {
+    font-size: 1rem !important;
+  }
+}
+
 @media (width >=1080px) {
   h2 {
     font-size: 2.25rem;

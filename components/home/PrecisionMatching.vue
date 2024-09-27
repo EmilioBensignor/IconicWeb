@@ -363,6 +363,16 @@
     }
   }
 
+  @media (width >= 850px) {
+    .stepContent h3 {
+      margin-bottom: 0.625rem !important;
+    }
+
+    .stepContent p {
+      font-size: 1.125rem;
+    }
+  }
+
   @media (width >= 1080px) {
     .precisionMatching {
       padding: 3.75rem 5rem !important;
@@ -370,10 +380,6 @@
 
     .stepContent {
       gap: 1.5rem;
-    }
-
-    .stepContent h3 {
-      margin-bottom: 0.625rem !important;
     }
 
     .stepContent p {

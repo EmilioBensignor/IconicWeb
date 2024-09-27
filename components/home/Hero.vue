@@ -130,6 +130,20 @@
     }
   }
 
+  @media (width >= 850px) {
+    .empower {
+      font-size: 1.875rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .starting {
+      font-size: 1.125rem;
+    }
+  }
+
   @media (width >= 1080px) {
     .hero {
       padding: 2.5rem 0 2.5rem 5rem;

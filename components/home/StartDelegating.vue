@@ -138,6 +138,10 @@
   }
 
   @media (width >= 700px) {
+    .delegatingContainer .p-accordion {
+      gap: 0.75rem !important;
+    }
+
     .accordionSteps .p-accordioncontent-content > div {
       flex-direction: row;
       gap: 1.25rem !important;
@@ -228,6 +232,10 @@
       align-self: flex-start;
     }
 
+    .delegatingContainer {
+      max-width: 100%;
+    }
+
     .imgStarDelegating {
       background-position: center;
     }
@@ -243,11 +251,7 @@
     }
   }
 
-  @media (width >= 1080px) {
-    .startDelegating {
-      padding: 3.75rem 5rem !important;
-    }
-
+  @media (width >= 850px) {
     .delegatingContainer {
       display: none;
     }
@@ -284,6 +288,12 @@
     .desktopContentPanel {
       width: 50%;
       gap: 0.75rem;
+    }
+  }
+
+  @media (width >= 1080px) {
+    .startDelegating {
+      padding: 3.75rem 5rem !important;
     }
   }
 </style>

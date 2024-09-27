@@ -211,6 +211,12 @@
     }
   }
 
+  @media (width >= 850px) {
+    .contactFooter {
+      max-width: 180px;
+    }
+  }
+
   @media (width >= 1080px) {
     footer {
       padding: 3.75rem 5rem !important;

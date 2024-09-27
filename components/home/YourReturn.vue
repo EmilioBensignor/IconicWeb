@@ -279,6 +279,17 @@
     }
   }
 
+  @media (width >= 850px) {
+    .categories p {
+      font-size: 1.125rem;
+    }
+
+    .iconic div p,
+    .employee p {
+      font-size: 1.25rem;
+    }
+  }
+
   @media (width >= 1080px) {
     .yourReturn {
       padding: 3.75rem 5rem !important;

@@ -11,7 +11,7 @@
         </div>
       </NuxtLink>
     </div>
-    <div class="relative">
+    <div class="w-full relative">
       <div
         class="w-full accordionMaximizeContainer columnAlignCenter gap-3"
         :class="{ 'hover-active': activePanel !== null }">
@@ -204,6 +204,7 @@
     }
 
     .questionContent p {
+      max-width: 176px;
       font-size: 1.125rem;
     }
 
@@ -293,6 +294,7 @@
     }
 
     .questionContent p {
+      max-width: 100%;
       font-size: 1.5rem;
     }
 

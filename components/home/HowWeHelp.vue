@@ -150,7 +150,7 @@
       height: auto;
       flex: 1;
       position: relative;
-      transition: flex 0.7s ease;
+      transition: flex 0.5s ease;
     }
 
     .help:hover {
@@ -158,7 +158,13 @@
       flex: 2;
     }
 
+    .help:hover .overlay {
+      align-items: flex-start;
+    }
+
     .overlay {
+      align-items: center;
+      transition: all 0.7s ease;
       padding: 0 1rem 1.375rem 1rem;
     }
 
@@ -166,10 +172,15 @@
       padding-bottom: 1.5rem;
     }
 
+    .help h3 {
+      max-width: 126px;
+      transition: all 0.8s ease;
+    }
+
     .help:hover h3 {
+      max-width: 100%;
       text-align: start !important;
       transform: rotate(0deg);
-      margin-bottom: 0.5rem;
     }
 
     .helpContainer:hover .help:not(:hover) h3 {
@@ -201,6 +212,7 @@
     }
 
     .help h3 {
+      max-width: 100%;
       font-size: 1.5rem;
     }
 

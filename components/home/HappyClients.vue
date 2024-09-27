@@ -122,6 +122,24 @@
     }
   }
 
+  @media (width >= 850px) {
+    .happyClients {
+      gap: 2rem !important;
+    }
+
+    .happyClients > .rowSpaceBetweenCenter {
+      gap: 2rem;
+    }
+
+    .info p:first-of-type {
+      font-size: 2.5rem;
+    }
+
+    .info p:last-of-type {
+      font-size: 1rem;
+    }
+  }
+
   @media (width >= 1080px) {
     .happyClients {
       gap: 2.188rem !important;
