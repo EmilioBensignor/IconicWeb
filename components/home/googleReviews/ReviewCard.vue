@@ -1,5 +1,9 @@
 <template>
-  <article class="reviewCard column relative bg-dark-blue border-grey-1 mx-1">
+  <NuxtLink
+    to="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0zDGqLMkrKS8yYLRSNagwMzFPSTaztEhMtDA0NDYwtTKoSE21NEhJSbY0MTA2TzE1TvUSzEzOz8tMVkgsLs4sLknMKykGABRIFoU&q=iconic+assistants&rlz=1C1ALOY_esAR1068AR1068&oq=ic&gs_lcrp=EgZjaHJvbWUqEggDEC4YJxivARjHARiABBiKBTIGCAAQRRg8MgYIARBFGDwyBggCEEUYOTISCAMQLhgnGK8BGMcBGIAEGIoFMgYIBBBFGDsyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQgxOTEwajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#lrd=0x647dc698aa811305:0xee90ddc94037d53e,1"
+    target="_blank"
+    class="reviewCard column relative bg-dark-blue border-grey-1 no-underline mx-1"
+  >
     <div class="rowCenter gap-2">
       <div
         class="avatar bgCover"
@@ -8,8 +12,8 @@
         }"
       ></div>
       <div class="reviewHeader column gap-1">
-        <p class="font-bold">{{ review.name }}</p>
-        <p>{{ review.numReviews }} reviews</p>
+        <p class="text-white font-bold">{{ review.name }}</p>
+        <p class="text-white">{{ review.numReviews }} reviews</p>
       </div>
     </div>
     <div>
@@ -20,13 +24,13 @@
         <MiscStarsFive />
       </div>
     </div>
-    <p>{{ review.text }}</p>
+    <p class="text-white">{{ review.text }}</p>
     <NuxtImg
       class="googleIcon absolute"
       src="/images/home/Google-Icon.svg"
       alt="Google Icon"
     />
-  </article>
+  </NuxtLink>
 </template>
 
 <script>
