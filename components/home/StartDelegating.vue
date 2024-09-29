@@ -296,4 +296,58 @@
       padding: 3.75rem 5rem !important;
     }
   }
+
+  @media (width >= 1280px) {
+    .delegatingContainerDesktop {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .desktopPanelsContainer {
+      width: 100%;
+      max-width: 538px;
+    }
+
+    .desktopContentPanel {
+      width: 100%;
+    }
+
+    .imgStarDelegating {
+      height: 12rem !important;
+    }
+  }
+
+  @media (width >= 1440px) {
+    .startDelegating {
+      gap: 3.5rem !important;
+      padding: 3.75rem 8rem !important;
+    }
+    .headAccordion div {
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1.25rem
+    }
+
+    .headAccordion h3 {
+      font-size: 1.25rem;
+    }
+
+    .imgStarDelegating {
+      height: 11.5rem !important;
+    }
+
+    .desktopContentPanel p {
+      font-size: 1.25rem
+    }
+  }
+
+  @media (width >= 1600px) {
+    .blueLayer {
+      padding: 1.5rem;
+    }
+
+    .imgStarDelegating {
+      height: 16rem !important;
+    }
+  }
 </style>

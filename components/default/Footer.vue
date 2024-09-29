@@ -236,6 +236,7 @@
 
     .menuFooter {
       flex-direction: row;
+      justify-content: end;
       gap: 2.5rem !important;
     }
 
@@ -256,6 +257,36 @@
     .privacyTerms a,
     .rightsReserved p {
       font-size: 1rem;
+    }
+  }
+
+  @media (width >= 1440px) {
+    footer {
+      padding: 3.75rem 8rem !important;
+    }
+
+    .logo {
+      width: 11rem;
+    }
+
+    .footerContent > div:first-of-type p {
+      font-size: 1.25rem
+    }
+
+    .contactFooter {
+      max-width: 240px;
+    }
+
+    .menuBottom a, .menuFooter p {
+      font-size: 1.375rem;
+    }
+
+    .menuDesktop ul li a {
+      font-size: 1.125rem;
+    }
+
+    .privacyTerms a, .rightsReserved p {
+      font-size: 1.125rem;
     }
   }
 </style>

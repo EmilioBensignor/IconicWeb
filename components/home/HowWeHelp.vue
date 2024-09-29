@@ -232,6 +232,11 @@
   }
 
   @media (width >= 1440px) {
+    .howWeHelp {
+      gap: 3.5rem !important;
+      padding: 3.75rem 8rem !important;
+    }
+
     .helpContainer {
       height: 24rem
     }

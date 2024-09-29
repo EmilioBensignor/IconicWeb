@@ -283,6 +283,10 @@ export default {
 }
 
 @media (width >= 1440px) {
+  .headerDefault {
+    padding: 1.156rem 8rem;
+  }
+
   .logo {
     width: 9rem;
   }

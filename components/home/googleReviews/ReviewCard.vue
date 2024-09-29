@@ -80,4 +80,19 @@ export default {
     margin-bottom: 0.625rem !important;
   }
 }
+
+@media (width >= 1440px) {
+  .reviewCard {
+    gap: 0.875rem;
+    margin-bottom: 1rem !important;
+  }
+
+  .reviewHeader p:first-of-type {
+    font-size: 1rem;
+  }
+
+  .reviewCard p:last-of-type {
+    font-size: 0.875rem;
+  }
+}
 </style>

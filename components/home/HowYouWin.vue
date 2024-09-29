@@ -294,4 +294,39 @@
       font-size: 1.25rem;
     }
   }
+
+  @media (width >= 1350px) {
+    .winContainer {
+      height: 26rem;
+    }
+  }
+
+  @media (width >= 1440px) {
+    .howYouWin {
+      padding: 3.75rem 8rem !important;
+    }
+
+    .howYouWin > div:last-of-type {
+      margin-top: 3.5rem !important;
+    }
+
+    .winBody ul li span {
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: 1.5rem !important;
+    }
+  }
+
+  @media (width >= 1600px) {
+
+    .winImg {
+      height: 12rem !important;
+    }
+  }
+
+  @media (width >= 1780px) {
+    .winContainer {
+      height: 23rem;
+    }
+  }
 </style>

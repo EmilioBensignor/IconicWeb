@@ -17,7 +17,8 @@
           <div
             class="categories allCenter"
             v-for="(category, index) in categories"
-            :key="index">
+            :key="index"
+          >
             <p class="text-center font-12">{{ category }}</p>
           </div>
         </div>
@@ -30,7 +31,8 @@
         <div
           class="iconic allCenter flex-grow-1 bg-blue-light-gradient"
           v-for="(iconicItem, index) in iconic"
-          :key="index">
+          :key="index"
+        >
           <div class="w-full h-full allCenter bg-dark-blue">
             <p class="text-center font-12">{{ iconicItem }}</p>
           </div>
@@ -49,7 +51,8 @@
         <div
           class="employee allCenter flex-grow-1 bg-dark-blue"
           v-for="(employeeItem, index) in employee"
-          :key="index">
+          :key="index"
+        >
           <p class="text-center font-12">{{ employeeItem }}</p>
         </div>
       </div>
@@ -58,261 +61,307 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        categories: [
-          "Hourly rate of pay",
-          "Fringe benefits 20%",
-          "Overhead rate 30%",
-          "Total pay rate",
-          "Hours per month",
-          "TOTAL MONTHLY",
-        ],
-        iconic: ["$11.00", "$0.00", "$0.00", "$11.00", "160 Hrs", "$1,760.00"],
-        employee: [
-          "$25.45",
-          "$5.09",
-          "$7.64",
-          "$38.18",
-          "160 Hrs",
-          "$6,108.80",
-        ],
-      };
-    },
-  };
+export default {
+  data() {
+    return {
+      categories: [
+        "Hourly rate of pay",
+        "Fringe benefits 20%",
+        "Overhead rate 30%",
+        "Total pay rate",
+        "Hours per month",
+        "TOTAL MONTHLY",
+      ],
+      iconic: ["$11.00", "$0.00", "$0.00", "$11.00", "160 Hrs", "$1,760.00"],
+      employee: ["$25.45", "$5.09", "$7.64", "$38.18", "160 Hrs", "$6,108.80"],
+    };
+  },
+};
 </script>
 
 <style scoped>
-  .p-10-5 {
-    padding: 0.625rem 0.313rem;
+.p-10-5 {
+  padding: 0.625rem 0.313rem;
+}
+
+.categories,
+.iconic,
+.employee {
+  height: 2.75rem;
+}
+
+.categories,
+.employee,
+.iconic div {
+  border-bottom: 1px solid var(--color-grey-50);
+}
+
+.categories {
+  padding: 0.5rem 0.4rem;
+}
+
+.categories:last-of-type,
+.iconic:last-of-type,
+.employee:last-of-type {
+  border-bottom: none;
+}
+
+.employee:last-of-type {
+  border-radius: 0 0 0.75rem 0.75rem;
+}
+
+.categories:last-of-type p,
+.iconic:last-of-type p,
+.employee:last-of-type p {
+  font-weight: 800;
+}
+
+.iconic {
+  padding: 0 3px;
+}
+
+.less {
+  width: 105%;
+  max-width: 100px;
+  left: -0.15rem;
+  right: 0;
+  bottom: -0.5rem;
+  border-radius: 20px;
+  padding: 0.35rem 1rem;
+  margin: 0 auto;
+}
+
+.categories:last-of-type,
+.iconicContainer div:nth-child(7),
+.employee:last-of-type {
+  height: 3.688rem;
+}
+
+.iconicContainer div:nth-child(7) {
+  border-radius: 0 0 0.75rem 0.75rem;
+  padding: 0 3px 3px 3px !important;
+}
+
+.iconicContainer div:nth-child(7) div {
+  border-radius: 0 0 0.75rem 0.75rem;
+  border-bottom: 0;
+}
+
+@media (width >= 480px) {
+  .categoriesContainer,
+  .iconicContainer,
+  .employeeContainer {
+    width: 32%;
+  }
+
+  .categoriesContainer > div:first-child {
+    margin: 0.75rem 0;
+  }
+
+  .categoriesContainer > div:first-child p,
+  .employeeContainer > div:first-child p,
+  .iconicContainer > div:first-child p {
+    font-size: 1.125rem;
+  }
+
+  .employeeContainer > div:first-child p,
+  .iconicContainer > div:first-child p {
+    max-width: 154px;
+    margin: 0 auto;
+  }
+
+  .costComparisonTable p {
+    font-size: 0.875rem;
+  }
+
+  .less {
+    width: 100%;
+    max-width: 120px;
+    bottom: -1rem;
+  }
+}
+
+@media (width >= 700px) {
+  .yourReturn {
+    gap: 2rem !important;
+    padding: 2.5rem !important;
+  }
+
+  .h2Return {
+    align-self: flex-start;
+  }
+
+  .costComparisonTable {
+    gap: 0.719rem !important;
+  }
+
+  .employeeContainer {
+    border-radius: 20px !important;
+  }
+
+  .categoriesContainer > div:first-child {
+    margin: 0;
+  }
+
+  .employeeContainer > div:first-child,
+  .iconicContainer > div:first-child {
+    border-radius: 20px 20px 0 0 !important;
+    padding: 0.938rem 1.688rem;
+  }
+
+  .categoriesContainer > div:first-child p,
+  .employeeContainer > div:first-child p,
+  .iconicContainer > div:first-child p {
+    font-size: 1.5rem;
+  }
+
+  .categoriesContainer > div:first-child p {
+    margin: 1.844rem 0 !important;
+  }
+
+  .categories {
+    padding: 0.625rem 1.25rem;
   }
 
   .categories,
   .iconic,
   .employee {
-    height: 2.75rem;
-  }
-
-  .categories,
-  .employee,
-  .iconic div {
-    border-bottom: 1px solid var(--color-grey-50);
-  }
-
-  .categories {
-    padding: 0.5rem 0.4rem;
-  }
-
-  .categories:last-of-type,
-  .iconic:last-of-type,
-  .employee:last-of-type {
-    border-bottom: none;
-  }
-
-  .employee:last-of-type {
-    border-radius: 0 0 0.75rem 0.75rem;
-  }
-
-  .categories:last-of-type p,
-  .iconic:last-of-type p,
-  .employee:last-of-type p {
-    font-weight: 800;
+    height: 3.125rem;
   }
 
   .iconic {
-    padding: 0 3px;
+    padding: 0 5px;
   }
 
-  .less {
-    width: 105%;
-    max-width: 100px;
-    left: -0.15rem;
-    right: 0;
-    bottom: -0.5rem;
-    border-radius: 20px;
-    padding: 0.35rem 1rem;
-    margin: 0 auto;
+  .iconicContainer div:nth-child(7) {
+    padding: 0 5px 5px 5px !important;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .iconicContainer div:nth-child(7) div {
+    border-radius: 0 0 15px 15px;
+    border-bottom: 0;
+  }
+
+  .employee:last-of-type {
+    border-radius: 0 0 20px 20px;
+  }
+
+  .categories p {
+    font-size: 1rem;
+  }
+
+  .iconic div p,
+  .employee p {
+    font-size: 1.125rem;
   }
 
   .categories:last-of-type,
   .iconicContainer div:nth-child(7),
   .employee:last-of-type {
-    height: 3.688rem;
+    height: 4.063rem;
   }
 
-  .iconicContainer div:nth-child(7) {
-    border-radius: 0 0 0.75rem 0.75rem;
-    padding: 0 3px 3px 3px !important;
+  .less {
+    max-width: 100%;
+    width: 80%;
+    left: 0;
+    bottom: -1.45rem;
+    padding: 0.625rem 1.25rem;
   }
 
-  .iconicContainer div:nth-child(7) div {
-    border-radius: 0 0 0.75rem 0.75rem;
-    border-bottom: 0;
+  .less p {
+    font-size: 1rem;
+  }
+}
+
+@media (width >= 850px) {
+  .categories p {
+    font-size: 1.125rem;
   }
 
-  @media (width >= 480px) {
-    .categoriesContainer,
-    .iconicContainer,
-    .employeeContainer {
-      width: 32%;
-    }
+  .iconic div p,
+  .employee p {
+    font-size: 1.25rem;
+  }
+}
 
-    .categoriesContainer > div:first-child {
-      margin: 0.75rem 0;
-    }
-
-    .categoriesContainer > div:first-child p,
-    .employeeContainer > div:first-child p,
-    .iconicContainer > div:first-child p {
-      font-size: 1.125rem;
-    }
-
-    .employeeContainer > div:first-child p,
-    .iconicContainer > div:first-child p {
-      max-width: 154px;
-      margin: 0 auto;
-    }
-
-    .costComparisonTable p {
-      font-size: 0.875rem;
-    }
-
-    .less {
-      width: 100%;
-      max-width: 120px;
-      bottom: -1rem;
-    }
+@media (width >= 1080px) {
+  .yourReturn {
+    padding: 3.75rem 5rem !important;
   }
 
-  @media (width >= 700px) {
-    .yourReturn {
-      gap: 2rem !important;
-      padding: 2.5rem !important;
-    }
-
-    .h2Return {
-      align-self: flex-start;
-    }
-
-    .costComparisonTable {
-      gap: 0.719rem !important;
-    }
-
-    .employeeContainer {
-      border-radius: 20px !important;
-    }
-
-    .categoriesContainer > div:first-child {
-      margin: 0;
-    }
-
-    .employeeContainer > div:first-child,
-    .iconicContainer > div:first-child {
-      border-radius: 20px 20px 0 0 !important;
-      padding: 0.938rem 1.688rem;
-    }
-
-    .categoriesContainer > div:first-child p,
-    .employeeContainer > div:first-child p,
-    .iconicContainer > div:first-child p {
-      font-size: 1.5rem;
-    }
-
-    .categoriesContainer > div:first-child p {
-      margin: 1.844rem 0 !important;
-    }
-
-    .categories {
-      padding: 0.625rem 1.25rem;
-    }
-
-    .categories,
-    .iconic,
-    .employee {
-      height: 3.125rem;
-    }
-
-    .iconic {
-      padding: 0 5px;
-    }
-
-    .iconicContainer div:nth-child(7) {
-      padding: 0 5px 5px 5px !important;
-      border-radius: 0 0 20px 20px;
-    }
-
-    .iconicContainer div:nth-child(7) div {
-      border-radius: 0 0 15px 15px;
-      border-bottom: 0;
-    }
-
-    .employee:last-of-type {
-      border-radius: 0 0 20px 20px;
-    }
-
-    .categories p {
-      font-size: 1rem;
-    }
-
-    .iconic div p,
-    .employee p {
-      font-size: 1.125rem;
-    }
-
-    .categories:last-of-type,
-    .iconicContainer div:nth-child(7),
-    .employee:last-of-type {
-      height: 4.063rem;
-    }
-
-    .less {
-      max-width: 100%;
-      width: 80%;
-      left: 0;
-      bottom: -1.45rem;
-      padding: 0.625rem 1.25rem;
-    }
-
-    .less p {
-      font-size: 1rem;
-    }
+  .costComparisonTable {
+    gap: 1.25rem !important;
   }
 
-  @media (width >= 850px) {
-    .categories p {
-      font-size: 1.125rem;
-    }
-
-    .iconic div p,
-    .employee p {
-      font-size: 1.25rem;
-    }
+  .costComparisonTable p,
+  .iconic div p {
+    font-size: 1.375rem;
   }
 
-  @media (width >= 1080px) {
-    .yourReturn {
-      padding: 3.75rem 5rem !important;
-    }
-
-    .costComparisonTable {
-      gap: 1.25rem !important;
-    }
-
-    .costComparisonTable p,
-    .iconic div p {
-      font-size: 1.375rem;
-    }
-
-    .categories,
-    .employee,
-    .iconic div {
-      padding: 0.625rem 1.25rem !important;
-    }
-
-    .less {
-      width: 70%;
-      bottom: -1.875rem;
-    }
+  .categories,
+  .employee,
+  .iconic div {
+    padding: 0.625rem 1.25rem !important;
   }
+
+  .less {
+    width: 70%;
+    bottom: -1.875rem;
+    border-radius: 999px;
+  }
+}
+
+@media (width >= 1440px) {
+  .yourReturn {
+    gap: 3.5rem !important;
+    padding: 3.75rem 8rem !important;
+  }
+
+  .costComparisonTable {
+    gap: 1.5rem !important;
+  }
+
+  .categoriesContainer > div:first-child p,
+  .employeeContainer > div:first-child p,
+  .iconicContainer > div:first-child p {
+    font-size: 1.625rem;
+  }
+
+  .categories,
+  .iconic,
+  .employee {
+    height: 3.5rem;
+  }
+
+  .categories:last-of-type,
+  .iconicContainer div:nth-child(7),
+  .employee:last-of-type {
+    height: 4.5rem;
+  }
+
+  .costComparisonTable p,
+  .iconic div p {
+    font-size: 1.5rem;
+  }
+
+  .less {
+    bottom: -2rem;
+  }
+}
+
+@media (width >= 1920px) {
+  .categories,
+  .iconic,
+  .employee {
+    height: 4rem;
+  }
+
+  .categories:last-of-type,
+  .iconicContainer div:nth-child(7),
+  .employee:last-of-type {
+    height: 5.5rem;
+  }
+}
 </style>

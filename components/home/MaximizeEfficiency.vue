@@ -331,7 +331,9 @@ export default {
 
 @media (width >= 1440px) {
   .maximizeEfficiency {
+    gap: 3.5rem !important;
     flex-direction: column;
+    padding: 3.75rem 8rem !important;
   }
 
   .h2Subtitle {
@@ -347,6 +349,7 @@ export default {
 
   .accordionMaximizeContainer {
     flex-direction: row;
+    gap: 1.5rem !important;
   }
 
   .panelContent .questionContent {

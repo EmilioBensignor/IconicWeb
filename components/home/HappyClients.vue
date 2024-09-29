@@ -166,8 +166,12 @@
   }
 
   @media (width >= 1440px) {
+    .happyClients {
+      padding: 3.25rem 8rem !important;
+    }
+
     .happyClients, .happyClients > .rowSpaceBetweenCenter {
-      gap: 5rem !important;
+      gap: 3.875rem !important;
     }
 
     .info p:first-of-type {
@@ -181,6 +185,12 @@
     .gradientLine {
       width: 7px;
       height: 6rem;
+    }
+  }
+
+  @media (width >= 1600px) {
+    .happyClients, .happyClients > .rowSpaceBetweenCenter {
+      gap: 5em !important;
     }
   }
 

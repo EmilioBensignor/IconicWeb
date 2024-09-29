@@ -182,6 +182,10 @@ h1 {
 }
 
 @media (width >= 1440px) {
+  .hero {
+    padding: 2.5rem 0 2.5rem 8rem;
+  }
+
   .hero > div:first-of-type {
     gap: 2rem !important;
   }

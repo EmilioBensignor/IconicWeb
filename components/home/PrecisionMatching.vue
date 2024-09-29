@@ -386,8 +386,38 @@
       font-size: 1.25rem;
     }
 
-    .lazyVideo {
-      max-height: 250px;
+    .animacion {
+      max-width: 500px;
+    }
+  }
+
+  @media (width >= 1440px) {
+    .precisionMatching {
+      gap: 3.5rem !important;
+      padding: 3.75rem 8rem !important;
+    }
+
+    .stepContent h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem !important;
+    }
+
+    .stepContent p {
+      font-size: 1.5rem;
+    }
+
+    .animacion {
+      max-width: 600px;
+    }
+  }
+
+  @media (width >= 1920px) {
+    .stepContent h3 {
+      font-size: 2rem;
+    }
+
+    .animacion {
+      max-width: 700px;
     }
   }
 </style>
