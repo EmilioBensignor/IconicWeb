@@ -142,12 +142,12 @@
 
   @media (width >= 1080px) {
     .happyClients {
-      gap: 2.188rem !important;
+      gap: 2.45rem !important;
       padding: 3.25rem 5rem !important;
     }
 
     .happyClients > .rowSpaceBetweenCenter {
-      gap: 2.188rem;
+      gap: 2.45rem;
     }
 
     .info p:first-of-type {
@@ -156,6 +156,50 @@
 
     .info p:last-of-type {
       font-size: 1.25rem;
+    }
+  }
+
+  @media (width >= 1280px) {
+    .happyClients, .happyClients > .rowSpaceBetweenCenter {
+      gap: 4.5rem !important;
+    }
+  }
+
+  @media (width >= 1440px) {
+    .happyClients, .happyClients > .rowSpaceBetweenCenter {
+      gap: 5rem !important;
+    }
+
+    .info p:first-of-type {
+      font-size: 3.5rem;
+    }
+
+    .info p:last-of-type {
+      font-size: 1.5rem;
+    }
+
+    .gradientLine {
+      width: 7px;
+      height: 6rem;
+    }
+  }
+
+  @media (width >= 1920px) {
+    .happyClients, .happyClients > .rowSpaceBetweenCenter {
+      gap: 7em !important;
+    }
+
+    .info p:first-of-type {
+      font-size: 3.75rem;
+    }
+
+    .info p:last-of-type {
+      font-size: 1.75rem;
+    }
+
+    .gradientLine {
+      width: 8px;
+      height: 6.5rem;
     }
   }
 </style>

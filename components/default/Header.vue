@@ -179,6 +179,16 @@ export default {
     color: var(--color-light-blue);
   }
 }
+
+@media (width >= 1440px) {
+  .p-menu-list {
+    gap: 1.5rem !important;
+  }
+
+  .p-menu-item-label {
+    font-size: 1.125rem
+  }
+}
 </style>
 
 <style scoped>
@@ -269,6 +279,21 @@ export default {
 
   .headerBtn {
     font-size: 1.25rem !important;
+  }
+}
+
+@media (width >= 1440px) {
+  .logo {
+    width: 9rem;
+  }
+
+  .navBar,
+  .navBar ul {
+    gap: 3.5rem;
+  }
+
+  .navBar ul li a, .navBar ul li button {
+    font-size: 1.375rem;
   }
 }
 </style>

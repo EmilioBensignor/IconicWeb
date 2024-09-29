@@ -219,5 +219,39 @@
     .help:hover h3 {
       margin-bottom: 0;
     }
+
+    .overlay p {
+      font-size: 1rem;
+    }
+  }
+
+  @media (width >= 1280px) {
+    .help h3 {
+      max-width: 195px;
+    }
+  }
+
+  @media (width >= 1440px) {
+    .helpContainer {
+      height: 24rem
+    }
+
+    .help h3 {
+      font-size: 1.625rem;
+    }
+
+    .help .overlay p {
+      font-size: 1rem
+    }
+  }
+
+  @media (width >= 1920px) {
+    .help h3 {
+      font-size: 1.75rem;
+    }
+
+    .help .overlay p {
+      font-size: 1.25rem
+    }
   }
 </style>
