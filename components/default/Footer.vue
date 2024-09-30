@@ -4,7 +4,7 @@
       <div class="column gap-35">
         <NuxtImg
           class="logo"
-          src="/images/Iconic-Assistants-Logo.png"
+          src="/images/Iconic-Assistants-Logo.svg"
           alt="Iconic Assistants Logo" />
         <p>Empowering businesses to thrive.</p>
         <NuxtLink class="w-7 contactFooter primaryButton" to="/"

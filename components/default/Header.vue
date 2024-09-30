@@ -5,7 +5,7 @@
     </button>
     <NuxtImg
       class="logo"
-      src="/images/Iconic-Assistants-Logo.png"
+      src="/images/Iconic-Assistants-Logo.svg"
       alt="Iconic Assistants Logo"
     />
     <div class="menuSidebar">
