@@ -86,7 +86,7 @@ export default {
           icon: "currency-dollar-line",
           question: "Are costs impacting your profits?",
           answer:
-            "Don't waste weeks on hiring. ICONIC speeds up the process, managing everything from job postings to candidate selection, so you can focus on growing your business.",
+            "Leave the financial stress to us. ICONIC handles recruitment costs, taxes, and payroll management efficiently, freeing you from the burden of high operational expenses.",
           value: 2,
         },
       ],
