@@ -82,9 +82,9 @@
           {
             value: "1",
             number: "2",
-            title: "Matching and interview",
-            img: "Matching-Interview",
-            alt: "Matching Interview Iconic Recruitment",
+            title: "Matching and Introduction",
+            img: "Matching-Introduction",
+            alt: "Matching Introduction Iconic Recruitment",
             text: "Our recruitment team will provide you with a perfect match from a pool of over 5,000 pre-vetted professionals for you to interview and approve.",
           },
           {

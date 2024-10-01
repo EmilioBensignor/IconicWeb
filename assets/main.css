@@ -20,7 +20,7 @@
 }
 
 body {
-  background: linear-gradient(360deg, rgb(10, 19, 42) 0%, rgb(28, 33, 45) 14%, rgb(47, 47, 47) 27.5%, rgb(28, 33, 45) 41%, rgb(10, 19, 42) 53.5%, rgb(28, 33, 45) 66%, rgb(47, 47, 47) 77.5%, rgb(28, 33, 45) 88.5%, rgb(10, 19, 42) 100%);
+  background: linear-gradient(180deg, rgba(13, 20, 40, 1) 0%, rgba(14, 26, 61, 1) 13%, rgba(15, 32, 82, 1) 25%, rgba(14, 26, 61, 1) 38%, rgba(13, 20, 40, 1) 50%, rgba(14, 26, 61, 1) 63%, rgba(15, 32, 82, 1) 75%, rgba(14, 26, 61, 1) 88%, rgba(13, 20, 40, 1) 100%);
   background-repeat: no-repeat;
   color: var(--color-white);
 }
