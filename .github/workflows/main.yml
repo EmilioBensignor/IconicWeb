@@ -23,8 +23,6 @@ jobs:
           ssh -o StrictHostKeyChecking=no root@147.182.214.108 << 'EOF'
             cd /home/iconic_server
             git submodule update --remote --merge  # Pull latest submodule changes
-            docker-compose down  # Stop current containers
-            docker-compose pull  # Pull latest images if needed
-            docker-compose build  # Rebuild the frontend container
-            docker-compose up -d  # Start the containers again
+            docker compose down --remove-orphans # Stop current containers
+            docker compose up --build -d  # Start the containers again
           EOF
