@@ -14,24 +14,13 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up SSH agent
-        uses: webfactory/ssh-agent@v0.5.4
+        uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.DO_SSH_KEY }}
       
-      - name: Debug SSH setup
-        run: |
-          echo "SSH_AUTH_SOCK: $SSH_AUTH_SOCK"
-          echo "SSH_AGENT_PID: $SSH_AGENT_PID"
-          ssh-add -l
-          
-      - name: Add server public key to known_hosts
-        run: |
-          ssh-keyscan ${{ secrets.DO_SERVER_IP }} >> ~/.ssh/known_hosts
-          chmod 644 ~/.ssh/known_hosts
-      
       - name: Update and Rebuild Frontend on DigitalOcean
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.DO_SSH_USER }}@${{ secrets.DO_SERVER_IP }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no root@147.182.214.108 << 'EOF'
             cd /home/iconic_server
             git submodule update --remote --merge  # Pull latest submodule changes
             docker-compose down  # Stop current containers
