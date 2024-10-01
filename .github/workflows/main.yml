@@ -1,0 +1,30 @@
+name: Deploy Frontend to DigitalOcean
+
+on:
+  push:
+    branches:
+      - main  # Deploy only when commits are pushed to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Set up SSH agent
+        uses: webfactory/ssh-agent@v0.8.1
+        with:
+          ssh-private-key: ${{ secrets.DO_SSH_KEY }}
+
+      - name: Update and Rebuild Frontend on DigitalOcean
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.DO_SSH_USER }}@${{ secrets.DO_SERVER_IP }} << 'EOF'
+            cd /home/iconic_server
+            git submodule update --remote --merge  # Pull latest submodule changes
+            docker-compose down  # Stop current containers
+            docker-compose pull  # Pull latest images if needed
+            docker-compose build  # Rebuild the frontend container
+            docker-compose up -d  # Start the containers again
+          EOF
