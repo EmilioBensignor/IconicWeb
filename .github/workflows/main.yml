@@ -15,9 +15,15 @@ jobs:
 
       - name: Set up SSH agent
         uses: webfactory/ssh-agent@v0.5.4
-        with:
-          ssh-private-key: ${{ secrets.DO_SSH_KEY }}
-
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DO_SSH_KEY }}
+      
+      - name: Debug SSH setup
+        run: |
+          echo "SSH_AUTH_SOCK: $SSH_AUTH_SOCK"
+          echo "SSH_AGENT_PID: $SSH_AGENT_PID"
+          ssh-add -l
+          
       - name: Add server public key to known_hosts
         run: |
           ssh-keyscan ${{ secrets.DO_SERVER_IP }} >> ~/.ssh/known_hosts
