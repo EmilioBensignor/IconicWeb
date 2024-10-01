@@ -15,8 +15,8 @@ jobs:
 
       - name: Set up SSH agent
         uses: webfactory/ssh-agent@v0.5.4
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.DO_SSH_KEY }}
+        with:
+          ssh-private-key: ${{ secrets.DO_SSH_KEY }}
       
       - name: Debug SSH setup
         run: |
