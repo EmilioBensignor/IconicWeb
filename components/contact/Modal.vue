@@ -80,7 +80,7 @@
 
 <style>
   .p-overlay-mask {
-    background: rgba(0, 0, 0, 0.32);
+    background: rgba(0, 0, 0, 0.32) !important;
   }
 
   .p-dialog {
