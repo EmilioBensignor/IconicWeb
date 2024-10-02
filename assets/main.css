@@ -117,6 +117,7 @@ h2 {
   font-weight: 900 !important;
   text-decoration: none;
   border-radius: 3.125rem !important;
+  cursor: pointer;
   padding: 0.75rem 2.225rem !important;
   transition: all 0.3s !important;
 }
@@ -134,6 +135,7 @@ h2 {
 
 .secondaryButton {
   background: linear-gradient(90deg, var(--color-blue), var(--color-light-blue));
+  border: none;
   color: var(--color-white);
   padding: 0.25rem !important;
 }

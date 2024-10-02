@@ -7,7 +7,9 @@
           src="/images/Iconic-Assistants-Logo.svg"
           alt="Iconic Assistants Logo" />
         <p>Empowering businesses to thrive.</p>
-        <NuxtLink class="w-7 contactFooter primaryButton" to="/"
+        <NuxtLink
+          class="w-7 contactFooter primaryButton"
+          :to="routes.CONTACT_US"
           >Contact Us</NuxtLink
         >
         <div class="socialMedia rowCenter gap-35">
@@ -52,7 +54,10 @@
           </AccordionPanel>
         </Accordion>
         <div class="menuDesktop">
-          <div class="column gap-3" v-for="(item, index) in menuAccordion" :key="index">
+          <div
+            class="column gap-3"
+            v-for="(item, index) in menuAccordion"
+            :key="index">
             <p class="font-bold">{{ item.title }}</p>
             <ul class="column gap-2">
               <li v-for="(link, index) in item.list" :key="index">
@@ -87,12 +92,20 @@
   </footer>
 </template>
 
-<script setup>
-  import { ref } from "vue";
+<script>
+  import ROUTES_NAMES from "~/constants/ROUTES_NAMES.js";
   import { menuAccordion, menuLinks } from "~/shared/menu";
 
-  const menuBottom = ref(menuLinks);
-  const currentYear = ref(new Date().getFullYear());
+  export default {
+    data() {
+      return {
+        routes: ROUTES_NAMES,
+        menuBottom: menuLinks,
+        menuAccordion: menuAccordion,
+        currentYear: new Date().getFullYear(),
+      };
+    },
+  };
 </script>
 
 <style>
@@ -245,7 +258,8 @@
       gap: 2.5rem;
     }
 
-    .menuBottom a, .menuFooter p {
+    .menuBottom a,
+    .menuFooter p {
       font-size: 1.25rem;
     }
 
@@ -270,14 +284,15 @@
     }
 
     .footerContent > div:first-of-type p {
-      font-size: 1.25rem
+      font-size: 1.25rem;
     }
 
     .contactFooter {
       max-width: 240px;
     }
 
-    .menuBottom a, .menuFooter p {
+    .menuBottom a,
+    .menuFooter p {
       font-size: 1.375rem;
     }
 
@@ -285,7 +300,8 @@
       font-size: 1.125rem;
     }
 
-    .privacyTerms a, .rightsReserved p {
+    .privacyTerms a,
+    .rightsReserved p {
       font-size: 1.125rem;
     }
   }

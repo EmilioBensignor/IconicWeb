@@ -15,7 +15,7 @@
         Assistants. Tailored solutions that drive growth and innovation.
       </p>
       <div class="w-full columnAlignCenter">
-        <NuxtLink to="/" class="primaryButton">Get Started</NuxtLink>
+        <NuxtLink :to="routes.CONTACT_US" class="primaryButton">Get Started</NuxtLink>
       </div>
     </div>
     <div class="column">
@@ -27,6 +27,18 @@
     </div>
   </section>
 </template>
+
+<script>
+import ROUTES_NAMES from "~/constants/ROUTES_NAMES.js";
+
+export default {
+  data() {
+    return {
+      routes: ROUTES_NAMES
+    }
+  }
+}
+</script>
 
 <style scoped>
 .heroAssistant {
