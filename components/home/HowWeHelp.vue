@@ -69,7 +69,7 @@
   .help {
     height: 6.25rem;
     overflow: hidden;
-    transition: height 0.7s ease;
+    transition: height 0.3s ease;
   }
 
   .help:hover {
@@ -93,10 +93,10 @@
     height: 100%;
   }
 
-  .overlay h3 {
+  .help h3 {
     font-size: 1.125rem;
     font-weight: 700;
-    transition: transform 0.7s ease, margin-bottom 0.7s ease;
+    transition: all 0.1s ease-in-out;
     margin-bottom: -1rem;
   }
 
@@ -109,7 +109,7 @@
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    transition: opacity 0.5s ease, max-height 0.7s ease;
+    transition: opacity 0.5s ease, max-height 0.3s ease;
   }
 
   .help:hover .overlay p {
@@ -150,7 +150,7 @@
       height: auto;
       flex: 1;
       position: relative;
-      transition: flex 0.5s ease;
+      transition: flex 0.3s ease;
     }
 
     .help:hover {
@@ -164,7 +164,7 @@
 
     .overlay {
       align-items: center;
-      transition: all 0.7s ease;
+      transition: all 0.5s ease;
       padding: 0 1rem 1.375rem 1rem;
     }
 
@@ -174,7 +174,7 @@
 
     .help h3 {
       max-width: 126px;
-      transition: all 0.8s ease;
+      transition: all 0.5s ease;
     }
 
     .help:hover h3 {
@@ -190,6 +190,7 @@
 
     .help .overlay p {
       text-align: start !important;
+      transition: opacity 0.8s ease, max-height 0.3s ease;
     }
 
     .help:first-of-type {
