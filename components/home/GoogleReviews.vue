@@ -74,6 +74,7 @@ export default {
 }
 
 .carrouselReviews .p-carousel-indicator-list {
+  display: none;
   gap: 0.5rem;
   margin: 0.625rem 0.5rem 0 0.5rem;
 }
