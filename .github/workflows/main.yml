@@ -23,5 +23,6 @@ jobs:
           ssh -o StrictHostKeyChecking=no root@147.182.214.108 << 'EOF'
             cd /home/iconic_server
             git submodule update --remote --merge  # Pull latest submodule changes
-            docker restart iconic_server-nuxt-1
+            docker compose down --remove-orphans
+            docker compose up --build -d
           EOF
