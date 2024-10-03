@@ -167,7 +167,7 @@
     max-height: 0;
     border-radius: 0 0 12px 12px;
     overflow: hidden;
-    transition: all 0.5s ease;
+    transition: all 0.3s linear;
     padding: 0 1rem;
   }
 
@@ -225,7 +225,7 @@
     }
 
     .accordionMaximize {
-      transition: all 0.5s ease;
+      transition: all 0.35s linear;
     }
 
     .accordionMaximizeContainer.hover-active .accordionMaximize,
@@ -243,7 +243,6 @@
 
     .questionContent p {
       max-width: 176px;
-      font-size: 1.125rem;
     }
 
     .answerContent {
@@ -257,7 +256,7 @@
       padding: 2px;
       margin-top: -2px;
       z-index: 1;
-      transition: all 0.3s ease;
+      transition: all 0.3s linear;
       opacity: 0;
       max-height: 0;
     }
@@ -274,7 +273,7 @@
 
     .panelContent .questionContent {
       background: transparent;
-      transition: all 0.5s ease;
+      transition: all 0.4s linear;
     }
 
     .panelContent.active .questionContent {
@@ -288,6 +287,12 @@
     .panelContent.active .questionContent span,
     .panelContent.active .questionContent p {
       color: var(--color-white) !important;
+    }
+  }
+
+  @media (width >= 730px) {
+    .questionContent p {
+      font-size: 1.125rem;
     }
   }
 
