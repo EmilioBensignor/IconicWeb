@@ -20,8 +20,13 @@
     </div>
     <div class="column">
       <NuxtImg
-        class="w-full heroAssistant"
-        src="/images/home/Iconic-Executive-Assistant-Recruitment.png"
+        class="w-full heroAssistant assistantImg"
+        src="/images/home/Iconic-Executive-Assistant-Recruitment.webp"
+        alt="Iconic Executive Assistant Recruitment"
+      />
+      <NuxtImg
+        class="w-full heroAssistant assistantLargeImg"
+        src="/images/home/Iconic-Executive-Assistant-Recruitment-Desktop.webp"
         alt="Iconic Executive Assistant Recruitment"
       />
     </div>
@@ -61,6 +66,10 @@ h1 {
 
 .starting span {
   font-weight: 800;
+}
+
+.assistantLargeImg {
+  display: none;
 }
 
 @media (width >= 480px) {
@@ -213,6 +222,14 @@ h1 {
 
   .starting {
     font-size: 1.375rem;
+  }
+
+  .assistantImg {
+    display: none;
+  }
+
+  .assistantLargeImg {
+    display: block;
   }
 }
 
