@@ -1,5 +1,5 @@
 <template>
-  <section class="hero column gap-1 py-5">
+  <section class="hero columnAlignCenter gap-1 py-5 px-3">
     <div class="columnAlignCenter gap-3 px-3">
       <div>
         <p class="empower text-center text-light-blue">
@@ -15,20 +15,23 @@
         Assistants. Tailored solutions that drive growth and innovation.
       </p>
       <div class="w-full columnAlignCenter">
-        <NuxtLink :to="routes.CONTACT_US" class="primaryButton">Get Started</NuxtLink>
+        <NuxtLink :to="routes.CONTACT_US" class="primaryButton"
+          >Get Started</NuxtLink
+        >
       </div>
     </div>
-    <div class="column">
-      <NuxtImg
+    <div class="w-full columnAlignCenter">
+      <div class="w-full heroAssistant bgContain"></div>
+      <!-- <NuxtImg
         class="w-full heroAssistant assistantImg"
-        src="/images/home/Iconic-Executive-Assistant-Recruitment.webp"
+        src="/images/home/Iconic-Executive-Assistant-Recruitment.png"
         alt="Iconic Executive Assistant Recruitment"
       />
       <NuxtImg
         class="w-full heroAssistant assistantLargeImg"
         src="/images/home/Iconic-Executive-Assistant-Recruitment-Desktop.webp"
         alt="Iconic Executive Assistant Recruitment"
-      />
+      /> -->
     </div>
   </section>
 </template>
@@ -39,16 +42,17 @@ import ROUTES_NAMES from "~/constants/ROUTES_NAMES.js";
 export default {
   data() {
     return {
-      routes: ROUTES_NAMES
-    }
-  }
-}
+      routes: ROUTES_NAMES,
+    };
+  },
+};
 </script>
 
 <style scoped>
 .heroAssistant {
-  max-width: 400px;
-  align-self: flex-end;
+  max-width: 350px;
+  height: 16.875rem;
+  background-image: url("/images/home/Iconic-Executive-Assistant-Recruitment.webp");
 }
 
 .empower {
@@ -72,17 +76,23 @@ h1 {
   display: none;
 }
 
+@media (width >= 400px) {
+  .heroAssistant {
+    height: 21.875rem;
+  }
+}
+
 @media (width >= 480px) {
   .hero {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 1rem !important;
-    padding: 1rem 0 1rem 2rem;
+    padding: 1rem 2rem !important;
   }
 
   .hero > div {
-    width: 50%;
+    width: 50% !important;
   }
 
   .hero > div:first-of-type {
@@ -116,6 +126,7 @@ h1 {
 
   .heroAssistant {
     max-width: 100%;
+    height: 17.5rem;
   }
 }
 
@@ -123,7 +134,7 @@ h1 {
   .hero {
     justify-content: center;
     gap: 1.25rem !important;
-    padding: 2.5rem 0 2.5rem 2.5rem;
+    padding: 2.5rem !important;
   }
 
   .hero > div:first-of-type {
@@ -150,6 +161,10 @@ h1 {
   .hero > div:last-of-type {
     width: 54%;
   }
+
+  .heroAssistant {
+    height: 19rem;
+  }
 }
 
 @media (width >= 850px) {
@@ -164,11 +179,15 @@ h1 {
   .starting {
     font-size: 1.125rem;
   }
+
+  .heroAssistant {
+    height: 21rem;
+  }
 }
 
 @media (width >= 1080px) {
   .hero {
-    padding: 2.5rem 0 2.5rem 5rem;
+    padding: 2.5rem 5rem !important;
   }
 
   .hero > div:first-of-type {
@@ -190,6 +209,10 @@ h1 {
   .starting {
     font-size: 1.25rem;
   }
+
+  .heroAssistant {
+    height: 25rem;
+  }
 }
 
 @media (width >= 1280px) {
@@ -198,13 +221,13 @@ h1 {
   }
 
   .heroAssistant {
-    max-width: 600px;
+    height: 27rem;
   }
 }
 
 @media (width >= 1440px) {
   .hero {
-    padding: 2.5rem 0 2.5rem 8rem;
+    padding: 2.5rem 8rem !important;
   }
 
   .hero > div:first-of-type {
@@ -224,12 +247,8 @@ h1 {
     font-size: 1.375rem;
   }
 
-  .assistantImg {
-    display: none;
-  }
-
-  .assistantLargeImg {
-    display: block;
+  .heroAssistant {
+    background-image: url("/images/home/Iconic-Executive-Assistant-Recruitment-Large.webp");
   }
 }
 
@@ -267,10 +286,6 @@ h1 {
   .starting {
     max-width: 605px;
     font-size: 1.625rem;
-  }
-
-  .heroAssistant {
-    max-width: 680px;
   }
 }
 </style>

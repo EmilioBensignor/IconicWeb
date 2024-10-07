@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <HomeHero />
     <HomeHappyClients />
     <HomeHowWeHelp />
@@ -10,7 +10,7 @@
     <HomeStartDelegating :linkTo="routes.CONTACT_US" />
     <HomeGoogleReviews />
     <HomeFAQ />
-  </div>
+  </main>
 </template>
 
 <script>

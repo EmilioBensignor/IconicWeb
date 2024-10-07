@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <ContactHero />
     <HomeHappyClients />
     <HomeHowWeHelp />
@@ -17,11 +17,11 @@
     <ContactModal
       :is-open="dialogHubspot"
       @update:is-open="dialogHubspot = $event" />
-  </div>
+  </main>
 </template>
 
 <script setup>
-  import { ref, watch, onMounted } from "vue";
+  import { ref } from "vue";
 
   definePageMeta({
     layout: 'get-started'

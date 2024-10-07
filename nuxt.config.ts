@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/main.css"],
   devtools: { enabled: true },
-  modules: ['@primevue/nuxt-module', '@nuxt/image', '@nuxt/icon'],
+  modules: ['@primevue/nuxt-module', '@nuxt/image', '@nuxt/icon', 'nuxt-swiper'],
   icon: {
     size: '1rem',
     serverBundle: {

@@ -66,6 +66,12 @@ h2 {
   background-repeat: no-repeat;
 }
 
+.bgContain {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 /* Border */
 
 .border-grey-1 {

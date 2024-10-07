@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full faqSection columnAlignCenter gap-4 px-3 py-5">
+  <section id="faqSection" class="w-full faqSection columnAlignCenter gap-4 px-3 py-5">
     <div class="h2Faq column">
       <h2>Frequently asked questions</h2>
       <p class="subtitle">
