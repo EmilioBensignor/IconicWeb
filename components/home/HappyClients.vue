@@ -2,13 +2,19 @@
   <section class="w-full happyClients columnAlignCenter gap-4 px-3 py-5">
     <div class="w-full infoContainer rowSpaceBetweenCenter">
       <div class="info">
-        <p>+1000</p>
+        <p>
+          +
+          <span class="number" data-val="100">0</span>
+        </p>
         <p>Happy clients</p>
       </div>
       <div class="gradientLine"></div>
       <div class="info">
-        <p>+1600</p>
-        <p>Virtual assistants</p>
+        <p>
+          +
+          <span class="number" data-val="300">0</span>
+        </p>
+        <p>Matched assistants</p>
       </div>
     </div>
     <div class="gradientLine lineSeparator"></div>
@@ -19,12 +25,39 @@
       </div>
       <div class="gradientLine"></div>
       <div class="info">
-        <p>24/7</p>
-        <p>Customer support</p>
+        <p>
+          +
+          <span class="number" data-val="2000">0</span>
+        </p>
+        <p>Pre-vetted candidates</p>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+  export default {
+    mounted() {
+      const valueDisplays = document.querySelectorAll(".number");
+
+      valueDisplays.forEach((valueDisplay) => {
+        let startValue = 0;
+        let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+
+        let interval = 4000;
+
+        let duration = Math.floor(interval / endValue);
+        let counter = setInterval(() => {
+          startValue += 5;
+          valueDisplay.textContent = startValue;
+          if (startValue === endValue) {
+            clearInterval(counter);
+          }
+        }, duration);
+      });
+    },
+  };
+</script>
 
 <style scoped>
   .info {
@@ -160,7 +193,8 @@
   }
 
   @media (width >= 1280px) {
-    .happyClients, .happyClients > .rowSpaceBetweenCenter {
+    .happyClients,
+    .happyClients > .rowSpaceBetweenCenter {
       gap: 4.5rem !important;
     }
   }
@@ -170,7 +204,8 @@
       padding: 3.25rem 8rem !important;
     }
 
-    .happyClients, .happyClients > .rowSpaceBetweenCenter {
+    .happyClients,
+    .happyClients > .rowSpaceBetweenCenter {
       gap: 3.875rem !important;
     }
 
@@ -189,13 +224,15 @@
   }
 
   @media (width >= 1600px) {
-    .happyClients, .happyClients > .rowSpaceBetweenCenter {
+    .happyClients,
+    .happyClients > .rowSpaceBetweenCenter {
       gap: 5em !important;
     }
   }
 
   @media (width >= 1920px) {
-    .happyClients, .happyClients > .rowSpaceBetweenCenter {
+    .happyClients,
+    .happyClients > .rowSpaceBetweenCenter {
       gap: 7em !important;
     }
 
