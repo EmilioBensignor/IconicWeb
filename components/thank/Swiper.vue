@@ -32,7 +32,7 @@
         class="linkWeb"
         :key="index"
       >
-        <NuxtLink :to="item.link" v-smooth-scroll class="h-full columnAlignCenter no-underline">
+        <NuxtLink :to="item.link" class="h-full columnAlignCenter no-underline">
           <NuxtImg
             class="w-full"
             :src="`/images/thankYou/${item.img}-Iconic-Assistants.png`"
