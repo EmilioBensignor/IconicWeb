@@ -32,7 +32,7 @@
         class="linkWeb"
         :key="index"
       >
-        <NuxtLink :to="item.link" class="h-full columnAlignCenter no-underline">
+        <NuxtLink :to="item.link" v-smooth-scroll class="h-full columnAlignCenter no-underline">
           <NuxtImg
             class="w-full"
             :src="`/images/thankYou/${item.img}-Iconic-Assistants.png`"
@@ -56,19 +56,19 @@ export default {
           img: "How-you-win",
           alt: "How you win",
           title: "How you win with Iconic Assistants",
-          link: "/#howYouWinSection",
+          link: "/get-started/#howYouWinSection",
         },
         {
           img: "Success-Stories",
           alt: "Success Stories",
           title: "Read our success stories",
-          link: "/#googleReviewsSection",
+          link: "/get-started/#googleReviewsSection",
         },
         {
           img: "FAQ",
           alt: "Frequently Asked Questions",
           title: "Check our Frequently Asked Questions",
-          link: "/#faqSection",
+          link: "/get-started/#faqSection",
         },
       ],
     };
@@ -80,6 +80,7 @@ export default {
 @media (width >=1080px) {
   .swiperLinksWeb .swiper-wrapper {
     justify-content: center;
+    gap: 1.5rem;
   }
 }
 </style>
@@ -174,6 +175,7 @@ section {
 
   .linkWeb {
     max-width: 22.5rem;
+    margin-right: 0 !important;
   }
 
   .linkWeb > div {
