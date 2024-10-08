@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full howYouWin columnAlignCenter px-3 py-5">
+  <section id="howYouWinSection" class="w-full howYouWin columnAlignCenter px-3 py-5">
     <div class="h2Subtitle column">
       <h2 class="column text-center">
         How you win with <span>Iconic Assistants</span>

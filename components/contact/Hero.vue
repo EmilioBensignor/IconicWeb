@@ -14,16 +14,10 @@
         <span>hire the top 1%</span> of Executive and Customer Service
         Assistants. Tailored solutions that drive growth and innovation.
       </p>
-      <div
-        ref="formContainer"
-        id="get-started"
-        class="formGetStarted"></div>
+      <div ref="formContainer" id="get-started" class="formGetStarted"></div>
     </div>
-    <div class="column">
-      <NuxtImg
-        class="w-full heroAssistant"
-        src="/images/home/Iconic-Executive-Assistant-Recruitment.png"
-        alt="Iconic Executive Assistant Recruitment" />
+    <div class="w-full columnAlignCenter">
+      <div class="w-full heroAssistant bgContain"></div>
     </div>
   </section>
 </template>
@@ -82,8 +76,9 @@
 
 <style scoped>
   .heroAssistant {
-    max-width: 400px;
-    align-self: flex-end;
+    max-width: 350px;
+    height: 16.875rem;
+    background-image: url("/images/home/Iconic-Executive-Assistant-Recruitment.webp");
   }
 
   .empower {
@@ -109,6 +104,12 @@
     background-color: white;
     border-radius: 24px;
     padding: 1.25rem;
+  }
+
+  @media (width >= 400px) {
+    .heroAssistant {
+      height: 21.875rem;
+    }
   }
 
   @media (width >= 480px) {
@@ -155,6 +156,7 @@
 
     .heroAssistant {
       max-width: 100%;
+      height: 17.5rem;
     }
   }
 
@@ -189,6 +191,10 @@
     .hero > div:last-of-type {
       width: 54%;
     }
+
+    .heroAssistant {
+      height: 19rem;
+    }
   }
 
   @media (width >= 850px) {
@@ -202,6 +208,10 @@
 
     .starting {
       font-size: 1.125rem;
+    }
+
+    .heroAssistant {
+      height: 21rem;
     }
   }
 
@@ -229,6 +239,10 @@
     .starting {
       font-size: 1.25rem;
     }
+
+    .heroAssistant {
+      height: 25rem;
+    }
   }
 
   @media (width >= 1280px) {
@@ -237,7 +251,7 @@
     }
 
     .heroAssistant {
-      max-width: 600px;
+      height: 27rem;
     }
   }
 
@@ -261,6 +275,10 @@
 
     .starting {
       font-size: 1.375rem;
+    }
+
+    .heroAssistant {
+      background-image: url("/images/home/Iconic-Executive-Assistant-Recruitment-Large.webp");
     }
   }
 

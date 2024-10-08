@@ -56,19 +56,19 @@ export default {
           img: "How-you-win",
           alt: "How you win",
           title: "How you win with Iconic Assistants",
-          link: "/#faqSection",
+          link: "/#howYouWinSection",
         },
         {
           img: "Success-Stories",
           alt: "Success Stories",
           title: "Read our success stories",
-          link: "#",
+          link: "/#googleReviewsSection",
         },
         {
           img: "FAQ",
           alt: "Frequently Asked Questions",
           title: "Check our Frequently Asked Questions",
-          link: "#",
+          link: "/#faqSection",
         },
       ],
     };

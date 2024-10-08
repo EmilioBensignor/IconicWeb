@@ -22,16 +22,6 @@
     </div>
     <div class="w-full columnAlignCenter">
       <div class="w-full heroAssistant bgContain"></div>
-      <!-- <NuxtImg
-        class="w-full heroAssistant assistantImg"
-        src="/images/home/Iconic-Executive-Assistant-Recruitment.png"
-        alt="Iconic Executive Assistant Recruitment"
-      />
-      <NuxtImg
-        class="w-full heroAssistant assistantLargeImg"
-        src="/images/home/Iconic-Executive-Assistant-Recruitment-Desktop.webp"
-        alt="Iconic Executive Assistant Recruitment"
-      /> -->
     </div>
   </section>
 </template>

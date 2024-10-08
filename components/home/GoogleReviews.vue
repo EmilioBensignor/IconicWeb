@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full googleReviews columnAlignCenter gap-25 px-3 py-5">
+  <section id="googleReviewsSection" class="w-full googleReviews columnAlignCenter gap-25 px-3 py-5">
     <div class="googleHeader">
       <div class="h2Google column">
         <h2 class="column text-center">
