@@ -1,1 +1,3 @@
-
+User-agent: *
+Disallow: /
+sitemap: https://iconicassistants.site/sitemap.xml

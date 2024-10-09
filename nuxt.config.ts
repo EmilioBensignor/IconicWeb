@@ -6,7 +6,18 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/main.css"],
   devtools: { enabled: true },
-  modules: ['@primevue/nuxt-module', '@nuxt/image', '@nuxt/icon', 'nuxt-swiper'],
+  modules: [
+    '@primevue/nuxt-module',
+    '@nuxt/image',
+    '@nuxt/icon',
+    'nuxt-swiper',
+    '@nuxtjs/seo',
+    'nuxt-site-config',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
+    'nuxt-og-image',
+    'nuxt-schema-org'
+  ],
   icon: {
     size: '1rem',
     serverBundle: {
@@ -37,5 +48,11 @@ export default defineNuxtConfig({
   },
   plugins: [
     { src: '~/plugins/passive-events.js', mode: 'client'}
-  ]
+  ],
+  site: {
+    url: 'https://iconicassistants.site/',
+    name: 'Iconic Assistants',
+    description: 'Iconic Assistants supercharge productivity for entrepreneurs, executives, startups, and high growth companies.',
+    defaultLocale: 'en',
+  }
 })
