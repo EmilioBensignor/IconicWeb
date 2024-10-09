@@ -4,32 +4,29 @@
       <div class="info">
         <p>
           +
-          <span class="number" data-val="100">0</span>
+          <span class="number" data-val="800">0</span>
         </p>
-        <p>Happy clients</p>
+        <p>Onboarded assistants</p>
       </div>
       <div class="gradientLine"></div>
       <div class="info">
         <p>
           +
-          <span class="number" data-val="300">0</span>
+          <span class="number" data-val="5000">0</span>
         </p>
-        <p>Matched assistants</p>
+        <p>Pre-vetted assistants</p>
       </div>
     </div>
     <div class="gradientLine lineSeparator"></div>
     <div class="w-full infoContainer rowSpaceBetweenCenter">
       <div class="info">
-        <p>4.9</p>
+        <p>5.0</p>
         <p>On Google Reviews</p>
       </div>
       <div class="gradientLine"></div>
       <div class="info">
-        <p>
-          +
-          <span class="number" data-val="2000">0</span>
-        </p>
-        <p>Pre-vetted candidates</p>
+        <p>97%</p>
+        <p>Match rate</p>
       </div>
     </div>
   </section>
@@ -40,7 +37,6 @@ export default {
   mounted() {
     const valueDisplays = document.querySelectorAll(".number");
 
-    // Función para ejecutar la animación de los números
     const animateNumbers = (element) => {
       let startValue = 0;
       let endValue = parseInt(element.getAttribute("data-val"));
@@ -48,7 +44,7 @@ export default {
       let duration = Math.floor(interval / endValue);
 
       let counter = setInterval(() => {
-        startValue += 5;
+        startValue += 10;
         element.textContent = startValue;
         if (startValue >= endValue) {
           clearInterval(counter);
@@ -56,22 +52,20 @@ export default {
       }, duration);
     };
 
-    // Configuración de IntersectionObserver
     const observer = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            animateNumbers(entry.target); // Ejecutar la animación
-            observer.unobserve(entry.target); // Dejar de observar después de la animación
+            animateNumbers(entry.target);
+            observer.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.5, // La animación se ejecutará cuando el 50% del elemento sea visible
+        threshold: 0.5,
       }
     );
 
-    // Observamos cada número
     valueDisplays.forEach((valueDisplay) => {
       observer.observe(valueDisplay);
     });
