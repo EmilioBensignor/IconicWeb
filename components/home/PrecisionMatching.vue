@@ -370,8 +370,12 @@ export default {
     gap: 1.25rem;
   }
 
-  .stepContent > div {
+  .stepContent > div:first-of-type {
     width: 50%;
+  }
+
+  .animacion {
+    width: 55%;
   }
 
   .stepContent h3 {
@@ -407,9 +411,11 @@ export default {
   .stepContent p {
     font-size: 1.25rem;
   }
+}
 
+@media (width >= 1280px) {
   .animacion {
-    max-width: 500px;
+    width: 65%;
   }
 }
 
@@ -427,19 +433,11 @@ export default {
   .stepContent p {
     font-size: 1.5rem;
   }
-
-  .animacion {
-    max-width: 600px;
-  }
 }
 
 @media (width >= 1920px) {
   .stepContent h3 {
     font-size: 2rem;
-  }
-
-  .animacion {
-    max-width: 700px;
   }
 }
 </style>

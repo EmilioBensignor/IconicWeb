@@ -26,7 +26,7 @@
       <div class="gradientLine"></div>
       <div class="info">
         <p>97%</p>
-        <p>Match rate</p>
+        <p>First match rate</p>
       </div>
     </div>
   </section>
@@ -247,7 +247,7 @@ export default {
 @media (width >= 1920px) {
   .happyClients,
   .happyClients > .rowSpaceBetweenCenter {
-    gap: 7em !important;
+    gap: 6em !important;
   }
 
   .info p:first-of-type {
