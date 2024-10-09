@@ -36,217 +36,237 @@
 </template>
 
 <script>
-  export default {
-    mounted() {
-      const valueDisplays = document.querySelectorAll(".number");
+export default {
+  mounted() {
+    const valueDisplays = document.querySelectorAll(".number");
 
-      valueDisplays.forEach((valueDisplay) => {
-        let startValue = 0;
-        let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+    // Función para ejecutar la animación de los números
+    const animateNumbers = (element) => {
+      let startValue = 0;
+      let endValue = parseInt(element.getAttribute("data-val"));
+      let interval = 4000;
+      let duration = Math.floor(interval / endValue);
 
-        let interval = 4000;
+      let counter = setInterval(() => {
+        startValue += 5;
+        element.textContent = startValue;
+        if (startValue >= endValue) {
+          clearInterval(counter);
+        }
+      }, duration);
+    };
 
-        let duration = Math.floor(interval / endValue);
-        let counter = setInterval(() => {
-          startValue += 5;
-          valueDisplay.textContent = startValue;
-          if (startValue === endValue) {
-            clearInterval(counter);
+    // Configuración de IntersectionObserver
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateNumbers(entry.target); // Ejecutar la animación
+            observer.unobserve(entry.target); // Dejar de observar después de la animación
           }
-        }, duration);
-      });
-    },
-  };
+        });
+      },
+      {
+        threshold: 0.5, // La animación se ejecutará cuando el 50% del elemento sea visible
+      }
+    );
+
+    // Observamos cada número
+    valueDisplays.forEach((valueDisplay) => {
+      observer.observe(valueDisplay);
+    });
+  },
+};
 </script>
 
 <style scoped>
-  .info {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
+.info {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.info p {
+  text-align: center;
+}
+
+.info p:first-of-type {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.info p:last-of-type {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.gradientLine {
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--color-light-blue),
+    var(--color-blue)
+  );
+  border-radius: 10px;
+  transform: rotate(90deg);
+}
+
+.lineSeparator {
+  display: none;
+}
+
+@media (width >= 480px) {
+  .gradientLine {
+    height: 5px;
   }
 
-  .info p {
-    text-align: center;
+  .infoContainer {
+    max-width: 450px;
   }
 
   .info p:first-of-type {
-    font-size: 2rem;
-    font-weight: 900;
+    font-size: 2.125rem;
   }
 
   .info p:last-of-type {
-    font-size: 0.75rem;
-    font-weight: 500;
+    font-size: 0.875rem;
+  }
+}
+
+@media (width >= 700px) {
+  .happyClients {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.25rem !important;
+    padding: 2.5rem !important;
   }
 
-  .gradientLine {
-    width: 50px;
-    height: 4px;
-    background: linear-gradient(
-      90deg,
-      var(--color-light-blue),
-      var(--color-blue)
-    );
-    border-radius: 10px;
-    transform: rotate(90deg);
+  .happyClients > .rowSpaceBetweenCenter {
+    width: auto !important;
+    max-width: 100%;
+    gap: 1.25rem;
   }
 
   .lineSeparator {
-    display: none;
+    display: block;
+    margin: 1.25rem 0;
   }
 
-  @media (width >= 480px) {
-    .gradientLine {
-      height: 5px;
-    }
-
-    .infoContainer {
-      max-width: 450px;
-    }
-
-    .info p:first-of-type {
-      font-size: 2.125rem;
-    }
-
-    .info p:last-of-type {
-      font-size: 0.875rem;
-    }
+  .gradientLine {
+    width: 6px;
+    height: 5rem;
+    background: linear-gradient(
+      180deg,
+      var(--color-light-blue),
+      var(--color-blue)
+    );
+    transform: rotate(0);
   }
 
-  @media (width >= 700px) {
-    .happyClients {
-      flex-direction: row;
-      justify-content: center;
-      gap: 1.25rem !important;
-      padding: 2.5rem !important;
-    }
-
-    .happyClients > .rowSpaceBetweenCenter {
-      width: auto !important;
-      max-width: 100%;
-      gap: 1.25rem;
-    }
-
-    .lineSeparator {
-      display: block;
-      margin: 1.25rem 0;
-    }
-
-    .gradientLine {
-      width: 6px;
-      height: 5rem;
-      background: linear-gradient(
-        180deg,
-        var(--color-light-blue),
-        var(--color-blue)
-      );
-      transform: rotate(0);
-    }
-
-    .info {
-      width: auto;
-    }
-
-    .info p:first-of-type {
-      font-size: 2.25rem;
-    }
+  .info {
+    width: auto;
   }
 
-  @media (width >= 850px) {
-    .happyClients {
-      gap: 2rem !important;
-    }
+  .info p:first-of-type {
+    font-size: 2.25rem;
+  }
+}
 
-    .happyClients > .rowSpaceBetweenCenter {
-      gap: 2rem;
-    }
-
-    .info p:first-of-type {
-      font-size: 2.5rem;
-    }
-
-    .info p:last-of-type {
-      font-size: 1rem;
-    }
+@media (width >= 850px) {
+  .happyClients {
+    gap: 2rem !important;
   }
 
-  @media (width >= 1080px) {
-    .happyClients {
-      gap: 2.45rem !important;
-      padding: 3.25rem 5rem !important;
-    }
-
-    .happyClients > .rowSpaceBetweenCenter {
-      gap: 2.45rem;
-    }
-
-    .info p:first-of-type {
-      font-size: 3.25rem;
-    }
-
-    .info p:last-of-type {
-      font-size: 1.25rem;
-    }
+  .happyClients > .rowSpaceBetweenCenter {
+    gap: 2rem;
   }
 
-  @media (width >= 1280px) {
-    .happyClients,
-    .happyClients > .rowSpaceBetweenCenter {
-      gap: 4.5rem !important;
-    }
+  .info p:first-of-type {
+    font-size: 2.5rem;
   }
 
-  @media (width >= 1440px) {
-    .happyClients {
-      padding: 3.25rem 8rem !important;
-    }
+  .info p:last-of-type {
+    font-size: 1rem;
+  }
+}
 
-    .happyClients,
-    .happyClients > .rowSpaceBetweenCenter {
-      gap: 3.875rem !important;
-    }
-
-    .info p:first-of-type {
-      font-size: 3.5rem;
-    }
-
-    .info p:last-of-type {
-      font-size: 1.5rem;
-    }
-
-    .gradientLine {
-      width: 7px;
-      height: 6rem;
-    }
+@media (width >= 1080px) {
+  .happyClients {
+    gap: 2.45rem !important;
+    padding: 3.25rem 5rem !important;
   }
 
-  @media (width >= 1600px) {
-    .happyClients,
-    .happyClients > .rowSpaceBetweenCenter {
-      gap: 5em !important;
-    }
+  .happyClients > .rowSpaceBetweenCenter {
+    gap: 2.45rem;
   }
 
-  @media (width >= 1920px) {
-    .happyClients,
-    .happyClients > .rowSpaceBetweenCenter {
-      gap: 7em !important;
-    }
-
-    .info p:first-of-type {
-      font-size: 3.75rem;
-    }
-
-    .info p:last-of-type {
-      font-size: 1.75rem;
-    }
-
-    .gradientLine {
-      width: 8px;
-      height: 6.5rem;
-    }
+  .info p:first-of-type {
+    font-size: 3.25rem;
   }
+
+  .info p:last-of-type {
+    font-size: 1.25rem;
+  }
+}
+
+@media (width >= 1280px) {
+  .happyClients,
+  .happyClients > .rowSpaceBetweenCenter {
+    gap: 4.5rem !important;
+  }
+}
+
+@media (width >= 1440px) {
+  .happyClients {
+    padding: 3.25rem 8rem !important;
+  }
+
+  .happyClients,
+  .happyClients > .rowSpaceBetweenCenter {
+    gap: 3.875rem !important;
+  }
+
+  .info p:first-of-type {
+    font-size: 3.5rem;
+  }
+
+  .info p:last-of-type {
+    font-size: 1.5rem;
+  }
+
+  .gradientLine {
+    width: 7px;
+    height: 6rem;
+  }
+}
+
+@media (width >= 1600px) {
+  .happyClients,
+  .happyClients > .rowSpaceBetweenCenter {
+    gap: 5em !important;
+  }
+}
+
+@media (width >= 1920px) {
+  .happyClients,
+  .happyClients > .rowSpaceBetweenCenter {
+    gap: 7em !important;
+  }
+
+  .info p:first-of-type {
+    font-size: 3.75rem;
+  }
+
+  .info p:last-of-type {
+    font-size: 1.75rem;
+  }
+
+  .gradientLine {
+    width: 8px;
+    height: 6.5rem;
+  }
+}
 </style>
