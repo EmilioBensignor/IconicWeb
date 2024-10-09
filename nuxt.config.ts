@@ -19,7 +19,9 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     'nuxt-og-image',
-    'nuxt-schema-org'
+    'nuxt-schema-org',
+    'nuxt-link-checker',
+    'nuxt-vitalizer'
   ],
   icon: {
     size: '1rem',
