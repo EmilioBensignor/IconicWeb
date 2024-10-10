@@ -49,7 +49,7 @@
               muted
               preload="none"
               class="lazyVideo shadow-3"
-              poster="/images/home/Precision-Matching-Placeholder.jpg"
+              poster="/images/home/Precision-Matching-Placeholder.webp"
             >
               <source :src="stepVideos[step - 1]" type="video/mp4" />
               Tu navegador no soporta videos.
