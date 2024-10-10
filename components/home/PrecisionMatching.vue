@@ -12,17 +12,17 @@
       v-model="currentStep"
       :value="currentStep"
       class="w-full stepperProcess"
-      role="tablist"
     >
-      <StepList>
+      <StepList role="tablist">
         <Step
           v-for="step in 4"
           :key="step"
           :value="step"
           @click="setStep(step)"
           role="tab"
-          :aria-selected="currentStep === step"
+          :aria-selected="currentStep === step ? 'true' : 'false'"
           :aria-controls="`panel-${step}`"
+          :id="`step-${step}`"
         />
       </StepList>
       <StepPanels class="mt-3">
