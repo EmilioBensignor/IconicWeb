@@ -6,22 +6,12 @@
         <p class="subtitle">Don't let time and money slip away.</p>
       </div>
       <NuxtLink
-        v-if="linkTo"
-        :to="linkTo"
+        :to="routes.CONTACT_US"
         class="secondaryButton secondaryTablet">
         <div>
           <p>Explore Our Solutions</p>
         </div>
       </NuxtLink>
-      <button
-        v-else-if="action === 'form'"
-        @click="handleAction('form')"
-        label="Explore Our Solutions"
-        class="secondaryButton secondaryTablet">
-        <div>
-          <p>Explore Our Solutions</p>
-        </div>
-      </button>
     </div>
     <div class="w-full relative">
       <div
@@ -62,43 +52,21 @@
     </div>
 
     <NuxtLink
-      v-if="linkTo"
-      :to="linkTo"
+      :to="routes.CONTACT_US"
       class="secondaryButton secondaryMobile">
       <div>
         <p>Explore Our Solutions</p>
       </div>
     </NuxtLink>
-    <button
-      v-else-if="action === 'form'"
-      @click="handleAction('form')"
-      label="Explore Our Solutions"
-      class="secondaryButton secondaryMobile">
-      <div>
-        <p>Explore Our Solutions</p>
-      </div>
-    </button>
   </section>
 </template>
 
 <script>
+import ROUTES_NAMES from "~/constants/ROUTES_NAMES.js";
   export default {
-    props: {
-      linkTo: {
-        type: String,
-        default: "",
-      },
-      action: {
-        type: String,
-        default: "",
-      },
-      handleAction: {
-        type: Function,
-        default: () => {},
-      },
-    },
     data() {
       return {
+        routes: ROUTES_NAMES,
         activePanel: null,
         problems: [
           {
