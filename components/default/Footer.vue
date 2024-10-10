@@ -36,7 +36,7 @@
             }"></a>
         </div>
       </div>
-      <div class="menuFooter column gap-2">
+      <!-- <div class="menuFooter column gap-2">
         <Accordion class="menuMobile" value="0">
           <AccordionPanel
             v-for="(item, index) in menuAccordion"
@@ -80,7 +80,7 @@
             {{ link.title }}
           </NuxtLink>
         </div>
-      </div>
+      </div> -->
     </section>
     <div class="w-full footerBottom columnAlignCenter gap-35 mt-2">
       <div class="privacyTerms rowCenter gap-3">

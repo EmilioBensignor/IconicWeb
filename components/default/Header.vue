@@ -1,15 +1,15 @@
 <template>
   <header class="headerDefault allCenter sticky top-0">
-    <button class="hamburger absolute" @click="toggleDrawer">
+    <!-- <button class="hamburger absolute" @click="toggleDrawer">
       <Icon class="text-white" size="2rem" name="mingcute:menu-fill" />
-    </button>
+    </button> -->
     <NuxtLink :to="routes.HOME">
       <NuxtImg
         class="logo"
         src="/images/Iconic-Assistants-Logo.svg"
         alt="Iconic Assistants Logo" />
     </NuxtLink>
-    <div class="menuSidebar">
+    <!-- <div class="menuSidebar">
       <Drawer
         :visible="drawerMenu"
         :show-close-button="false"
@@ -40,9 +40,9 @@
           </div>
         </div>
       </Drawer>
-    </div>
+    </div> -->
     <div class="navBar rowCenter">
-      <ul class="rowCenter">
+      <!-- <ul class="rowCenter">
         <li v-for="(item, index) in menuAccordion" :key="index">
           <Button
             :label="item.title"
@@ -65,7 +65,7 @@
             {{ item.title }}
           </NuxtLink>
         </li>
-      </ul>
+      </ul> -->
       <NuxtLink :to="routes.CONTACT_US" class="primaryButton headerBtn">Get Started</NuxtLink>
     </div>
   </header>
