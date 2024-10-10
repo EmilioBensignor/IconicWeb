@@ -30,7 +30,7 @@
                   class="w-full h-8rem imgStarDelegating border-round-md"
                   :class="step.class"
                   :style="{
-                    backgroundImage: `url(/images/home/${step.img}-Iconic-Recruitment.jpg)`,
+                    backgroundImage: `url(/images/home/${step.img}-Iconic-Recruitment.webp)`,
                   }"></div>
                 <p class="font-12">{{ step.text }}</p>
               </div>
@@ -60,7 +60,7 @@
           class="w-full h-12rem imgStarDelegating border-round-md"
           :class="steps[selectedStep].class"
           :style="{
-            backgroundImage: `url(/images/home/${steps[selectedStep].img}-Iconic-Recruitment.jpg)`,
+            backgroundImage: `url(/images/home/${steps[selectedStep].img}-Iconic-Recruitment.webp)`,
           }"></div>
         <p>{{ steps[selectedStep].text }}</p>
       </div>

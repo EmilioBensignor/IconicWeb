@@ -16,7 +16,7 @@
         <div
           class="h-7rem winImg bgCover border-round-top-3xl"
           :style="{
-            backgroundImage: `url(/images/home/${win.img}.jpg)`,
+            backgroundImage: `url(/images/home/${win.img}.webp)`,
           }">
           <div class="w-full h-full flex align-items-end px-3 py-2">
             <p class="title">{{ win.title }}</p>

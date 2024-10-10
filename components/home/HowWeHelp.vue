@@ -17,7 +17,7 @@
         @mouseenter="item.show = true"
         @mouseleave="item.show = false"
         :style="{
-          backgroundImage: `url(/images/home/${item.img}-Executive-Assistant.jpg)`,
+          backgroundImage: `url(/images/home/${item.img}-Executive-Assistant.webp)`,
         }">
         <div class="w-full h-full overlay gap-3">
           <h3 class="text-center">{{ item.title }}</h3>
