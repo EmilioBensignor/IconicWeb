@@ -14,18 +14,21 @@
         >
         <div class="socialMedia rowCenter gap-35">
           <a
+            aria-label="Visit our Facebook page"
             href="https://facebook.com"
             class="iconFooter bgCover"
             :style="{
               backgroundImage: `url('/images/footer/Facebook-Icon.svg')`,
             }"></a>
           <a
+            aria-label="Visit our Instagram profile"
             href="https://instagram.com"
             class="iconFooter bgCover"
             :style="{
               backgroundImage: `url('/images/footer/Instagram-Icon.svg')`,
             }"></a>
           <a
+            aria-label="Visit our LinkedIn profile"
             href="https://linkedin.com"
             class="iconFooter bgCover"
             :style="{
