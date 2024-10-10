@@ -2,80 +2,91 @@
   <section
     class="w-full precisionMatching columnAlignCenter gap-4 px-3 py-5"
     ref="stepperSection"
-    role="region"
-    aria-labelledby="precision-matching-title"
+    aria-labelledby="stepper-title"
   >
-    <div id="precision-matching-title" class="h2Subtitle column">
-      <h2>Precision matching process</h2>
+    <div class="h2Subtitle column">
+      <h2 id="stepper-title">Precision matching process</h2>
       <p class="subtitle">DATA DRIVEN HR</p>
     </div>
-
-    <div
-      role="tablist"
-      aria-label="Steps Navigation"
+    <Stepper
+      v-model="currentStep"
+      :value="currentStep"
       class="w-full stepperProcess"
+      role="tablist"
     >
-      <button
-        v-for="step in 4"
-        :key="step"
-        :id="'step-' + step"
-        role="tab"
-        :aria-selected="currentStep === step"
-        :aria-controls="'step-panel-' + step"
-        @click="setStep(step)"
-      >
-        Step {{ step }}
-      </button>
-    </div>
-
-    <div>
-      <div
-        v-for="step in 4"
-        :key="step"
-        :id="'step-panel-' + step"
-        role="tabpanel"
-        :aria-labelledby="'step-' + step"
-        v-show="currentStep === step"
-        class="columnAlignCenter gap-4"
-      >
-        <div class="stepContent column">
-          <div>
-            <h3 class="text-center font-18 mb-2">{{ stepTitles[step - 1] }}</h3>
-            <p class="text-center font-14">{{ stepDescriptions[step - 1] }}</p>
+      <StepList>
+        <Step
+          v-for="step in 4"
+          :key="step"
+          :value="step"
+          @click="setStep(step)"
+          role="tab"
+          :aria-selected="currentStep === step"
+          :aria-controls="`panel-${step}`"
+        />
+      </StepList>
+      <StepPanels class="mt-3">
+        <StepPanel
+          v-for="step in 4"
+          :key="step"
+          :value="step"
+          class="columnAlignCenter gap-4"
+          role="tabpanel"
+          :id="`panel-${step}`"
+          :aria-labelledby="`step-${step}`"
+          :aria-hidden="currentStep !== step"
+        >
+          <div class="stepContent column">
+            <div>
+              <h3 class="text-center font-18 mb-2">
+                {{ stepTitles[step - 1] }}
+              </h3>
+              <p class="text-center font-14">
+                {{ stepDescriptions[step - 1] }}
+              </p>
+            </div>
+            <div class="animacion">
+              <video
+                :ref="`video${step}`"
+                muted
+                preload="none"
+                class="lazyVideo shadow-3"
+                poster="/images/home/Precision-Matching-Placeholder.webp"
+              >
+                <source :src="stepVideos[step - 1]" type="video/mp4" />
+                Tu navegador no soporta videos.
+              </video>
+            </div>
           </div>
-          <div class="animacion">
-            <video
-              :ref="`video${step}`"
-              muted
-              preload="none"
-              class="lazyVideo shadow-3"
-              poster="/images/home/Precision-Matching-Placeholder.webp"
-            >
-              <source :src="stepVideos[step - 1]" type="video/mp4" />
-              Tu navegador no soporta videos.
-            </video>
-          </div>
-        </div>
-
-        <div class="w-full" :class="getStepButtonClasses(step)">
-          <Button v-if="step > 1" class="back" @click="setStep(step - 1)">
-            <template #icon>
-              <Icon name="mingcute:arrow-left-line" />
-            </template>
-          </Button>
-          <Button
-            v-if="step < 4"
-            :label="`Step ${step + 1}`"
-            class="primaryButton"
-            @click="setStep(step + 1)"
+          <div
+            class="w-full"
+            :class="
+              step === 1
+                ? 'flex justify-content-end'
+                : step === 4
+                ? 'flex justify-content-start'
+                : 'rowSpaceBetweenCenter'
+            "
           >
-            <template #icon>
-              <Icon name="mingcute:arrow-right-line" />
-            </template>
-          </Button>
-        </div>
-      </div>
-    </div>
+            <Button v-if="step > 1" class="back" @click="setStep(step - 1)">
+              <template #icon>
+                <Icon name="mingcute:arrow-left-line" />
+              </template>
+            </Button>
+            <Button
+              v-if="step < 4"
+              :label="`Step ${step + 1}`"
+              class="primaryButton"
+              @click="setStep(step + 1)"
+            >
+              <template #icon>
+                <Icon name="mingcute:arrow-right-line" />
+              </template>
+            </Button>
+          </div>
+        </StepPanel>
+      </StepPanels>
+    </Stepper>
   </section>
 </template>
 
