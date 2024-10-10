@@ -11,6 +11,7 @@
       v-model="currentStep"
       :value="currentStep"
       class="w-full stepperProcess"
+      role="tablist"
     >
       <StepList>
         <Step
@@ -18,6 +19,9 @@
           :key="step"
           :value="step"
           @click="setStep(step)"
+          role="tab"
+          :aria-selected="currentStep === step"
+          :tabindex="currentStep === step ? 0 : -1"
         />
       </StepList>
       <StepPanels class="mt-3">
@@ -26,6 +30,9 @@
           :key="step"
           :value="step"
           class="columnAlignCenter gap-4"
+          role="tabpanel"
+          :aria-labelledby="`step-${step}`"
+          :hidden="currentStep !== step"
         >
           <div class="stepContent column">
             <div>

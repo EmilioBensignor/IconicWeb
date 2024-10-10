@@ -122,6 +122,10 @@
 </script>
 
 <style>
+  .menuSidebar, .p-drawer-mask, .p-drawer, .hamburger, .navBar ul {
+    display: none !important;
+  }
+
   .p-drawer-mask {
     width: 12.5rem !important;
     top: 4.438rem !important;

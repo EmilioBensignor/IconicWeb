@@ -112,6 +112,10 @@
 </script>
 
 <style>
+  .menuFooter {
+    display: none;
+  }
+
   .menuFooter .p-accordionheader {
     color: var(--color-white) !important;
     font-weight: 700;
