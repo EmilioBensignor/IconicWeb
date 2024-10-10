@@ -1,6 +1,6 @@
 <template>
   <main>
-    <ContactHero />
+    <HomeHero />
     <HomeHappyClients />
     <HomeHowWeHelp />
     <HomeMaximizeEfficiency

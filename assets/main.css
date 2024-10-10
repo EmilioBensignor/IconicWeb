@@ -25,6 +25,11 @@ body {
   color: var(--color-white);
 }
 
+header, main, footer {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 h2 {
   font-size: 1.25rem;
   font-weight: 700;
