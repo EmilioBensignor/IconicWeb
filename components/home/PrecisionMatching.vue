@@ -13,9 +13,10 @@
       :value="currentStep"
       class="w-full stepperProcess"
       aria-labelledby="stepper"
+      role="tablist"
     >
       <!-- StepList with correct ARIA role -->
-      <StepList role="tablist">
+      <StepList>
         <!-- Step buttons with correct ARIA attributes -->
         <Step
           v-for="step in 4"
@@ -23,10 +24,7 @@
           :value="step"
           @click="setStep(step)"
           role="tab"
-          :aria-selected="currentStep === step ? 'true' : 'false'"
           :aria-controls="step"
-          :id="step"
-          :tabindex="currentStep === step ? '0' : '-1'"
         >
           <span class="p-step-number"></span>
         </Step>
@@ -42,7 +40,6 @@
           role="tabpanel"
           :id="step"
           :aria-labelledby="step"
-          :hidden="currentStep !== step"
         >
           <div class="stepContent column">
             <div>
