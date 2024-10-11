@@ -13,7 +13,9 @@
       :value="currentStep"
       class="w-full stepperProcess"
     >
+      <!-- StepList with correct ARIA role -->
       <StepList role="tablist">
+        <!-- Step buttons with correct ARIA attributes -->
         <Step
           v-for="step in 4"
           :key="step"
@@ -23,10 +25,13 @@
           :aria-selected="currentStep === step ? 'true' : 'false'"
           :aria-controls="`panel-${step}`"
           :id="`step-${step}`"
+          :tabindex="currentStep === step ? '0' : '-1'"
         >
-          <span class="p-step-number">{{ step }}</span>
+          <span class="p-step-number"></span>
         </Step>
       </StepList>
+
+      <!-- StepPanels with role="tabpanel" -->
       <StepPanels class="mt-3">
         <StepPanel
           v-for="step in 4"
@@ -36,7 +41,7 @@
           role="tabpanel"
           :id="`panel-${step}`"
           :aria-labelledby="`step-${step}`"
-          :aria-hidden="currentStep !== step ? 'true' : 'false'"
+          :hidden="currentStep !== step"
         >
           <div class="stepContent column">
             <div>
@@ -60,6 +65,8 @@
               </video>
             </div>
           </div>
+
+          <!-- Navegación entre pasos -->
           <div
             class="w-full"
             :class="
