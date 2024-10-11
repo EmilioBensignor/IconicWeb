@@ -84,9 +84,9 @@
     </section>
     <div class="w-full footerBottom columnAlignCenter gap-35 mt-2">
       <div class="privacyTerms rowCenter gap-3">
-        <NuxtLink to="#" class="text-white no-underline">Privacy</NuxtLink>
+        <NuxtLink :to="routes.PRIVACY" class="text-white no-underline">Privacy</NuxtLink>
         <span>|</span>
-        <NuxtLink to="#" class="text-white no-underline">Terms</NuxtLink>
+        <NuxtLink :to="routes.TERMS" class="text-white no-underline">Terms</NuxtLink>
       </div>
       <div class="rightsReserved columnAlignCenter">
         <p>© Iconic Assistants. All Rights Reserved {{ currentYear }}</p>
