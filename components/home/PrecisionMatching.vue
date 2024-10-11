@@ -70,7 +70,10 @@
             @click="setStep(step - 1)"
             aria-label="Previous step"
           >
-            <Icon name="mingcute:arrow-left-line" aria-hidden="true" />
+            <span class="p-button-label">
+              <Icon name="mingcute:arrow-left-line" aria-hidden="true" />
+              <span class="sr-only">Previous</span>
+            </span>
           </Button>
           <Button
             v-if="step < 4"
@@ -78,8 +81,10 @@
             @click="setStep(step + 1)"
             :aria-label="`Go to Step ${step + 1}`"
           >
-            <span>Step {{ step + 1 }}</span>
-            <Icon name="mingcute:arrow-right-line" aria-hidden="true" />
+            <span class="p-button-label">
+              <span>Step {{ step + 1 }}</span>
+              <Icon name="mingcute:arrow-right-line" aria-hidden="true" />
+            </span>
           </Button>
         </div>
       </StepperPanel>
