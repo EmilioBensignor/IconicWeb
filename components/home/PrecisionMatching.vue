@@ -13,28 +13,27 @@
       :value="currentStep"
       class="w-full stepperProcess"
     >
-      <StepList role="tablist">
+      <StepList>
         <Step
           v-for="step in 4"
           :key="step"
           :value="step"
           @click="setStep(step)"
-          role="tab"
-          :aria-selected="currentStep === step ? 'true' : 'false'"
+          :aria-selected="currentStep === step"
           :aria-controls="`panel-${step}`"
           :id="`step-${step}`"
-        />
+        >
+          {{ `Step ${step}` }}
+        </Step>
       </StepList>
-      <StepPanels class="mt-3">
+      <StepPanels>
         <StepPanel
           v-for="step in 4"
           :key="step"
           :value="step"
           class="columnAlignCenter gap-4"
-          role="tabpanel"
           :id="`panel-${step}`"
           :aria-labelledby="`step-${step}`"
-          :aria-hidden="currentStep !== step"
         >
           <div class="stepContent column">
             <div>
@@ -54,7 +53,7 @@
                 poster="/images/home/Precision-Matching-Placeholder.webp"
               >
                 <source :src="stepVideos[step - 1]" type="video/mp4" />
-                Tu navegador no soporta videos.
+                Your browser does not support videos.
               </video>
             </div>
           </div>
@@ -69,19 +68,16 @@
             "
           >
             <Button v-if="step > 1" class="back" @click="setStep(step - 1)">
-              <template #icon>
-                <Icon name="mingcute:arrow-left-line" />
-              </template>
+              <Icon name="mingcute:arrow-left-line" aria-hidden="true" />
+              <span class="sr-only">Previous step</span>
             </Button>
             <Button
               v-if="step < 4"
-              :label="`Step ${step + 1}`"
               class="primaryButton"
               @click="setStep(step + 1)"
             >
-              <template #icon>
-                <Icon name="mingcute:arrow-right-line" />
-              </template>
+              <span>Step {{ step + 1 }}</span>
+              <Icon name="mingcute:arrow-right-line" aria-hidden="true" />
             </Button>
           </div>
         </StepPanel>
