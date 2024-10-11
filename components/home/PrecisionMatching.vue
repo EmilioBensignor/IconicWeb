@@ -23,7 +23,9 @@
           :aria-selected="currentStep === step ? 'true' : 'false'"
           :aria-controls="`panel-${step}`"
           :id="`step-${step}`"
-        />
+        >
+          <span class="p-step-number">{{ step }}</span>
+        </Step>
       </StepList>
       <StepPanels class="mt-3">
         <StepPanel
@@ -34,7 +36,7 @@
           role="tabpanel"
           :id="`panel-${step}`"
           :aria-labelledby="`step-${step}`"
-          :aria-hidden="currentStep !== step"
+          :aria-hidden="currentStep !== step ? 'true' : 'false'"
         >
           <div class="stepContent column">
             <div>
