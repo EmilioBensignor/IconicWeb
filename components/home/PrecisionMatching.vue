@@ -12,8 +12,7 @@
       v-model="currentStep"
       :value="currentStep"
       class="w-full stepperProcess"
-      aria-labelledby="stepper"
-      role="tablist"
+      aria-labelledby="Stepper Process"
     >
       <!-- StepList with correct ARIA role -->
       <StepList>
@@ -23,8 +22,6 @@
           :key="step"
           :value="step"
           @click="setStep(step)"
-          role="tab"
-          :aria-controls="step"
         >
           <span class="p-step-number"></span>
         </Step>
@@ -37,9 +34,6 @@
           :key="step"
           :value="step"
           class="columnAlignCenter gap-4"
-          role="tabpanel"
-          :id="step"
-          :aria-labelledby="step"
         >
           <div class="stepContent column">
             <div>
