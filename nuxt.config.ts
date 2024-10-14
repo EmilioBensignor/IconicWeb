@@ -92,5 +92,14 @@ export default defineNuxtConfig({
       xxl: 1600,
       '4k': 1921
     },
+    domains: ['img.youtube.com', 'i.vimeocdn.com'],
+    alias: {
+      youtube: 'https://img.youtube.com',
+      vimeo: 'https://i.vimeocdn.com',
+    }
+  },
+  vitalizer: {
+    disableStylesheets: 'entry',
+    disablePrefetchLinks: true
   }
 })
