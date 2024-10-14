@@ -12,3 +12,10 @@
     <HomeFAQ />
   </main>
 </template>
+
+<script setup>
+definePageMeta({
+  title: "Start delegating with ICONIC Assistants",
+  description: "Discover the power of having realiable Executive Assistants.",
+});
+</script>
