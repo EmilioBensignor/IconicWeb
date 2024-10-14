@@ -9,7 +9,6 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/main.css"],
   devtools: { enabled: true },
-
   modules: [
     '@primevue/nuxt-module',
     '@nuxt/image',
@@ -23,16 +22,14 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
     'nuxt-link-checker',
     'nuxt-vitalizer',
-    'nuxt-booster', // Añadimos nuxt-booster
+    'nuxt-booster',
   ],
-
   icon: {
     size: '1rem',
     serverBundle: {
       collections: ['mingcute']
     }
   },
-
   app: {
     head: {
       link: [
@@ -55,7 +52,6 @@ export default defineNuxtConfig({
       ],
     }
   },
-
   plugins: [
     { src: '~/plugins/passive-events.js', mode: 'client' }
   ],
@@ -66,7 +62,6 @@ export default defineNuxtConfig({
     description: 'Iconic Assistants supercharge productivity for entrepreneurs, executives, startups, and high growth companies.',
     defaultLocale: 'en',
   },
-
   booster: {
     detection: {
       performance: true,
@@ -79,34 +74,12 @@ export default defineNuxtConfig({
         dcl: 1200
       }
     },
-    fonts: [{
-      family: 'Figtree',
-      locals: ['Figtree'],
-      fallback: ['Arial', 'sans-serif'],
-      variances: [
-        {
-          style: 'normal',
-          weight: 300,
-          sources: [
-            { src: 'https://fonts.gstatic.com/s/figtree/v2/abcd1234.woff2', type: 'woff2' },
-          ]
-        },
-        {
-          style: 'normal',
-          weight: 700,
-          sources: [
-            { src: 'https://fonts.gstatic.com/s/figtree/v2/abcd5678.woff2', type: 'woff2' },
-          ]
-        }
-      ]
-    }],
     targetFormats: ['webp', 'avif', 'jpg|jpeg|png|gif'],
     lazyOffset: {
       component: '0%',
       asset: '0%'
     }
   },
-
   image: {
     screens: {
       default: 320,
