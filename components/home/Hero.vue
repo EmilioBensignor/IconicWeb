@@ -24,14 +24,17 @@
       <NuxtImg
         class="heroAssistant assistantMobile"
         src="/images/home/Iconic-Executive-Assistant-Recruitment-Mobile.webp"
+        preload
         alt="Iconic-Executive-Assistant-Recruitment" />
       <NuxtImg
         class="heroAssistant assistantDeskop"
         src="/images/home/Iconic-Executive-Assistant-Recruitment-Desktop.webp"
+        preload
         alt="Iconic-Executive-Assistant-Recruitment" />
       <NuxtImg
         class="heroAssistant assistantLargeDeskop"
         src="/images/home/Iconic-Executive-Assistant-Recruitment-Large.webp"
+        preload
         alt="Iconic-Executive-Assistant-Recruitment" />
     </div>
   </section>

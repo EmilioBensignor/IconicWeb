@@ -2,7 +2,6 @@
   <section
     class="w-full precisionMatching columnAlignCenter gap-4 px-3 py-5"
     ref="stepperSection"
-    aria-labelledby="stepper-title"
   >
     <div class="h2Subtitle column">
       <h2 id="stepper-title">Precision matching process</h2>
@@ -14,9 +13,7 @@
       class="w-full stepperProcess"
       aria-labelledby="Stepper Process"
     >
-      <!-- StepList with correct ARIA role -->
       <StepList>
-        <!-- Step buttons with correct ARIA attributes -->
         <Step
           v-for="step in 4"
           :key="step"
