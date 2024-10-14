@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     'nuxt-link-checker',
     'nuxt-vitalizer',
     'nuxt-booster',
+    '@nuxtjs/fontaine'
   ],
   icon: {
     size: '1rem',
